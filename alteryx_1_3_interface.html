@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-147504302-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-147504302-1');
+</script>
+
+    <title>AnalyseUp.com</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/Users/dan/Documents/Programming & Development/Projects/AnalyseUp/Site/css/bootstrap.min.css">
+    <link href='/Users/dan/Documents/Programming & Development/Projects/AnalyseUp/Site/css/w3.css' rel='stylesheet' type="text/css">
+    <link href='/Users/dan/Documents/Programming & Development/Projects/AnalyseUp/Site/css/page_style.css' rel='stylesheet' type='text/css'> 
+    <script>
+        function checkAnswer(answer,result) {
+            if(document.getElementById(answer).checked) {
+                document.getElementById(result).innerHTML = "Correct!";
+                document.getElementById(result).style.color = "limegreen"; 
+            }else{
+                    document.getElementById(result).innerHTML = "Incorrect.Try Again";
+                    document.getElementById(result).style.color = "red";
+                }
+        }
+        function w3_open() {
+            document.getElementById("mySidebar").style.display = "block";
+        }
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+        }
+</script>
+</head>
+
+<body>
+<!--Top Nav-->
+    <div id="top">
+
+        <a href="index.html"><img alt="Upgrade your data skills with analyseup.com" id="banner" src="img/AnalyseUp_Black(v2.2).png" ></a>
+        <div class="sep"></div>
+    </div>
+<!--Side Menu-->
+    <div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style="width:250px; top:0vh;" id="mySidebar">
+        <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
+        <a href="alteryx_1_4_selecting_data.html" style="text-decoration: none;"><div id="next">Next</div></a>
+        <p></p>
+        <!--<h5 id="side_head"><b>Data Wrangling with Alteryx</b></h5>-->
+        <h6 class="side_title">Getting Started</h6>
+            <a href="alteryx_1_1_introduction.html" class="w3-bar-item w3-button side_link" >Introduction</a>
+            <a href="alteryx_1_2_first_worflow.html" class="w3-bar-item w3-button side_link">First Workflow</a>
+            <a id="sel" href="alteryx_1_3_interface.html" class="w3-bar-item w3-button side_link">Designer Interface</a>
+        <h6 class="side_title">Data Preparation</h6>
+            <a href="alteryx_1_4_selecting_data.html" class="w3-bar-item w3-button side_link" >Selecting Data</a>
+            <a href="alteryx_1_5_data_type_conversion.html" class="w3-bar-item w3-button side_link" >Data Type Conversion</a>
+            <a href="alteryx_1_6_cleaning_data.html" class="w3-bar-item w3-button side_link" >Cleaning Data</a>
+            <a  href="alteryx_1_7_exercises_p1.html" class="w3-bar-item w3-button side_link" >Exercises</a>
+        <h6 class="side_title">Filters & Joins</h6>
+            <a href="alteryx_2_1_housekeeping.html" class="w3-bar-item w3-button side_link" >Housekeeping</a>
+    </div>
+<!--Content-->
+    <div class="ad_banner"></div>
+    <div class="w3-main" style="margin-left:250px; margin-right:200px;">
+    <!--Menu Button-->
+        <div >
+          <div class="h_left">
+                          <button class="w3-button w3-xlarge w3-hide-large" onclick="w3_open()" style="left:0;">&#9776;</button>
+            </div>
+          <div class="h_right">
+
+          <h1>Alteryx Designer Interface</h1>
+            </div>
+
+          <p></p>
+          <div class="w3-container">
+              <p></p>
+              <p></p>
+              <p></p>
+              <p class="txt">
+                  The Alteryx Designer interface (other than the top menu) has four key components; the tool pallet, the workflow configuration window, the results window and of course the main workspace. 
+              </p>
+              <p></p>
+              <div class="wide_box">
+                  <div class="box2">
+                      <p class="txt2">The <b>Tool Pallet</b> is where things start to get interesting. This contains all the drag and drop tools that can be used to construct a workflow. Alteryx contains around 200 tools and are grouped together in different tabs based on functionality (importing data, reporting etc).</p>
+                  </div>
+                  <div class="box2">
+                    <img alt="Alteryx Tool Pallet" class="tut_img" src="img/Alteryx/1.3_Interface/2_tool_pallet.PNG"></div>
+              </div>
+              <div class="wide_box">
+                  <div class="box2">
+                      <p class="txt2">The <b>Workspace</b> is where you will drop and connect different tools to build your workflows as we did in our first workflow. All workflows are built in the same way, by dragging, dropping and connecting different tools into the workspace to process your data.</p>
+                  </div>
+                  <div class="box2">
+                    <img alt="Alteryx Workspace" class="tut_img" src="img/Alteryx/1.3_Interface/Final_Workfloe.PNG"></div>
+              </div>
+              <div class="wide_box">
+                  <div class="box">
+                      <p class="txt2">The <b>Configuration Window</b> allows us to tell specific tools or indeed the workflow itself how to behave and process our data. Selecting any tools in a workflow will display the configuration window for that tool and will allow you to adjust associated parameters. In this case we have the input tool selected from our first workflow and displayed are different parameters that can be adjusted for our csv import such as how the file is delimited.</p>
+                  </div>
+                  <div class="box">
+                    <img alt="ALteryx Configuration Window" class="tut_img" src="img/Alteryx/1.3_Interface/4_configuration.PNG"></div>
+              </div>
+              <div class="wide_box">
+                  <div class="box2">
+                      <p class="txt2">Finally the <b>Results Window</b> enables us to preview both the data output from any tool at any point in the workflow along with associated metadata. Here we can also monitor any errors or warnings that may have occurred during the workflow run. Having selected the browse tool from our first workflow we can see all the data that has been imported into Alteryx from our csv file. Data in this window can also be copied and then pasted into other applications. </p>
+                  </div>
+                  <div class="box2">
+                    <img alt="Alteryx Results Window" class="tut_img" src="img/Alteryx/1.3_Interface/5_results.PNG"></div>
+              </div>
+              <p class="txt2" style="padding-top: 50px">
+                  <b>Tip: Selecting any of the output nodes of a tool (shown below) will display the first megabyte of data output from the tool in the results window.</b>
+              </p>
+              <p  style="padding-top: 30px"></p>
+              <img alt="Alteryx Output Node" class="tut_img" style="width:40%;" src="img/Alteryx/1.3_Interface/7_output_node.PNG">
+              <p class="txt2" style="padding-top: 50px">
+              One way to think of a workflow is that it’s like a car production line in a factory where the skeleton of a car passes on a conveyor through the factory, stopping at different stations to have panels and doors added, the engine mounted, the exterior painted etc. Alteryx workflows are similar to this but instead of a car we have data. The raw data that you import passes through the workflow (usually from left to right) along the connectors (conveyor), stopping at different tools (stations) to have some operation performed on it before moving on to other tools or outputs.
+              </p>
+          </div>
+        </div>
+    </div>
+<!-------------------------------------FOOTER---------------------------------->
+    <div id="footer"></div>
+<!-------------------------------------SIDE AD BAR----------------------------->
+    <div id="ad_bar" ></div>
+
+    
+
+    
+    
+
+</body>
+
+</html>

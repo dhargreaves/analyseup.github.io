@@ -129,14 +129,13 @@
     top:82vh;
     background-color: lightgrey;
     width: 100%;
-    /*height: 25vw;*/
-    overflow: auto;
+    height: 30vh;
     
 }
 #summary_text {
     padding-top:2%;
-    padding-left:30%;
-    padding-right:30%;
+    padding-left:20%;
+    padding-right:20%;
         color: white;
     font-family:"helvetica";
     text-align:center;
@@ -145,21 +144,7 @@
     
 }
 #summary_title {
-    font-family:"arial";
+        font-family:"arial";
     font-size:2vh;
     letter-spacing: 2px;
-}
-
-@media (max-width: 980px){
-    #summary_text {
-        padding-top:2%;
-        padding-left:8%;
-        padding-right:8%;
-        color: white;
-        font-family:"helvetica";
-        text-align:center;
-        font-size:1.7vh;
-        letter-spacing: 1px;
-    
-}
 }

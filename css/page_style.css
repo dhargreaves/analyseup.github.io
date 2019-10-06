@@ -2,9 +2,9 @@
 
     #top {
         display:block;
-        width: 100%;
+        width: 80vw;
         height:6.5vh;
-
+        
     }
     #banner { 
         /*Centre Image*/
@@ -19,12 +19,13 @@
         top: 0.5vh;        
     }
     .sep {
-        width:100%;
+        width:calc(80vw-270px);
         height:1px;
         background-color: lightgray;
         position:relative;
         top:0.8vh;
         margin-left:270px;
+      
  
     }
 
@@ -54,7 +55,16 @@
     
 }
 
-    h6 {
+#side_head {
+        position:relative;
+        padding-top: 0.8vh;
+        padding-bottom: 0.8vh;
+        margin-left: 15px;
+        margin-top: 20px;
+        color:black;
+}
+
+.side_title {
         position:relative;
         padding-top: 0.8vh;
         padding-bottom: 0.8vh;
@@ -62,12 +72,16 @@
         margin-top: 20px;
         color:black;
     }
-    a {
+a{
         position:relative;
         font-size: 14px;
         font-family:"helvetica";
         color: white;
     }
+.side_link{
+    font-size:14px;
+    font-weight: 100;
+}
 #sel{
     background-color: lightgrey;
     color: white;
@@ -75,17 +89,19 @@
 /*AD BAR*/
 
 #ad_bar {
-   height: 100%;
+   height:106.5vh;
   width: 200px;
   position: fixed;
   z-index: 1;
-  top: 8.2vh;
- 
-  background-color: #111;
-  overflow-x: hidden;
-  padding-top: 20px;
+  /*top: 8.2vh;*/
+  top: -6.5vh;
+
+  /*overflow-x: hidden;*/
+  /*padding-top: -20px;*/
     right:0;
     background-color: white;
+   
+    /*margin-top:50px;*/
     
 }
 /*CONTENT*/
@@ -93,19 +109,20 @@
 .ad_banner {
     width:100%;
     height: 100px;
-    background-color: grey;
+    background-color: white;
     display:none;
 }
 h1 {
     display:inline-block;
-    font-size:24px;
+    font-size:26px;
     position: relative;
     top:8px;
-  
-    font-weight:100;
+    text-indent:20px;
+    font-weight:300;
     color:#ff7700ff;
     font-family: "helvetica";
     text-align-last: center;
+    padding-bottom: 20px;
     
 }
 .h_right {
@@ -125,7 +142,10 @@ h1 {
     float:right;
 }
 h2 {
-    font-size:20px;
+    font-size:18px;
+    font-weight:600;
+    padding-top: 40px;
+    /*color:#ff7700ff;*/
 }
 
 #sub {
@@ -134,7 +154,8 @@ h2 {
     padding-bottom:5px;
     letter-spacing: 1px;
     position:relative;
-    
+    margin:auto;
+    text-align: center;
     top:-12px;
 }
 #m_menu {
@@ -147,7 +168,7 @@ h2 {
    
 }
 
-li {
+.menu_li {
     font-family:"helvetica";
     color: grey;
     display: inline-block;
@@ -165,6 +186,15 @@ li {
     
 }
 
+/* same as wide_box but without background styling, for use on regular content */
+.wide_box2 {
+    width: 100%;
+    height: 30%;
+    margin-top: 5%;
+    
+}
+
+
 .box {
     display: inline-block;
     width: 49%;
@@ -172,20 +202,54 @@ li {
     text-align: center;
     margin-top:3%;
     margin-bottom:3%;
+    padding-left: 3%;
+    padding-right:3%;
+    background-color: #F5F5F5;
+    vertical-align: middle;
+}
+/*For when image is much wider, creates stacked view
+rather than side by side*/
+.box2 {
+    display:block;
+    width: 98%;
+    height: 100%;
+    text-align: center;
+    margin-top:3%;
+    margin-bottom:3%;
+    padding-left: 3%;
+    padding-right:3%;
     background-color: #F5F5F5;
     vertical-align: middle;
 }
 
+.box3 {
+    display:block;
+    width: 98%;
+    height: 100%;
+    text-align: center;
+    margin-top:3%;
+    margin-bottom:3%;
+    padding-left: 3%;
+    padding-right:3%;
+    background-color: #F5F5F5;
+    vertical-align: middle;
+}
+
+.txt_link {
+    color:darkorange;
+    font-family:"opensans";
+    font-size:16px;
+}
 .txt {
     font-family:"opensans";
-    font-size:14px;
+    font-size:16px;
     font-weight:100;
     color:#595959;
     text-indent: 50px;
 }
 .txt2 {
     font-family:"opensans";
-    font-size:14px;
+    font-size:16px;
     font-weight:100;
     color:#595959;
 }
@@ -197,6 +261,29 @@ li {
     height: auto;
     border-radius:10px;
 }
+
+.tut_img2 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    height: auto;
+    border-radius:10px;
+}
+/*Images with this class will enlarge when hovered over*/
+.enlarge_img:hover{
+    color: #424242; 
+  -webkit-transition: all .3s ease-in;
+  -moz-transition: all .3s ease-in;
+  -ms-transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+  transition: all .3s ease-in;
+  opacity: 1;
+  transform: scale(1.5);
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari and Chrome */
+
+}
 .banner {
     display:block;
     margin-left: auto;
@@ -206,6 +293,41 @@ li {
     
     margin-left: 4%;
     margin-right: 4%;
+}
+
+/*CODE*/
+
+.code_box {
+    display:block;
+    width: 98%;
+    height: 100%;
+    text-align: left;
+    margin-top:3%;
+    margin-bottom:3%;
+    padding-left: 3%;
+    padding-right:3%;
+    background-color: #F5F5F5;
+    vertical-align: middle;
+}
+
+.key_word{
+    color: blue;
+}
+
+.string {
+    color: #ff7700ff;
+}
+
+.comment {
+    color: darkgrey;
+}
+
+.function1 {
+    text-indent: 50px;  
+}
+
+.function2 {
+    text-indent: 100px;  
 }
 
 /*QUIZ*/
@@ -231,6 +353,10 @@ li {
     margin-bottom: 10px;
     margin-left:auto;
     margin-right:auto;
+    font-size:12px;
+    vertical-align: top;
+    height:100%;
+    position:relative
 }
 
 .question {
@@ -240,9 +366,15 @@ li {
     padding-bottom:5px;
 }
 .answers {
-    margin:auto;
+    /*margin:auto;*/
+
 }
-#submit {
+.q {
+    padding-left: 20px;
+    width:50%;
+    display:
+}
+.submit {
     margin:auto;
     color:white;
     text-align: center;
@@ -253,11 +385,23 @@ li {
     padding-top: 5px;
     padding-bottom: 5px;
     margin-bottom:0px;
+    position:absolute;
+    bottom:0;
 }
 label {
-    margin-left:20px;
-    text-align: center;
+    
+    text-align: left;
     font-weight: 100;
+    width:80%;
+    position: relative;
+    margin-left: 30px;
+    padding-top:2.5px;
+    display: block;
+}
+input {
+    margin-left:10px;
+    float: left;
+      display: block;
 }
 
 .result {
@@ -267,9 +411,19 @@ label {
     font-family:"helvetica";
     text-align: center;
 }
+
+#footer{
+    height: 50px;
+}
 /*TABLET SIZE*/
     @media (max-width: 980px) {
     /*TOP BANNER*/
+
+        #top {
+            display:block;
+            width: 100%;
+            height:6.5vh;   
+        }
         #banner {
             margin-right: auto;
         }
@@ -284,7 +438,7 @@ label {
         .ad_banner {
                 width:95vw;
                 height: 100px;
-                background-color: grey;
+ 
                 display:inline-block;
                 margin-top: 10px;
             margin-right:10px;
@@ -300,10 +454,18 @@ label {
             margin-left:20px;
             display: inline-block;
         }
+        .box {
+            display:block;
+            width: 98%;
+        }
         
         #sub {
             margin:auto;
             text-align: center;
+        }
+        .small_img{
+            /*For sizing images that look too big on small screen*/
+            width:50%;
         }
     /*EXERCISES*/
         .q_sub{
@@ -315,12 +477,28 @@ label {
     }
 /*MOBILE SIZE*/
 @media (max-width: 450px){
-        /*EXERCISES*/
+    /*EXERCISES*/
         .q_sub{
-            width:100%;
+                width:100%;
+                display:block;
+                margin: none;
+                margin-bottom:20px;
+            }
+    /*TOP BANNER*/
+        #top {
             display:block;
-            margin: auto;
-            margin-bottom:20px;
+            width: 100%;
+            height:6.5vh;   
+        }
+    /*CONTENT*/
+        .box {
+            display:block;
+            width: 98%;
+        }
+    
+        .small_img{
+            /*For sizing images that look too big on small screen*/
+            width:50%;
         }
     }
 }

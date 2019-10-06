@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-147504302-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-147504302-1');
+</script>
+
+    <title>AnalyseUp.com</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/Users/dan/Documents/Programming & Development/Projects/AnalyseUp/Site/css/bootstrap.min.css">
+    <link href='/Users/dan/Documents/Programming & Development/Projects/AnalyseUp/Site/css/w3.css' rel='stylesheet' type="text/css">
+    <link href='/Users/dan/Documents/Programming & Development/Projects/AnalyseUp/Site/css/page_style.css' rel='stylesheet' type='text/css'> 
+    <script>
+        function checkAnswer(answer,result) {
+            if(document.getElementById(answer).checked) {
+                document.getElementById(result).innerHTML = "Correct!";
+                document.getElementById(result).style.color = "limegreen"; 
+            }else{
+                    document.getElementById(result).innerHTML = "Incorrect.Try Again";
+                    document.getElementById(result).style.color = "red";
+                }
+        }
+        function w3_open() {
+            document.getElementById("mySidebar").style.display = "block";
+        }
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+        }
+        function reveal(element, button){
+            document.getElementById(element).style.visibility = "visible"; 
+            document.getElementById(button).style.visibility = "hidden"; 
+        }
+</script>
+</head>
+
+<body>
+<!--Top Nav-->
+    <div id="top">
+
+        <a href="index.html"><img alt="Upgrade your data skills with analyseup.com" id="banner" src="img/AnalyseUp_Black(v2.2).png" ></a>
+        <div class="sep"></div>
+    </div>
+<!--Side Menu-->
+    <div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style="width:250px; top:0vh;" id="mySidebar">
+        <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
+        <a href="alteryx_1_6_cleaning_data.html" style="text-decoration: none;"><div id="next">Next</div></a>
+        <p></p>
+        <!--<h5 id="side_head"><b>Data Wrangling with Alteryx</b></h5>-->
+        <h6 class="side_title">Getting Started</h6>
+            <a href="alteryx_1_1_introduction.html" class="w3-bar-item w3-button side_link" >Introduction</a>
+            <a href="alteryx_1_2_first_worflow.html" class="w3-bar-item w3-button side_link">First Workflow</a>
+            <a href="alteryx_1_3_interface.html" class="w3-bar-item w3-button side_link">Designer Interface</a>
+        <h6 class="side_title">Data Preparation</h6>
+            <a href="alteryx_1_4_selecting_data.html" class="w3-bar-item w3-button side_link" >Selecting Data</a>
+            <a id="sel" href="alteryx_1_5_data_type_conversion.html" class="w3-bar-item w3-button side_link" >Data Type Conversion</a>
+            <a href="alteryx_1_6_cleaning_data.html" class="w3-bar-item w3-button side_link" >Cleaning Data</a>
+            <a  href="alteryx_1_7_exercises_p1.html" class="w3-bar-item w3-button side_link" >Exercises</a>
+        <h6 class="side_title">Filters & Joins</h6>
+            <a href="alteryx_2_1_housekeeping.html" class="w3-bar-item w3-button side_link" >Housekeeping</a>
+    </div>
+<!--Content-->
+    <div class="ad_banner"></div>
+    <div class="w3-main" style="margin-left:250px; margin-right:200px;">
+    <!--Menu Button-->
+        <div >
+          <div class="h_left">
+                          <button class="w3-button w3-xlarge w3-hide-large" onclick="w3_open()" style="left:0;">&#9776;</button>
+            </div>
+          <div class="h_right">
+              <h1>Data Type Conversion</h1>
+            </div>
+          <p></p>
+          <div class="w3-container">
+              <p></p>
+              <p></p>
+              <p></p>
+              <p class="txt">
+                  When Alteryx imports data through an input tool it chooses a data type for each field imported based on its best guess of the type in the data source. You will find (especially when importing from text, csv and excel files where there is no metadata), that Alteryx defaults to seeing these as a string (text) field. 
+              </p>
+              <p></p>
+              <div class="wide_box">
+                  <div class="box2">
+                      <p class="txt2">After running our workflow, we can click on the <b>Browse</b> tool and select Metadata in the results window. This will show us the type and size of data that has been passed to the browse tool. As you can see Alteryx, as expected, imported all our data as a V_String data type.</p>
+                  </div>
+                  <div class="box2">
+                    <img alt="" class="tut_img" src=img/Alteryx/1.5_Selecting/6_metadata_edit.PNG>
+                  </div>
+              </div>
+              <p></p>
+              <p style="padding-top: 20px;" class="txt">It’s often the case that we would like the data to be some other type for certain fields. Alteryx offers a couple of quick and intuitive ways to do this depending on the type and how well you know the data imported.</p>
+              <p>
+              </p>
+              <h2 style="padding-top: 40px;" >Auto-Field</h2>
+              <p class="txt2">In the <b>Preperation</b> tab on the tool pallet there is a tool called <b>Auto-Field</b> (shown below).</p>
+              <p>                    
+                  <img alt="Alteryx Auto-field Tool" class="tut_img" style="width:10%;" src="img/Alteryx/1.5_Selecting/7_auto_field_tool.PNG">
+              </p>
+              <p class='txt2'>In the configuration window we can select some or all fields for Alteryx to convert to the data type it thinks is most suitable. For example, it will detect if a field contains only strings or numbers and convert it accordingly. However, it will go one step further and makes sure to select the most appropriate data source that reduces the size of the data without losing any precision or value. 
+              </p>
+              <p class='txt2'>What does that mean? Suppose we have a field that contains decimal number, such as 1.3, 2.4, 7.1 etc. that have originally being imported as a V_String data type. Auto-Field would detect that this field contains numeric values and that although converting to Int16 would reduce the size of the data, 1.3 would be converted to 1, 2.4 to 2 etc and this would be a loss of precision and Auto-Field would instead convert to decimal to preserve precision. 
+              </p>
+              
+              <div class="wide_box">
+                  <div class="box2">
+                      <p class="txt2">1 - Let’s add an Auto-Field tool in-between the select and browse tool in our workflow.</p>
+                      <p class='txt2'>Select the auto-field tool once connected to display the configuration window and you will see as default all fields are selected for Alteryx to perform the auto-field operation on. Let’s leave all selected and run the workflow (Ctrl-R).</p>
+                  </div>
+                  <div class="box2">
+                    <img alt="Alteryx Add Auto-field" class="tut_img" src="img/Alteryx/1.5_Selecting/8_add_auto_field_edit.PNG"></div>
+              </div>
+              <p></p>
+              <div class="wide_box">
+                  <div class="box2">
+                      <p class="txt2">Once the workflow has run select the browse tool and let’s have a look at the metadata again.</p>
+                      <p class='txt2'>As we can see Auto-Field has converted all the fields into the what it believes is the most appropriate and efficient data type. However, it’s not perhaps the best type for how we would like to work with the data so let’s discuss how we can improve on what Alteryx has done</p>
+                  </div>
+                  <div class="box2">
+                    <img alt="Alteryx After Auto-field" class="tut_img" src="img/Alteryx/1.5_Selecting/9_metadata_after_edit.PNG"></div>
+              </div>
+              <p></p>
+              <h2 style="padding-top: 40px;" >Select Tool</h2>
+              <p  class="txt2">If we know something about the data that is perhaps not obvious to Alteryx such as what the data represents or perhaps how we would like to perform additional processing on it further along in the workflow then we can manually convert the data type using the Select tool.</p>
+              <p class="txt2">We’ve already used the Select tool to remove fields from our data but we can also use this to quickly convert the data type of a field before it is processed downstream. We do this simply by picking a data type from the drop down in the Type column associated with the field we would like to convert.</p>
+              <div class="wide_box">
+                  <div class="box2">
+                      <p class="txt2">After the Auto-Field worked on our data we saw that “Order_No”, “Customer_ID” and “ProductID” were converted to different types of Int (numeric data type) from string. This makes sense as all these fields contain numeric values, however what Alteryx didn’t know is that these are more like numeric identifiers of the orders, customers and products of our ecommerce business and not continuous numeric values. As such, further along in the workflow we might want to do additional processing such as grouping by or concatenating these identifiers so we would prefer to have these as strings.</p>
+                      <p class='txt2'>So let’s add a select tool between the auto-field and browse tool and convert the “Order_No”, “Customer_ID” and “ProductID” fields to data type “V_String” using the drop downs in the configuration window.</p>
+                  </div>
+                  <div class="box2">
+                    <img alt="Alteryx Convert Data Type Using Select Tool1" class="tut_img small_img" src="img/Alteryx/1.5_Selecting/10_another_select_edit.PNG">
+                    <p></p>
+                </div>
+              </div>
+              <p></p>
+              <h2 >Date & Time</h2>
+              <p  class="txt2">The data type that is often most troublesome when importing from sources like text files are date and time fields. Dates are often imported as strings as the date part seperators cause Alteryx to see the values as non-numeric. Luckily Alteryx provides us with a DateTime parse tool to correct this.</p>
+              <div class="wide_box">
+                  <div class="box">
+                      <p class="txt2">In the results window we can see that we have a field “Order_Date” with record 1 having date 22/11/17.</p>
+                      <p class='txt2'>This is clearly a date to our eyes but if we click on metadata we can that Alteryx has read this as a string. Let’s change that.</p>
+                  </div>
+                  <div class="box">
+                    <img alt="Alteryx Date" class="tut_img small_img" src="img/Alteryx/1.5_Selecting/12_date.PNG">
+                    <p></p>
+                    <img alt="Alteryx Date Metadata" class="tut_img small_img" src="img/Alteryx/1.5_Selecting/13_metadata.PNG"></div>
+              </div>
+              <div class="wide_box">
+                  <div class="box2">
+                      <p class="txt2">1.    Go to the Parse tab on the tool pallet and locate the DateTime tool. Click and drag inbetween the auto-field tool and the 2nd select tool in the main workspace.</p>
+                  </div>
+                  <div class="box2">
+                    <img alt="Alteryx Add Date Time" class="tut_img" src="img/Alteryx/1.5_Selecting/15_Add_DateTime_edit.PNG">
+                  </div>
+              </div>
+              <div class="wide_box">
+                  <div class="box2">
+                      <p class="txt2">2.	Select the tool to display the configuration window. Here we tell Alteryx whether we want to convert a string to date or date to string. In our case we would like to convert the “Order_Date” string field to a date.</p>
+                  </div>
+                  <div class="box2">
+                    <img alt="Alteryx DateTime Configuration" class="tut_img2 " src="img/Alteryx/1.5_Selecting/16_config1.PNG">
+                  </div>
+              </div>
+              <div class="wide_box">
+                  <div class="box2">
+                      <p class="txt2">3.	The DateTime tool will create an additional converted date field and leave the original string field in it’s current state. The new field now requires a different name and we will call it “OrderDate”</p>
+                  </div>
+                  <div class="box2">
+                    <img alt="Alteryx DateTime Rename" class="tut_img2" src="img/Alteryx/1.5_Selecting/17_config2.PNG">
+                  </div>
+              </div>
+              <div class="wide_box">
+                  <div class="box2">
+                      <p class="txt2">4.	Finally we need to select the format of the string that we want to convert to a date. As we can see in the data, “Order_Date” is in the format “dd/mm/yy” (i.e. 22/11/17 as seen in record 1)</p>
+                  </div>
+                  <div class="box2">
+                    <img alt="Alteryx DateTime Format" class="tut_img2" src="img/Alteryx/1.5_Selecting/18_config3.PNG">
+                  </div>
+              </div>
+              <div class="wide_box">
+                  <div class="box2">
+                      <p class="txt2">5.    Now run the workflow and click the browse tool. We can see that Alteryx has created the field “OrderDate” and if we select metadata we see that the data type of this field is “Date”. Good times.</p>
+                  </div>
+                  <div class="box2">
+                    <img alt="Alteryx Date Results" class="tut_img" src="img/Alteryx/1.5_Selecting/19_results.PNG">
+                    <p></p>
+                  </div>
+              </div>
+              <div class="wide_box">
+                  <div class="box2">
+                      <p class="txt2">There’s just one last thing to take care of. We no longer need the “Order_Date” string field so let's remove this using the Select tool already in the workflow.</p>
+                  </div>
+                  <div class="box2">
+                    <img alt="Alteryx Date Results"  class="tut_img2" src="img/Alteryx/1.5_Selecting/21_task_answer.PNG">
+                  </div>
+              </div>
+              <p></p>
+
+
+
+          </div>
+        </div>
+    </div>
+<!-------------------------------------FOOTER---------------------------------->
+    <div id="footer"></div>
+<!-------------------------------------SIDE AD BAR----------------------------->
+    <div id="ad_bar" ></div>
+
+    
+
+    
+    
+
+</body>
+
+</html>

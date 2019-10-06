@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-147504302-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-147504302-1');
+</script>
+
+    <title>AnalyseUp.com</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/Users/dan/Documents/Programming & Development/Projects/AnalyseUp/Site/css/bootstrap.min.css">
+    <link href='/Users/dan/Documents/Programming & Development/Projects/AnalyseUp/Site/css/w3.css' rel='stylesheet' type="text/css">
+    <link href='/Users/dan/Documents/Programming & Development/Projects/AnalyseUp/Site/css/page_style.css' rel='stylesheet' type='text/css'> 
+    
+</head>
+
+<body>
+<!--Top Nav-->
+    <div id="top">
+        <a href="index.html"><img alt="Upgrade your data skills with analyseup.com" id="banner" src="img/AnalyseUp_Black(v2.2).png" ></a>
+        <div class="sep"></div>
+    </div>
+<!--Side Menu-->
+    <div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style="width:250px; top:0vh;" id="mySidebar">
+        <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
+        <a href="alteryx_1_7_exercises_p1.html" style="text-decoration: none;"><div id="next">Next</div></a>
+        <p></p>
+        <!--<h5 id="side_head"><b>Data Wrangling with Alteryx</b></h5>-->
+        <h6 class="side_title">Getting Started</h6>
+            <a href="alteryx_1_1_introduction.html" class="w3-bar-item w3-button side_link" >Introduction</a>
+            <a href="alteryx_1_2_first_worflow.html" class="w3-bar-item w3-button side_link">First Workflow</a>
+            <a href="alteryx_1_3_interface.html" class="w3-bar-item w3-button side_link">Designer Interface</a>
+        <h6 class="side_title">Data Preparation</h6>
+            <a href="alteryx_1_4_selecting_data.html" class="w3-bar-item w3-button side_link" >Selecting Data</a>
+            <a href="alteryx_1_5_data_type_conversion.html" class="w3-bar-item w3-button side_link" >Data Type Conversion</a>
+            <a href="alteryx_1_6_cleaning_data.html" class="w3-bar-item w3-button side_link" >Cleaning Data</a>
+            <a href="alteryx_1_7_exercises_p1.html" class="w3-bar-item w3-button side_link" >Exercises</a>
+        <h6 class="side_title">Filters & Joins</h6>
+            <a id="sel" href="alteryx_2_1_housekeeping.html" class="w3-bar-item w3-button side_link" >Housekeeping</a>
+    </div>
+<!--Content----->
+    <div class="ad_banner"></div>
+    <div class="w3-main" style="margin-left:250px; margin-right:200px;">
+    <div >
+            
+        <!--Menu Button-->
+          <div class="h_left">
+              <button class="w3-button w3-xlarge w3-hide-large" onclick="w3_open()" style="left:0;">&#9776;</button>
+          </div>
+          
+          <!--Page Content -->
+          <div class="h_right">
+              <h1>Housekeeping</h1>
+            </div>
+
+          <div class="w3-container">
+              <p></p>
+
+              <p class="txt">
+                Before we move on, we are going to do some housekeeping in our workflow. As you start to build bigger and more complex workflows then it becomes important to make sure your workflows are tidy and organised so that you and others can make changes to workflows without having to spend too long working out what each tool is connected to and why. 
+              </p>
+
+              
+              <h2 style="padding-top: 40px;" >Annotations</h2>
+              <p class="txt2">
+                As discussed previously and as you will have no doubt noticed, Alteryx by default adds annotations to tools whenever you drag them on to the canvas, displaying details about what function the tool is performing. This can be useful in some respects but often creates clutter in the workflow especially when there are a lot of tools performing multiple functions. 
+              </p>
+
+              <div class="wide_box">
+                  <div class="box"><p class="txt2">To hide, simply click on a bank part of the canvas to display the workflow configuration window. Under Canvas, select “Hide” from the dropdown menu next to Annotations and all the tool annotations will disappear. </p>
+                </div>
+                <div class="box"><img alt="Alteryx Annotations" class="tut_img" src="img/Alteryx/1.9_WorkflowTidy/1_Annotations.PNG">
+                </div>     
+              </div>
+              <h2 style="padding-top: 40px;" >Comments</h2>
+              <p class="txt2">
+                Although Alteryx default annotations may make workflows difficult to read, we will often still want to add some sort of comment to parts of our workflows. In particular we may want to provide notes about what the workflow is doing or to detail the purpose of a particular part without the need to click in and look at the configurations. We can do this with the Comment tool which can be placed anywhere on the canvas. 
+              </p>
+              <p></p>
+              <img alt="Alteryx Comment Tool" class="tut_img" style="width:10%;" src="img/Alteryx/1.9_WorkflowTidy/2_comment.PNG">
+              <p></p>
+              <p class="txt2">
+                  Free text can be added to label a tool or make notes. You can also change the background colour, text colour and font of the comments as you see fit. 
+              </p>
+              <p></p>
+              <img alt="Alteryx Comment Config" class="tut_img enlarge_img" style="width:30%;" src="img/Alteryx/1.9_WorkflowTidy/3_comment_config.PNG">
+              <p></p>
+              <div class="wide_box">
+                  <div class="box"><p class="txt2">Let’s try this now by adding a label to each of our input tools and also some notes on what the purpose of our workflow is. </p>
+                </div>
+                <div class="box"><img alt="Alteryx Add Annotations" class="tut_img" src="img/Alteryx/1.9_WorkflowTidy/4_add_omments.PNG">
+                </div>     
+              </div>
+              <h2 style="padding-top: 40px;" >Containers</h2>
+              <p class="txt2">
+                Alteryx also comes with ability to place groups of tools inside collapsible containers. This allows us to group several tools that we combine to perform a specific task such as cleaning an input and make them appear as one block that can be collapsed to save space and to easily make changes to certain actions performed in our workflows. 
+              </p>
+              <p class="txt2">
+                To add tools to a container, drag the container tool onto the canvas from the Documentation tab on the tool pallet and then the tools you would like to group into the container.
+              </p>
+              <p></p>
+              <img alt="Alteryx Container Tool" class="tut_img" style="width:10%;" src="img/Alteryx/1.9_WorkflowTidy/5_container.PNG">
+              <p></p>
+              <div class="wide_box">
+                  <div class="box"><p class="txt2">Our sales_report workflow currently has two streams, one that imports the orders csv file and cleans the data and one that does the same for the products csv file. Let’s put each one of these streams in it’s own container and change the caption to match the input.</p>
+                </div>
+                <div class="box"><img alt="Alteryx Add Containers" class="tut_img enlarge_img" src="img/Alteryx/1.9_WorkflowTidy/6_add_containers.PNG">
+                </div>     
+              </div>
+              <p></p>
+              <p class="txt2">
+                  The arrow in the top right hand corner of the container can be used to collapse or un-collapse a container as you see fit. This becomes particularly useful when we have large workflows with dozens of tools allowing us to shrink blocks of tools until we need to edit them, keeping our workflows manageable to work with.
+              </p>
+              <p></p>
+              <img alt="Alteryx Collapse Container " class="tut_img" style="width:80%;" src="img/Alteryx/1.9_WorkflowTidy/7_collapse.PNG">
+              <h2 style="padding-top: 40px;" >Tool Alignment</h2>
+              <p></p>
+              <p class="txt2">
+                Finally, we have a trick for everyone who appreciates straight lines and angles. As you will have noticed, the flow of data within Alteryx worklows moves from left to right in lines but sometimes as we add tools we don’t get these exactly in line with each other. 
+              </p>
+              <p></p>
+              <img alt="Alteryx Tool Not Aligned" class="tut_img" style="width:40%;" src="img/Alteryx/1.9_WorkflowTidy/8_alignment.PNG">
+              <p class="txt2">
+                Luckily there is a quick shortcut that will bring everything back into harmony. Select all tools that you would like to align and press ctrl/shift/- to bring everything back in line.  
+              </p>
+              <p></p>
+              <img alt="Alteryx Tool Aligned" class="tut_img" style="width:40%;" src="img/Alteryx/1.9_WorkflowTidy/9_align.PNG">
+              
+            
+              
+              
+
+          </div>
+        </div>
+    </div>
+<!-------------------------------------FOOTER---------------------------------->
+<div id="footer"></div>
+<!-------------------------------------SIDE AD BAR----------------------------->
+<div id="ad_bar" ></div>
+
+</body>
+</html>
