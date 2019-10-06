@@ -1,16 +1,39 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
-<url>
-  <loc>http://www.analyseup.com/</loc>
-  <lastmod>2018-04-08T18:41:01+00:00</lastmod>
-</url>
-
-
+<?xml version="1.0" encoding="utf-8"?>
+<!--Created using XmlSitemapGenerator.org - Free HTML, RSS and XML sitemap generator-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  <url>
+    <loc>http://www.analyseup.com/</loc>
+  </url>
+  <url>
+    <loc>http://www.analyseup.com/alteryx_1_1_introduction.html</loc>
+  </url>
+  <url>
+    <loc>http://www.analyseup.com/alteryx_2_1_housekeeping.html</loc>
+  </url>
+  <url>
+    <loc>http://www.analyseup.com/alteryx_1_7_exercises_p1.html</loc>
+  </url>
+  <url>
+    <loc>http://www.analyseup.com/alteryx_1_3_interface.html</loc>
+  </url>
+  <url>
+    <loc>http://www.analyseup.com/Data/LargeRainforestData.zip</loc>
+  </url>
+  <url>
+    <loc>http://www.analyseup.com/alteryx_1_5_data_type_conversion.html</loc>
+  </url>
+  <url>
+    <loc>http://www.analyseup.com/alteryx_1_4_selecting_data.html</loc>
+  </url>
+  <url>
+    <loc>http://www.analyseup.com/index.html</loc>
+  </url>
+  <url>
+    <loc>http://www.analyseup.com/alteryx_1_6_cleaning_data.html</loc>
+  </url>
+  <url>
+    <loc>http://www.analyseup.com/alteryx_1_2_first_worflow.html</loc>
+  </url>
 </urlset>
+<!--<guid value="9c4774b3-6f6a-434c-913e-b8612ffa2c03" />-->
+<!--Created using XmlSitemapGenerator.org - Free HTML, RSS and XML sitemap generator-->
