@@ -282,7 +282,7 @@ rather than side by side*/
   transform: scale(1.5);
   -ms-transform: scale(1.5); /* IE 9 */
   -webkit-transform: scale(1.5); /* Safari and Chrome */
-
+  -moz-transform: scale(1.5);
 }
 .banner {
     display:block;
