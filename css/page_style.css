@@ -89,7 +89,7 @@ a{
 /*AD BAR*/
 
 #ad_bar {
-   height:106.5vh;
+   height:100vh;
   width: 200px;
   position: fixed;
   z-index: 1;
