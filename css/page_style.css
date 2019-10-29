@@ -55,6 +55,25 @@
     
 }
 
+#next_mobile {
+    display:none;
+    height:30px;
+    width: 50%;
+    color:white;
+    background-color: #ff7700ff;
+    text-align: center;
+    border: 2px solid #ff7700ff;
+    border-radius:5px;
+    margin:auto;
+    position:relative;
+    top:10px;
+    padding: 4px 0;
+    font-size:14px;
+    text-decoration: none;
+    margin-bottom: 10px;
+    
+}
+
 #side_head {
         position:relative;
         padding-top: 0.8vh;
@@ -480,6 +499,25 @@ input {
         .small_img{
             /*For sizing images that look too big on small screen*/
             width:50%;
+        }
+        /*Mobile next button that is displayed at bottom of screen on mobile*/
+        #next_mobile {
+            display: block;
+            height:30px;
+            width: 50%;
+            color:white;
+            background-color: #ff7700ff;
+            text-align: center;
+            border: 2px solid #ff7700ff;
+            border-radius:5px;
+            margin:auto;
+            position:relative;
+            top:10px;
+            padding: 4px 0;
+            font-size:14px;
+            text-decoration: none;
+            margin-bottom: 10px;
+
         }
     /*EXERCISES*/
         .q_sub{
