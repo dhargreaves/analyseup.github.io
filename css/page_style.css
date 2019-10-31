@@ -127,7 +127,7 @@ a{
 
 /*HORIZONTAL AD*/
 .horizontal_ad {
-    visibility: hidden;
+    display:none;
 }
 /*CONTENT*/
 
@@ -469,18 +469,18 @@ input {
         }
     /*HORIZONTAL AD*/
         .horizontal_ad {
-            visibility: visible;
+            display: block;
             width:95vw;
             height: 7vh;
             margin-top: 10px;
             margin-right:10px;
             margin-left:10px;
+            margin-bottom:10px;
         }
     /*CONTENT*/
         .ad_banner {
                 width:95vw;
                 height: 7vh;
- 
                 display:inline-block;
                 margin-top: 10px;
             margin-right:10px;
@@ -492,10 +492,7 @@ input {
                 background-color: white;
                 display:none;
             }
-        .mobile_ad {
-            height:7vh;
-        }
-                    .h_right h1{
+        .h_right h1{
             font-size:22px;
             margin: auto;
             text-align: center;
