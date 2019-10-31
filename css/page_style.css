@@ -472,12 +472,15 @@ input {
             margin-left:10px;
             }
         .ad_banner2 {
-    width:100%;
-    height: 100px;
-    background-color: white;
-    display:none;
-}
-        .h_right h1{
+                width:100%;
+                height: 100px;
+                background-color: white;
+                display:none;
+            }
+        .mobile_ad {
+            height:7vh;
+        }
+                    .h_right h1{
             font-size:22px;
             margin: auto;
             text-align: center;
