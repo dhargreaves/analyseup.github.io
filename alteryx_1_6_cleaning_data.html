@@ -95,7 +95,7 @@
               <p></p>
               <p></p>
               <p class="txt">
-                  Wouldn’t it be nice if all of our raw data came to us without missing values, nulls, and unnecessary random whitespace? Unfortunately for the most of us that isn’t the day-to-day reality of working with data and therefore we need methods to be able to clean our data to avoid errors that may occur when we further process our data. Without this crucial step we’ll find that formulas don’t behave as expected, joins don’t match correctly and filtering logic appears random. In tools like Excel and even with SQL, cleaning data can often be challenging and time consuming but Alteryx enables faster ways to deal with this step of data preperation. 
+                  Wouldn’t it be nice if all of our raw data came to us without missing values, nulls, and unnecessary random whitespace? Unfortunately for the most of us that isn’t the day-to-day reality of working with data and therefore we need methods to be able to clean our data to avoid errors that may occur when we further process our data. Without this crucial step we’ll find that formulas don’t behave as expected, joins don’t match correctly and filtering logic appears random. In tools like Excel and even with SQL, cleaning data can often be challenging and time consuming but Alteryx enables faster ways to deal with this step of data preparation. 
               </p>
               <p></p>
               
@@ -109,24 +109,14 @@
               
               <p class="txt2">This can be applied to all our fields or we can specify that cleaning be only applied to certain fields within our data. </p>
 
-              <div class="wide_box">
-                  <div class="box2"><p class="txt2">The Data Cleansing configuration window gives us three sections to define how we want to clean our data:</p></div>
-                  <div class="box2">
+<p class="txt2">The Data Cleansing configuration window gives us three sections to define how we want to clean our data:</p>
                       <p class="txt2">1.	The “Replace Nulls” section enables us to quickly convert any Null values that may occur to be replaced by blanks where our field(s) is a string data type or be replaced with 0s for numeric fields. This will enable us to perform calculations and summarise the data easier and more accurately further along in our workflow. </p>
-                  </div>
-                  <div class="box2">
-                    <img alt="Alteryx Replace Nulls" class="tut_img2" src="img/Alteryx/1.7_Cleaning/2_replace_nulls.PNG"></div>
-                    <div class="box2">
-                      <p class="txt2">2.	Remove Unwanted Characters will let us remove whitespace, specifying whether that be all whitespace (leading and trailing along with space between words) or just any random leading or trailing whitespace that might have been imported with the data. In addition we sometimes find that depending on the data source we will have values that have been added that are part of the formatting or data structure of the source and not actually part of the data itself. By specifying to remove letters, numbers or punctuation we can quickly strip our data back to values we want to work with.</p>
-                  </div>
-                  <div class="box2">
-                    <img alt="Alteryx Unwanted Characters" class="tut_img2" src="img/Alteryx/1.7_Cleaning/3_Unwanted_characters.PNG"></div>
-                  <div class="box2">
+                    <img alt="Alteryx Replace Nulls" class="tut_img_50" src="img/Alteryx/1.7_Cleaning/2_replace_nulls.PNG">
+                      <p class="txt2">2.	Remove Unwanted Characters will let us remove whitespace, specifying whether that be all whitespace (leading and trailing along with space between words) or just any random leading or trailing whitespace that might have been imported with the data. In addition, we sometimes find that we will have values that have been added that are part of the formatting or data structure of the source and not actually part of the data itself. By specifying to remove letters, numbers or punctuation we can quickly strip our data back to values we want to work with.</p>
+                    <img alt="Alteryx Unwanted Characters" class="tut_img_50" src="img/Alteryx/1.7_Cleaning/3_Unwanted_characters.PNG">
                       <p class="txt2">3.	Finally we can convert string values in our workflow to upper or lower case. This is useful if we have a mix of cases in fields and we wish to perform some calculation grouped by this field or join to another data set as these are all case sensitive and will be treated as different values.</p>
-                  </div>
-                  <div class="box2">
-                    <img alt="Alteryx Modify Case" class="tut_img2" src="img/Alteryx/1.7_Cleaning/4_Modify_Case.PNG"></div>
-              </div>
+
+                    <img alt="Alteryx Modify Case" class="tut_img_50" src="img/Alteryx/1.7_Cleaning/4_Modify_Case.PNG">            
               <p></p>
               
               <div class="wide_box">
@@ -139,7 +129,8 @@
               </div>
               <div class="wide_box">
                    <div class="box2">
-                      <p class="txt2"><b>1.	</b>Drag and drop a Data Cleansing tool between the 2nd select tool and the browse tool</p>
+                       <p class="txt2"><b>Step 1:</b></p>
+                      <p class="txt2">Drag and drop a Data Cleansing tool between the 2nd select tool and the browse tool</p>
                   </div>
                   <div class="box2">
                       <img alt="Alteryx Add Cleaning Tool" class="tut_img" src="img/Alteryx/1.7_Cleaning/5_add_cleaning_tool_edit.PNG">
@@ -147,7 +138,8 @@
               </div>
               <div class="wide_box">
                   <div class="box">
-                      <p class="txt2"><b>2.	</b>Select the Data Cleansing tool and then in the configuration window make sure all 5 fields are selected to cleanse. Let’s replace all the NULL values in PromoID with blank spaces by checking “Replace with Blanks” under Replace NULLs  and check only “Leading and Trailing Whitespace” in the Remove Unwanted Characters section to take of any random whitespace we may have in our data.</p>
+                      <p class="txt2"><b>Step 2:</b></p>
+                      <p class="txt2">Select the Data Cleansing tool and then in the configuration window make sure all 5 fields are selected. Let’s replace all the NULL values in PromoID with blank spaces by checking “Replace with Blanks” under Replace NULLs  and check only “Leading and Trailing Whitespace” in the Remove Unwanted Characters section to take care of any random whitespace we may have in our data.</p>
                   </div>
                   <div class="box">
                       <img alt="Alteryx Cleaning Tool Config" class="tut_img" src="img/Alteryx/1.7_Cleaning/6_cleansing_config.PNG">
@@ -155,7 +147,8 @@
               </div>
               <div class="wide_box">
                   <div class="box">
-                      <p class="txt2"><b>3.	</b>If we run our workflow and browse we now see that the data cleansing tool has replaced all the NULL values in PromoID and we can now rest easy that here isn’t any random white space in our data that may cause us problems later. Easy as that!</p>
+                      <p class="txt2"><b>Step 3:</b></p>
+                      <p class="txt2">If we run our workflow and browse we now see that the data cleansing tool has replaced all the NULL values in the PromoID field and we can now rest easy that there isn’t any random white space in our data that may cause us problems later.</p>
                   </div>
                   <div class="box">
                       <img alt="Alteryx Cleaned Data" class="tut_img" src="img/Alteryx/1.7_Cleaning/8_Blanks.PNG">

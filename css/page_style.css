@@ -309,6 +309,14 @@ rather than side by side*/
     height: auto;
     border-radius:10px;
 }
+.tut_img_50 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: auto;
+    border-radius:10px;
+}
 /*Images with this class will enlarge when hovered over*/
 .enlarge_img:hover{
     color: #424242; 
@@ -573,6 +581,9 @@ input {
         .small_img{
             /*For sizing images that look too big on small screen*/
             width:50%;
+        }
+        .tut_img_50 {
+            width: 75%;
         }
     }
 }
