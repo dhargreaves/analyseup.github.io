@@ -113,11 +113,11 @@ a{
   position: fixed;
   z-index: 1;
   /*top: 8.2vh;*/
-  /*top: -6.5vh;*/
+  top: -6.5vh;
     
 
   /*overflow-x: hidden;*/
-  /*padding-top: -20px;*/
+  padding-top: -20px;
     right:0;
     background-color: white;
    
