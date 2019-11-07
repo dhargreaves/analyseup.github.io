@@ -106,13 +106,13 @@
               </p>
               <p></p>
               
-              <h2 style="padding-top: 40px;" >Exercises Part 1</h2>
+              <h2 style="padding-top: 40px;" >Exercises</h2>
               
               <p class="txt2">
                     In the same workflow that we have been working on, perform the following tasks:
               </p>
               <p class="txt2" style=" margin-left:50px;">
-                  <b>1.</b>	Import the "Products" csv file from the provided data.
+                  <b>1.</b>	Import the products csv file from the course data.
               </p>
               <p class="txt2" style="margin-left:50px;">
                   <b>2.</b> Use auto-field to determine the optimum data type for each string field
@@ -124,125 +124,45 @@
                   <b>4.	</b>Make sure all string fields that contain Nulls are blank, all Nulls in numeric fields are converted to 0 and that there is no random leading and trailing whitespace in any of the fields. Now run the workflow to ensure there are no errors.
               </p>
               
-              <h2 style="padding-top: 40px;" >Exercises Part 2</h2>
-
-              <p class="txt2" style=" margin-left:50px;">
-                  <b>1.</b>	Import the "Promotions" csv file from the provided data.
-              </p>
-              <p class="txt2" style="margin-left:50px;">
-                  <b>2.</b> As before, use auto-field to determine the optimum data type for each string field
-              </p>
-              <p class="txt2" style="margin-left:50px;">
-                  <b>3.	</b>Again, make sure all string fields that contain Nulls are blank, all Nulls in numeric fields are converted to 0 and that there is no random leading and trailing whitespace in any of the fields.
-              </p>
-              
-              <h2 style="padding-top: 40px;" >Exercises Part 3</h2>
-
-              <p class="txt2" style=" margin-left:50px;">
-                  <b>1.</b>	Import the "Customers" csv file from the provided data.
-              </p>
-              <p class="txt2" style="margin-left:50px;">
-                  <b>2.</b> Select CustomerID and age from the customer data and use the Select tool to convert any data types you think are not correct.
-              </p>
-              <p class="txt2" style="margin-left:50px;">
-                  <b>3.	</b>Finally, make sure all string fields that contain Nulls are blank, all Nulls in numeric fields are converted to 0 and that there is no random leading and trailing whitespace in any of the fields.
-              </p>
-              
-              <h2 style="padding-top: 40px;" >Solutions Part 1</h2>
+              <h2 style="padding-top: 40px;" >Solutions</h2>
               
               <div class="wide_box">
                   <div class="box2"><p class="txt2"><b>1.	</b>You should have an input tool dragged into the main workspace and have imported the Products.csv file from wherever you have saved the course data</p>
                 </div>
-                <div class="box2"><img alt="Alteryx Import Data" class="tut_img" src="img/Alteryx/1.8_Exercises/1_1.PNG">
+                <div class="box2"><img alt="Alteryx Import Data" class="tut_img" src="img/Alteryx/1.8_Exercises/1_input_data.PNG">
                 </div>     
               </div>
               
               <div class="wide_box">
                 <div class="box2"><p class="txt2"><b>2.	</b>Drag in an auto-field tool after the input tool and select all fields for processing</p>
                 </div>
-                <div class="box2"><img alt="Alteryx Auto-field" class="tut_img" src="img/Alteryx/1.8_Exercises/2.PNG">
+                <div class="box2"><img alt="Alteryx Auto-field" class="tut_img" src="img/Alteryx/1.8_Exercises/2_auto_field.PNG">
                 </div>     
               </div>
               
               <div class="wide_box">
                 <div class="box2"><p class="txt2"><b>3.	</b>Cost, Retail_Price and Shipping_Cost are all cash values and therefore require converting to FixedDecimal. Alteryx often sets FixedDecimal to size 19.6 where the 6 refers to the number of decimal places. As we know we are dealing with montery values let’s convert the 6 to a 2</p>
                 </div>
-                <div class="box2"><img alt="Alteryx Select Tool" class="tut_img" src="img/Alteryx/1.8_Exercises/3.PNG">
+                <div class="box2"><img alt="Alteryx Select Tool" class="tut_img" src="img/Alteryx/1.8_Exercises/3_select_tool.PNG">
                 </div>     
               </div>
               
               <div class="wide_box">
                 <div class="box2"><p class="txt2"><b>4.	</b>Add a Data Cleansing tool after the select tool and set the configuration as below</p>
                 </div>
-                <div class="box2"><img alt="Alteryx Data Cleanse" class="tut_img" src="img/Alteryx/1.8_Exercises/4.PNG">
+                <div class="box2"><img alt="Alteryx Data Cleanse" class="tut_img"
+                style="width:60%" src="img/Alteryx/1.8_Exercises/4_cleaning1.PNG">
                 </div>  
-
+                <div class="box2"><img alt="Alteryx Data Cleanse Configuration" class="tut_img" style="width:60%" src="img/Alteryx/1.8_Exercises/5_cleaning2.PNG">
+                </div> 
               </div>
               <div class="wide_box">
-                <div class="box2"><p class="txt2"><b>5.	</b>If you run the workflow you should have an output like below</p>
+                <div class="box2"><p class="txt2">You now should have two clean data sources to work with.</p>
                 </div>
-                <div class="box2"><img alt="Alteryx Exercise Solution" class="tut_img2" src="img/Alteryx/1.8_Exercises/5.PNG">
-                </div>  
-              </div>
-              <p></p>
-              
-              <h2 style="padding-top: 40px;" >Solutions Part 2</h2>
-              
-              <div class="wide_box">
-                  <div class="box2"><p class="txt2"><b>1.	</b>Drag in an Import tool and load Promotions file from wherever you have saved it</p>
-                </div>
-                <div class="box2"><img alt="Alteryx Import Data" class="tut_img" src="img/Alteryx/1.8_Exercises/6.PNG">
-                </div>     
-              </div>
-              
-              <div class="wide_box">
-                <div class="box2"><p class="txt2"><b>2.	</b>Drag in an auto-field tool after the input tool and select all fields for processing</p>
-                </div>
-                <div class="box2"><img alt="Alteryx Auto-field" class="tut_img" src="img/Alteryx/1.8_Exercises/7.PNG">
-                </div>     
-              </div>
-              
-              <div class="wide_box">
-                <div class="box2"><p class="txt2"><b>3.	</b>Add a Data Cleansing tool after the select tool and set the configuration as below</p>
-                </div>
-                <div class="box2"><img alt="Alteryx Data Cleanse" class="tut_img" src="img/Alteryx/1.8_Exercises/8.PNG">
+                <div class="box2"><img alt="Alteryx Exercise Solution" class="tut_img" src="img/Alteryx/1.8_Exercises/6_exercises_solution.PNG">
                 </div>  
               </div>
               <p></p>
-              
-              <h2 style="padding-top: 40px;" >Solutions Part 3</h2>
-              
-              <div class="wide_box">
-                  <div class="box2"><p class="txt2"><b>1.	</b>Drag an Import tool into the workflow and load the Customer csv file</p>
-                </div>
-                <div class="box2"><img alt="Alteryx Import Data" class="tut_img" src="img/Alteryx/1.8_Exercises/9.PNG">
-                </div>     
-              </div>
-              
-              <div class="wide_box">
-                <div class="box2"><p class="txt2"><b>2.	</b>Drag in a Select tool, deselect the Gender and Location fields and convert the Age data type to Int16.</p>
-                </div>
-                <div class="box2"><img alt="Alteryx Add Select Tool" class="tut_img" src="img/Alteryx/1.8_Exercises/10.PNG">
-                </div>     
-              </div>
-              
-              <div class="wide_box">
-                <div class="box2"><p class="txt2"><b>3.	</b>Finally, add a Data Cleansing tool after the select tool and set the configuration as below</p>
-                </div>
-                <div class="box2"><img alt="Alteryx Data Cleanse" class="tut_img" src="img/Alteryx/1.8_Exercises/11.PNG">
-                </div>  
-
-              </div>
-              <div class="wide_box">
-                  <div class="box2"><p class="txt2"><b>4.	</b>Running the workflow should produce and output like below</p>
-                </div>
-                <div class="box2"><img alt="Alteryx Exercise Solution" class="tut_img2" src="img/Alteryx/1.8_Exercises/12.PNG">
-                </div>  
-              </div>
-              <p></p>
-
-
-
 
 
           </div>
