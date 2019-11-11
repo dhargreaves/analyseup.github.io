@@ -99,7 +99,7 @@
                   We’ve just gone through a few very useful tools and it’s likely you’ll use these over and again in your own Alteryx workflows so it’s time to get some additonal practice in using them. 
               </p>
               <p class="txt2">
-                  Our workflow so far has only one (all be it now very clean) data source that contains data about what, when and who ordered from our ecommerce website but doesn’t tell us anything about the products that were actually ordered. One of our tasks is to build a report to give insight into the performance of the fiction genre so we need to know which books were ordered from which genre. We can get this data from the products.csv file. 
+                  Our workflow so far has only one (all be it now very clean) data source that contains data about what, when and who ordered from our ecommerce website but doesn’t tell us anything about the products that were actually ordered. Our task is to build a report to give insight into the sales performance of the fiction genre so we need to know which books were ordered from which genre. We can get this data from the products.csv file. In addition we will also need to know if any of the orders were subject to a promotional discount to enable us to calculate the value the customer acutally paid. We will need to import the promotions.csv file for this.
               </p>
               <p class="txt2">
                     In the following exercises you will import and prepare the data as we have done for the orders data, before we move on to the next section where we will look at blending the data sources to create a new data set for processing.  
@@ -134,18 +134,6 @@
               </p>
               <p class="txt2" style="margin-left:50px;">
                   <b>3.	</b>Again, make sure all string fields that contain Nulls are blank, all Nulls in numeric fields are converted to 0 and that there is no random leading and trailing whitespace in any of the fields.
-              </p>
-              
-              <h2 style="padding-top: 40px;" >Exercises Part 3</h2>
-
-              <p class="txt2" style=" margin-left:50px;">
-                  <b>1.</b>	Import the "Customers" csv file from the provided data.
-              </p>
-              <p class="txt2" style="margin-left:50px;">
-                  <b>2.</b> Select CustomerID and age from the customer data and use the Select tool to convert any data types you think are not correct.
-              </p>
-              <p class="txt2" style="margin-left:50px;">
-                  <b>3.	</b>Finally, make sure all string fields that contain Nulls are blank, all Nulls in numeric fields are converted to 0 and that there is no random leading and trailing whitespace in any of the fields.
               </p>
               
               <h2 style="padding-top: 40px;" >Solutions Part 1</h2>
@@ -209,41 +197,6 @@
                 </div>  
               </div>
               <p></p>
-              
-              <h2 style="padding-top: 40px;" >Solutions Part 3</h2>
-              
-              <div class="wide_box">
-                  <div class="box2"><p class="txt2"><b>1.	</b>Drag an Import tool into the workflow and load the Customer csv file</p>
-                </div>
-                <div class="box2"><img alt="Alteryx Import Data" class="tut_img" src="img/Alteryx/1.8_Exercises/9.PNG">
-                </div>     
-              </div>
-              
-              <div class="wide_box">
-                <div class="box2"><p class="txt2"><b>2.	</b>Drag in a Select tool, deselect the Gender and Location fields and convert the Age data type to Int16.</p>
-                </div>
-                <div class="box2"><img alt="Alteryx Add Select Tool" class="tut_img" src="img/Alteryx/1.8_Exercises/10.PNG">
-                </div>     
-              </div>
-              
-              <div class="wide_box">
-                <div class="box2"><p class="txt2"><b>3.	</b>Finally, add a Data Cleansing tool after the select tool and set the configuration as below</p>
-                </div>
-                <div class="box2"><img alt="Alteryx Data Cleanse" class="tut_img" src="img/Alteryx/1.8_Exercises/11.PNG">
-                </div>  
-
-              </div>
-              <div class="wide_box">
-                  <div class="box2"><p class="txt2"><b>4.	</b>Running the workflow should produce and output like below</p>
-                </div>
-                <div class="box2"><img alt="Alteryx Exercise Solution" class="tut_img2" src="img/Alteryx/1.8_Exercises/12.PNG">
-                </div>  
-              </div>
-              <p></p>
-
-
-
-
 
           </div>
         </div>
