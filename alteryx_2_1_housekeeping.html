@@ -94,18 +94,64 @@
 
               <div class="wide_box">
                   <div class="box">
-                      <p class="txt2"><b>Step 1:</b></p>
+                      <p class="txt2">Step 1:</p>
                       <p class="txt2">To hide, simply click on a bank part of the canvas to display the workflow configuration window. Under Canvas, select “Hide” from the dropdown menu next to Annotations and all the tool annotations will disappear. </p>
                 </div>
                 <div class="box"><img alt="Alteryx Annotations" class="tut_img" src="img/Alteryx/1.9_WorkflowTidy/1_Annotations.PNG">
                 </div>     
               </div>
+              
+
+              
+              <h2 style="padding-top: 40px;" >Containers</h2>
+              <p class="txt2">
+                Alteryx also comes with ability to place groups of tools inside collapsible containers. This allows us to group several tools that we combine to perform a specific task and make them appear as one block that can be collapsed to save space and to easily make changes to certain actions performed in our workflows. 
+              </p>
+              <p class="txt2">
+                To add tools to a container, drag the container tool onto the canvas from the Documentation tab on the tool pallet and then the tools you would like to group into the container.
+              </p>
+              <p></p>
+              <img alt="Alteryx Container Tool" class="tut_img_50" src="img/Alteryx/1.9_WorkflowTidy/5.Tool_containerPNG.PNG">
+              <p></p>
+              <div class="wide_box">
+                  <div class="box2">
+                      <p class="txt2">Step 2:</p>
+                      <p class="txt2">Drag a Tool Container tool into the workflow and rename the caption "Orders".</p>
+                </div>
+                <div class="box2"><img alt="Alteryx Add Containers" class="tut_img" src="img/Alteryx/1.9_WorkflowTidy/2.PNG">
+                </div>     
+              </div>
+              <p></p>
+              <div class="wide_box">
+                  <div class="box">
+                      <p class="txt2">Step 3:</p>
+                      <p class="txt2">Select the six tools that we used to import and process the orders csv file, then drag into the tool container.</p>
+                </div>
+                <div class="box"><img alt="Alteryx Select Tools for Tool Container" class="tut_img" src="img/Alteryx/1.9_WorkflowTidy/3.PNG">
+                </div>   
+              </div>
+              <p></p>
+              <div class="wide_box">
+                  <div class="box">
+                      <p class="txt2">Step 4:</p>
+                      <p class="txt2">Repeat the above steps for the products and promotions data sources.</p>
+                </div>
+                <div class="box"><img alt="Alteryx Tool Containers" class="tut_img" src="img/Alteryx/1.9_WorkflowTidy/1_3.PNG">
+                </div>   
+              </div>
+              <p></p>
+              <p class="txt2">
+                  The arrow in the top right hand corner of the container can be used to collapse or un-collapse a container as you see fit. This becomes particularly useful when we have large workflows with dozens of tools allowing us to shrink blocks of tools until we need to edit them, keeping our workflows manageable to work with.
+              </p>
+              <p></p>
+              <img alt="Alteryx Collapse Container " class="tut_img2" src="img/Alteryx/1.9_WorkflowTidy/7_collapse.PNG">
+              
               <h2 style="padding-top: 40px;" >Comments</h2>
               <p class="txt2">
                 Although Alteryx default annotations may make workflows difficult to read, we will often still want to add some sort of comment to parts of our workflows. In particular we may want to provide notes about what the workflow is doing or to detail the purpose of a particular part without the need to click in and look at the configurations. We can do this with the Comment tool which can be placed anywhere on the canvas. 
               </p>
               <p></p>
-              <img alt="Alteryx Comment Tool" class="tut_img" style="width:10%;" src="img/Alteryx/1.9_WorkflowTidy/2_comment.PNG">
+              <img alt="Alteryx Comment Tool" class="tut_img_50" src="img/Alteryx/1.9_WorkflowTidy/2_comment_tool.PNG">
               <p></p>
               <p class="txt2">
                   Free text can be added to label a tool or make notes. You can also change the background colour, text colour and font of the comments as you see fit. 
@@ -115,48 +161,25 @@
               <p></p>
               <div class="wide_box">
                   <div class="box">
-                      <p class="txt2"><b>Step 2:</b></p>
-                      <p class="txt2">Let’s try this now by adding a label to each of our input tools and also some notes on what the purpose of our workflow is. </p>
+                      <p class="txt2">Step 5:</p>
+                      <p class="txt2">Let’s add a label to each of our Input tools so we can easily see our data sources.</p>
                 </div>
-                <div class="box"><img alt="Alteryx Add Annotations" class="tut_img" src="img/Alteryx/1.9_WorkflowTidy/4_add_omments.PNG">
+                <div class="box"><img alt="Alteryx Add Annotations" class="tut_img" src="img/Alteryx/1.9_WorkflowTidy/5.PNG">
                 </div>     
               </div>
-              <h2 style="padding-top: 40px;" >Containers</h2>
-              <p class="txt2">
-                Alteryx also comes with ability to place groups of tools inside collapsible containers. This allows us to group several tools that we combine to perform a specific task and make them appear as one block that can be collapsed to save space and to easily make changes to certain actions performed in our workflows. 
-              </p>
-              <p class="txt2">
-                To add tools to a container, drag the container tool onto the canvas from the Documentation tab on the tool pallet and then the tools you would like to group into the container.
-              </p>
-              <p></p>
-              <img alt="Alteryx Container Tool" class="tut_img" style="width:10%;" src="img/Alteryx/1.9_WorkflowTidy/5_container.PNG">
-              <p></p>
-              <div class="wide_box">
-                  <div class="box2">
-                      <p class="txt2"><b>Step 3:</b></p>
-                      <p class="txt2">Our sales_report workflow currently has two streams, one that imports the orders csv file and cleans the data and one that does the same for the products csv file. Let’s put each one of these streams in it’s own container and change the caption to match the input.</p>
-                </div>
-                <div class="box2"><img alt="Alteryx Add Containers" class="tut_img" src="img/Alteryx/1.9_WorkflowTidy/6_add_containers.PNG">
-                </div>     
-              </div>
-              <p></p>
-              <p class="txt2">
-                  The arrow in the top right hand corner of the container can be used to collapse or un-collapse a container as you see fit. This becomes particularly useful when we have large workflows with dozens of tools allowing us to shrink blocks of tools until we need to edit them, keeping our workflows manageable to work with.
-              </p>
-              <p></p>
-              <img alt="Alteryx Collapse Container " class="tut_img" style="width:80%;" src="img/Alteryx/1.9_WorkflowTidy/7_collapse.PNG">
+              
               <h2 style="padding-top: 40px;" >Tool Alignment</h2>
               <p></p>
               <p class="txt2">
                 Finally, we have a trick for everyone who appreciates straight lines and angles. As you will have noticed, the flow of data within Alteryx worklows moves from left to right in lines but sometimes as we add tools we don’t get these exactly in line with each other. 
               </p>
               <p></p>
-              <img alt="Alteryx Tool Not Aligned" class="tut_img" style="width:40%;" src="img/Alteryx/1.9_WorkflowTidy/8_alignment.PNG">
+              <img alt="Alteryx Tool Not Aligned" class="tut_img_50" src="img/Alteryx/1.9_WorkflowTidy/8_alignment.PNG">
               <p class="txt2">
                 Luckily there is a quick shortcut that will bring everything back into harmony. Select all tools that you would like to align and press ctrl/shift/- to bring everything back in line.  
               </p>
               <p></p>
-              <img alt="Alteryx Tool Aligned" class="tut_img" style="width:40%;" src="img/Alteryx/1.9_WorkflowTidy/9_align.PNG">
+              <img alt="Alteryx Tool Aligned" class="tut_img_50" src="img/Alteryx/1.9_WorkflowTidy/9_align.PNG">
               
             
               
