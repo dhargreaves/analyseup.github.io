@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-147504302-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-147504302-1');
+</script>
+
+    <title>AnalyseUp.com - Alteryx First Workflow</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href='css/w3.css' rel='stylesheet' type="text/css">
+    <link href='css/page_style.css' rel='stylesheet' type='text/css'> 
+    
+<script>
+        function w3_open() {
+            document.getElementById("mySidebar").style.display = "block";
+        }
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+        }
+</script>
+</head>
+
+<body>
+<!--Top Nav-->
+    <div id="top">
+        <a href="index.html"><img alt="Upgrade your data skills with analyseup.com" id="banner" src="img/AnalyseUp_Black(v2.2).png" ></a>
+        <div class="sep"></div>
+    </div>
+<!--Side Menu-->
+    <div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style="width:250px; top:0vh;" id="mySidebar">
+        <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
+        <a href="alteryx_1_3_interface.html" style="text-decoration: none;"><div id="next">Next</div></a>
+        <p></p>
+        <!--<h5 id="side_head"><b>Data Wrangling with Alteryx</b></h5>-->
+        <h6 class="side_title">Getting Started</h6>
+            <a href="alteryx-introduction.html" class="w3-bar-item w3-button side_link" >Introduction</a>
+            <a id="sel" href="alteryx-input-tool.html" class="w3-bar-item w3-button side_link">First Workflow</a>
+            <a href="alteryx-interface.html" class="w3-bar-item w3-button side_link">Designer Interface</a>
+        <h6 class="side_title">Data Preparation</h6>
+            <a href="alteryx-select-tool.html" class="w3-bar-item w3-button side_link" >Selecting Data</a>
+            <a href="alteryx-data-type-conversion.html" class="w3-bar-item w3-button side_link" >Data Type Conversion</a>
+            <a href="alteryx-data-cleansing.html" class="w3-bar-item w3-button side_link" >Cleaning Data</a>
+            <a href="alteryx-exercises.html" class="w3-bar-item w3-button side_link" >Exercises</a>
+        <h6 class="side_title">Filters & Joins</h6>
+            <a href="alteryx-documentation.html" class="w3-bar-item w3-button side_link" >Documentation</a>
+            <a href="alteryx-filter.html" class="w3-bar-item w3-button side_link" >Filters</a>
+    </div>
+
+<!--------------------------------------------------Content------------------------------------------>
+    <div class="w3-main" style="margin-left:250px; margin-right:200px;">
+    <!------Content & burger menu div-------------->
+    <div >
+          <!-------Burger Menu-------------->
+          <div class="h_left">
+                          <button class="w3-button w3-xlarge w3-hide-large" onclick="w3_open()" style="left:0;">&#9776;</button>
+            </div>
+          <!--------Content Title----------->
+          <div class="h_right">
+            <h1>First Workflow</h1>
+          </div>
+        <!--TOP AD BANNER-->
+        <div class='horizontal_ad'>
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- top_ad_banner -->
+            <ins class="adsbygoogle"
+                 style="display:inline-block;width:100%;height:100px;
+                        text-align:center;"
+                 data-ad-client="ca-pub-4825364639199120"
+                 data-ad-slot="9607273384"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+          <p></p>
+            <!------Main content--------------->
+          <div class="w3-container">
+              <p></p>
+              <p></p>
+              <p></p>
+              <p class="txt">
+                  For our first workflow we are simply going to import data from our “Orders.csv” file (click <a class = "txt" href="Data/LargeRainforestData.zip">here</a> to download course data files if you haven’t already) using an <b>Input Tool</b> and then display the results using a <b>Browse Tool</b>. This is a simple and let’s face it, not very interesting workflow but it will become a step you will perform numerous times as part of larger and more complex workflows that hopefully will be interesting. Let’s get started.</p>
+              <div class="wide_box">
+                  <div class="box">
+                      <p class="txt2">Step 1:</p>
+                      <p class="txt2">Navigate to the “In/Out” tab on the Alteryx tool pallet.</p>
+                  </div>
+                  <div class="box">
+                    <img class="tut_img " src="img/Alteryx/1.2_first_workflow/1.PNG"></div>
+              </div>
+              <div class="wide_box">
+                  <div class="box">
+                      <p class="txt2">Step 2:</p>
+                      <p class="txt2">Find the “Input Data” tool and drag this onto the main workspace </p>
+                  </div>
+                  <div class="box">
+                      <img class="tut_img" src="img/Alteryx/1.2_first_workflow/2_drag_import_tool_edit.png">
+                  </div>
+              </div>
+              <div class="wide_box">
+                  <div class="box">
+                      <p class="txt2">Step 3:</p>
+                      <p class="txt2">In the “Input Tool” configuration window click the arrow below “Connect a File or Database” then “File Browse…”. This will open the explorer window from where you can browse to find the order.csv file, wherever you have chosen to save this and select.</p>
+                  </div>
+                  <div class="box">
+                    <img class="tut_img" src="img/Alteryx/1.2_first_workflow/3_file_browse_edit.png">
+                  </div>
+              </div>
+              <div class="wide_box">
+                  <div class="box">
+                      <p class="txt2">Step 4:</p>
+                      <p class="txt2">Next, drag the “Browse” tool from the tool pallet and onto the main workspace (somewhere near the input data tool) and drop. Alteryx should connect the tools through a connection wire. If the connection doesn't happen automatically, you can click and drag the connection wire from the output node of the <b>Input Tool</b> to the input node of the <b>Browse Tool</b></p>
+                  </div>
+                  <div class="box">
+                    <img class="tut_img" src="img/Alteryx/1.2_first_workflow/4_connect_browse_edit.png">
+                  </div>
+              </div>
+              <div class="wide_box">
+                  <div class="box">
+                      <p class="txt2">Step 5:</p>
+                      <p class="txt2">The workflow is now ready to run so simply click the run icon on the toolbar or press Ctrl+R.</p>
+                  </div>
+                  <div class="box">
+                    <img class="tut_img" src="img/Alteryx/1.2_first_workflow/5_run.png">
+                  </div>
+              </div>
+              <div class="wide_box">
+                  <div class="box">
+                      <p class="txt2">In less than a second you will get a message to tell you that Alteryx has finished running the workflow. If you get a warning, that’s fine, we’ll discuss that later.</p>
+                  </div>
+                  <div class="box">
+                    <img class="tut_img" src="img/Alteryx/1.2_first_workflow/6_workflow_finished.PNG">
+                  </div>
+              </div>
+              <p style="padding-top: 20px;"></p>
+
+              <p class="txt2">If you have managed to do this without error then you have built your first Ateryx workflow. 
+              </p>
+              <p class="txt2">Now let’s get an overview of the Alteryx Designer interface.  
+              </p>
+              <p></p>
+          </div> <!--Main content close------->
+        </div> <!---Content & burger close--------->
+    </div>
+    <a href="alteryx_1_3_interface.html" style="text-decoration: none;"><div id="next_mobile">Next</div></a>
+<!-------------------------------------FOOTER---------------------------------->
+    <div id="footer"></div>
+<!----------AD BANNER-------------------->
+<div class="ad_banner">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <ins class="adsbygoogle"
+             style="display:block; text-align:center;"
+             data-ad-layout="in-article"
+             data-ad-format="fluid"
+             data-ad-client="ca-pub-4825364639199120"
+             data-ad-slot="9368231129"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+</div>
+<!-------------------------------------SIDE AD BAR----------------------------->
+<div id="ad_bar" >
+    <!-- side_bar_1 -->
+    <ins class="adsbygoogle"
+         style="display:block; margin-top: 10vh;"
+         data-ad-client="ca-pub-4825364639199120"
+         data-ad-slot="2467780853"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+</div>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+
+    
+    
+
+</body>
+
+</html>

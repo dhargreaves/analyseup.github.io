@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-147504302-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-147504302-1');
+</script>
+
+    <title>AnalyseUp.com - Alteryx Join Fundamentals</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href='css/w3.css' rel='stylesheet' type="text/css">
+    <link href='css/page_style.css' rel='stylesheet' type='text/css'> 
+
+<script>
+        function w3_open() {
+            document.getElementById("mySidebar").style.display = "block";
+        }
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+        }
+</script>
+    
+</head>
+
+<body>
+<!--Top Nav-->
+    <div id="top">
+        <a href="index.html"><img alt="Upgrade your data skills with analyseup.com" id="banner" src="img/AnalyseUp_Black(v2.2).png" ></a>
+        <div class="sep"></div>
+    </div>
+<!--Side Menu-->
+    <div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style="width:250px; top:0vh;" id="mySidebar">
+        <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
+        <a href="alteryx_1_7_exercises_p1.html" style="text-decoration: none;"><div id="next">Next</div></a>
+        <p></p>
+        <!--<h5 id="side_head"><b>Data Wrangling with Alteryx</b></h5>-->
+        <h6 class="side_title">Getting Started</h6>
+            <a href="alteryx-introduction.html" class="w3-bar-item w3-button side_link" >Introduction</a>
+            <a href="alteryx-input-tool.html" class="w3-bar-item w3-button side_link">First Workflow</a>
+            <a href="alteryx-interface.html" class="w3-bar-item w3-button side_link">Designer Interface</a>
+        <h6 class="side_title">Data Preparation</h6>
+            <a href="alteryx-select-tool.html" class="w3-bar-item w3-button side_link" >Selecting Data</a>
+            <a href="alteryx-data-type-conversion.html" class="w3-bar-item w3-button side_link" >Data Type Conversion</a>
+            <a id="sel" href="alteryx-data-cleansing.html" class="w3-bar-item w3-button side_link" >Cleaning Data</a>
+            <a href="alteryx-exercises.html" class="w3-bar-item w3-button side_link" >Exercises</a>
+        <h6 class="side_title">Filters & Joins</h6>
+            <a href="alteryx-documentation.html" class="w3-bar-item w3-button side_link" >Documentation</a>
+            <a href="alteryx-filter.html" class="w3-bar-item w3-button side_link" >Filters</a>
+    </div>
+<!--Content----->
+    <div class="ad_banner"></div>
+    <div class="w3-main" style="margin-left:250px; margin-right:200px;">
+    <div >
+            
+        <!--Menu Button-->
+          <div class="h_left">
+              <button class="w3-button w3-xlarge w3-hide-large" onclick="w3_open()" style="left:0;">&#9776;</button>
+          </div>
+          
+          <!--Page Content -->
+          <div class="h_right">
+              <h1>Joins Part 1 - Fundamentals</h1>
+            </div>
+        <!--TOP AD BANNER-->
+        <div class='horizontal_ad'>
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- top_ad_banner -->
+            <ins class="adsbygoogle"
+                 style="display:inline-block;width:100%;height:100px;
+                        text-align:center;"
+                 data-ad-client="ca-pub-4825364639199120"
+                 data-ad-slot="9607273384"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+          <div class="w3-container">
+              <p></p>
+              <p class="txt">
+                One of Alteryx main strengths is its ability to quickly blend data from multiple data sources to build one complete data set. We can do this through the use of joins. If you come from a SQL background you should already be familiar with the theory behind joins and may wish to move on to the next section on implementing joins in Alteryx. If not, then let’s carry on and explore how joins work.
+              </p>
+              <h2 style="padding-top: 40px;" >How Joins Work</h2>
+              <p class="txt2">
+                We use a join when we want to blend fields from one data source with another to create a new dataset with fields from both original data sources side by side. We can create joins when there is a relationship between one or more fields in both data sources. In practice, this means that at least one field in the first data source contains values that also appear in a field in the second source. For Excel users, a join serves a similar purpose to a lookup function but is far more expansive and flexible.
+              </p>
+              <p class="txt2">
+                Let’s look at an example. In the two data sources below (order data and customer data) we can see that the Customer ID field appears in both sets of data and that they contain values that appear in both sources such as 4002. Therefore there is a relationship between the two sources through the “Customer_ID” fields that we can call the relational fields. In this case, joining the two data sources on the Customer ID field would result in matches between four out of the five records in each source. 
+              </p>
+              <p></p>
+               <table>
+                  <tr>
+                    <th>Order_No</th>
+                    <th>Order_Date</th>
+                    <th>Customer_ID</th>
+                    <th>ProductID</th>
+                  </tr>
+                  <tr>
+                    <td>01259</td>
+                    <td>22/11/17</td>
+                    <td>4002</td>
+                    <td>376401</td>
+                  </tr>
+                  <tr>
+                    <td>14716</td>
+                    <td>01/04/17</td>
+                    <td>3979</td>
+                     <td>218178</td>
+                  </tr>
+                  <tr>
+                    <td>23441</td>
+                    <td>21/11/17</td>
+                    <td>3382</td>
+                     <td>218178</td>
+                  </tr>
+                  <tr>
+                    <td>88155</td>
+                    <td>19/11/17</td>
+                    <td>3552</td>
+                    <td>355904</td>
+                  </tr>
+                  <tr>
+                    <td>42078</td>
+                    <td>10/05/17</td>
+                    <td>1654</td>
+                    <td>227774</td>
+                  </tr>
+                </table> 
+              <p></p>
+              <table>
+                  <tr>
+                    <th>Customer_ID</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Location</th>
+                  </tr>
+                  <tr>
+                    <td>4002</td>
+                    <td>60</td>
+                    <td>M</td>
+                     <td>Non-US</td>
+                  </tr>
+                  <tr>
+                    <td>1681</td>
+                    <td>37</td>
+                    <td>M</td>
+                     <td>US</td>
+                  </tr>
+                  <tr>
+                    <td>3382</td>
+                    <td>20</td>
+                    <td>F</td>
+                     <td>US</td>
+                  </tr>
+                  <tr>
+                    <td>3552</td>
+                    <td>40</td>
+                    <td>F</td>
+                    <td>Non-US</td>
+                  </tr>
+                  <tr>
+                    <td>3979</td>
+                    <td>52</td>
+                    <td>F</td>
+                    <td>US</td>
+                  </tr>
+                </table> 
+              <p></p>
+              <p class="txt2">
+                We now know that we can join these two sources to create a new data set but the records contained in this new data will depend on the type of join we use. Let’s look at join types now. 
+              </p>
+              <h2 style="padding-top: 40px;" >Inner Joins</h2>
+              <p class="txt2">
+                  An inner join returns a data set that includes <b>ONLY</b> records where the values in the relational field(s) match. In the example below we have used an inner join to blend our order and customer data sources. As we saw above, there are four records from each source with matching customer IDs and therefore an inner join between the two data sources creates the following data set:
+              </p>
+              <table>
+                  <tr>
+                    <th>Order_No</th>
+                    <th>Order_Date</th>
+                    <th>Customer_ID</th>
+                    <th>ProductID</th>
+                    <th>Customer_ID</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Location</th>
+                  </tr>
+                  <tr>
+                    <td>01259</td>
+                    <td>22/11/17</td>
+                    <td>4002</td>
+                    <td>376401</td>
+                    <td>4002</td>
+                    <td>60</td>
+                    <td>M</td>
+                     <td>Non-US</td>
+                  </tr>
+                  <tr>
+                    <td>23441</td>
+                    <td>21/11/17</td>
+                    <td>3382</td>
+                     <td>218178</td>
+                    <td>3382</td>
+                    <td>20</td>
+                    <td>F</td>
+                     <td>US</td>
+                  </tr>
+                  <tr>
+                    <td>88155</td>
+                    <td>19/11/17</td>
+                    <td>3552</td>
+                    <td>355904</td>
+                    <td>3552</td>
+                    <td>40</td>
+                    <td>F</td>
+                    <td>Non-US</td>
+                  </tr>
+                  <tr>
+                    <td>3979</td>
+                    <td>52</td>
+                    <td>F</td>
+                    <td>US</td>
+                    <td>3979</td>
+                    <td>52</td>
+                    <td>F</td>
+                    <td>US</td>
+                  </tr>
+                </table> 
+
+            <h2 style="padding-top: 40px;" >Outer Joins</h2>
+              <p class="txt2">
+                  Outer joins have three variation; left, right and outer. 
+              </p>
+              <p class="txt2">
+                A full outer join creates a data set that contains all records from both data sources but where there is aisn’t a matching value in the relational field(s) in either of the then fields from this record will return as Nulls. As we can see below customer_ID 1681 only appears in table 2 and as such table 1 fields for this record are Null. The same is true for customer_ID 1654 in table 1.
+              </p>
+              <table>
+                  <tr>
+                    <th>Order_No</th>
+                    <th>Order_Date</th>
+                    <th>Customer_ID</th>
+                    <th>ProductID</th>
+                    <th>Customer_ID</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Location</th>
+                  </tr>
+                  <tr>
+                    <td>01259</td>
+                    <td>22/11/17</td>
+                    <td>4002</td>
+                    <td>376401</td>
+                    <td>4002</td>
+                    <td>60</td>
+                    <td>M</td>
+                     <td>Non-US</td>
+                  </tr>
+                  <tr>
+                    <td>23441</td>
+                    <td>21/11/17</td>
+                    <td>3382</td>
+                     <td>218178</td>
+                    <td>3382</td>
+                    <td>20</td>
+                    <td>F</td>
+                     <td>US</td>
+                  </tr>
+                  <tr>
+                    <td>88155</td>
+                    <td>19/11/17</td>
+                    <td>3552</td>
+                    <td>355904</td>
+                    <td>3552</td>
+                    <td>40</td>
+                    <td>F</td>
+                    <td>Non-US</td>
+                  </tr>
+                  <tr>
+                    <td>3979</td>
+                    <td>52</td>
+                    <td>F</td>
+                    <td>US</td>
+                    <td>3979</td>
+                    <td>52</td>
+                    <td>F</td>
+                    <td>US</td>
+                  </tr>
+                   <tr>
+                    <td>42078</td>
+                    <td>10/05/17</td>
+                    <td>1654</td>
+                    <td>227774</td>
+                    <td>NULL</td>   
+                    <td>NULL</td> 
+                    <td>NULL</td> 
+                    <td>NULL</td> 
+                  </tr>
+                  <tr>
+                    <td>NULL</td>   
+                    <td>NULL</td> 
+                    <td>NULL</td> 
+                    <td>NULL</td> 
+                    <td>1681</td>
+                    <td>37</td>
+                    <td>M</td>
+                    <td>US</td>
+                  </tr>
+                </table> 
+
+              <p class="txt2" style="padding-top: 40px;">
+                If we take the order data source as the left (either written first in a SQL script or connected to the “L” input tool in Alteryx) and join this to the customer data source as the right data source then performing a left outer join means that we take all the records from order data regardless of whether there is a matching record in the customer data source. Any records that appear in the order data without a match in the customer data will appear with NULLs for the customer data fields in the joined data set. In the below example customer_ID 1654 doesn’t appear in the customer data, therefore performing a left outer join creates the following table with NULLs in the customer data fields for the records that includes the non-matching value in the relational field.
+              </p>
+              <table>
+                  <tr>
+                    <th>Order_No</th>
+                    <th>Order_Date</th>
+                    <th>Customer_ID</th>
+                    <th>ProductID</th>
+                    <th>Customer_ID</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Location</th>
+                  </tr>
+                  <tr>
+                    <td>01259</td>
+                    <td>22/11/17</td>
+                    <td>4002</td>
+                    <td>376401</td>
+                    <td>4002</td>
+                    <td>60</td>
+                    <td>M</td>
+                     <td>Non-US</td>
+                  </tr>
+                  <tr>
+                    <td>23441</td>
+                    <td>21/11/17</td>
+                    <td>3382</td>
+                     <td>218178</td>
+                    <td>3382</td>
+                    <td>20</td>
+                    <td>F</td>
+                     <td>US</td>
+                  </tr>
+                  <tr>
+                    <td>88155</td>
+                    <td>19/11/17</td>
+                    <td>3552</td>
+                    <td>355904</td>
+                    <td>3552</td>
+                    <td>40</td>
+                    <td>F</td>
+                    <td>Non-US</td>
+                  </tr>
+                  <tr>
+                    <td>3979</td>
+                    <td>52</td>
+                    <td>F</td>
+                    <td>US</td>
+                    <td>3979</td>
+                    <td>52</td>
+                    <td>F</td>
+                    <td>US</td>
+                  </tr>
+                   <tr>
+                    <td>42078</td>
+                    <td>10/05/17</td>
+                    <td>1654</td>
+                    <td>227774</td>
+                    <td>NULL</td>   
+                    <td>NULL</td> 
+                    <td>NULL</td> 
+                    <td>NULL</td> 
+                  </tr>
+                </table>
+
+              <p class="txt2" style="padding-top: 40px;">
+                 A right outer join does the same as the left outer join but with the logic reversed in that all records from the right data sources are retained and non-matching records from the left table are discarded as shown below.
+              </p>
+              <table>
+                  <tr>
+                    <th>Order_No</th>
+                    <th>Order_Date</th>
+                    <th>Customer_ID</th>
+                    <th>ProductID</th>
+                    <th>Customer_ID</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Location</th>
+                  </tr>
+                  <tr>
+                    <td>01259</td>
+                    <td>22/11/17</td>
+                    <td>4002</td>
+                    <td>376401</td>
+                    <td>4002</td>
+                    <td>60</td>
+                    <td>M</td>
+                     <td>Non-US</td>
+                  </tr>
+                  <tr>
+                    <td>23441</td>
+                    <td>21/11/17</td>
+                    <td>3382</td>
+                     <td>218178</td>
+                    <td>3382</td>
+                    <td>20</td>
+                    <td>F</td>
+                     <td>US</td>
+                  </tr>
+                  <tr>
+                    <td>88155</td>
+                    <td>19/11/17</td>
+                    <td>3552</td>
+                    <td>355904</td>
+                    <td>3552</td>
+                    <td>40</td>
+                    <td>F</td>
+                    <td>Non-US</td>
+                  </tr>
+                  <tr>
+                    <td>3979</td>
+                    <td>52</td>
+                    <td>F</td>
+                    <td>US</td>
+                    <td>3979</td>
+                    <td>52</td>
+                    <td>F</td>
+                    <td>US</td>
+                  </tr>
+                  <tr>
+                    <td>NULL</td>   
+                    <td>NULL</td> 
+                    <td>NULL</td> 
+                    <td>NULL</td> 
+                    <td>1681</td>
+                    <td>37</td>
+                    <td>M</td>
+                    <td>US</td>
+                  </tr>
+                </table>
+
+          <h2 style="padding-top: 40px;" >Union</h2>
+              <p class="txt2">
+                The joins we have seen so far create new data sets by joining row-wise (side-by-side).  A union joins the data column-wise and basically appends any rows from one data set to another where there are common fields. In our example, if we performed a union the only common field is Customer_ID and we would create the following data set.
+              </p>
+               <table>
+                  <tr>
+                    <th>Order_No</th>
+                    <th>Order_Date</th>
+                    <th>Customer_ID</th>
+                    <th>ProductID</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Location</th>
+                  </tr>
+                  <tr>
+                    <td>01259</td>
+                    <td>22/11/17</td>
+                    <td>4002</td>
+                    <td>376401</td>
+                    <td>NULL</td>   
+                    <td>NULL</td> 
+                    <td>NULL</td>
+                  </tr>
+                  <tr>
+                    <td>14716</td>
+                    <td>01/04/17</td>
+                    <td>3979</td>
+                     <td>218178</td>
+                    <td>NULL</td>   
+                    <td>NULL</td> 
+                    <td>NULL</td>
+                  </tr>
+                  <tr>
+                    <td>23441</td>
+                    <td>21/11/17</td>
+                    <td>3382</td>
+                     <td>218178</td>
+                    <td>NULL</td>   
+                    <td>NULL</td> 
+                    <td>NULL</td>
+                  </tr>
+                  <tr>
+                    <td>88155</td>
+                    <td>19/11/17</td>
+                    <td>3552</td>
+                    <td>355904</td>
+                    <td>NULL</td>   
+                    <td>NULL</td> 
+                    <td>NULL</td>
+                  </tr>
+                  <tr>
+                    <td>42078</td>
+                    <td>10/05/17</td>
+                    <td>1654</td>
+                    <td>227774</td>
+                    <td>NULL</td>   
+                    <td>NULL</td> 
+                    <td>NULL</td>
+                  </tr>
+                  <tr>
+                    <td>NULL</td>   
+                    <td>NULL</td> 
+                    <td>4002</td>
+                    <td>NULL</td> 
+                    <td>60</td>
+                    <td>M</td>
+                     <td>Non-US</td>
+                  </tr>
+                  <tr>
+                    <td>NULL</td>   
+                    <td>NULL</td> 
+                    <td>1681</td>
+                    <td>NULL</td> 
+                    <td>37</td>
+                    <td>M</td>
+                     <td>US</td>
+                  </tr>
+                  <tr>
+                    <td>NULL</td>   
+                    <td>NULL</td> 
+                    <td>3382</td>
+                    <td>NULL</td> 
+                    <td>20</td>
+                    <td>F</td>
+                     <td>US</td>
+                  </tr>
+                  <tr>
+                    <td>NULL</td>   
+                    <td>NULL</td> 
+                    <td>3552</td>
+                    <td>NULL</td> 
+                    <td>40</td>
+                    <td>F</td>
+                    <td>Non-US</td>
+                  </tr>
+                  <tr>
+                    <td>NULL</td>   
+                    <td>NULL</td> 
+                    <td>3979</td>
+                    <td>NULL</td> 
+                    <td>52</td>
+                    <td>F</td>
+                    <td>US</td>
+                  </tr>
+                </table>
+
+              <p class="txt2" style="padding-top: 40px;">
+                Having discussed how joins work, let’s go ahead and utilise these to blend the data in our workflow.
+              </p>
+        </div>
+    </div>
+    </div>
+
+    <!--MOBILE NEXT BUTTON-->
+    <a href="alteryx_2_2_filtering_data.html" style="text-decoration: none;"><div id="next_mobile">Next</div></a>
+
+<!--FOOTER-->
+<div id="footer"></div>
+    
+<!--AD BANNER-->
+<div class="ad_banner">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <ins class="adsbygoogle"
+             style="display:block; text-align:center;"
+             data-ad-layout="in-article"
+             data-ad-format="fluid"
+             data-ad-client="ca-pub-4825364639199120"
+             data-ad-slot="9368231129"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+</div>
+    
+<!--SIDE AD BAR-->
+<div id="ad_bar" >
+    <!-- side_bar_1 -->
+    <ins class="adsbygoogle"
+         style="display:block; margin-top: 10vh;"
+         data-ad-client="ca-pub-4825364639199120"
+         data-ad-slot="2467780853"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+</div>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+
+</body>
+</html>

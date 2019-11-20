@@ -341,6 +341,26 @@ rather than side by side*/
     margin-left: 4%;
     margin-right: 4%;
 }
+/*TABLES*/
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 99%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 4px;
+    font-size:12px;
+}
+td {
+    width:25%;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
 
 /*CODE*/
 

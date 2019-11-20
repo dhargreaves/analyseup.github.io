@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-147504302-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-147504302-1');
+</script>
+
+    <title>AnalyseUp.com - Alteryx Filtering Data</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href='css/w3.css' rel='stylesheet' type="text/css">
+    <link href='css/page_style.css' rel='stylesheet' type='text/css'> 
+
+<script>
+        function w3_open() {
+            document.getElementById("mySidebar").style.display = "block";
+        }
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+        }
+</script>
+</head>
+<body>
+<!--Top Nav-->
+    <div id="top">
+        <a href="index.html"><img alt="Upgrade your data skills with analyseup.com" id="banner" src="img/AnalyseUp_Black(v2.2).png" ></a>
+        <div class="sep"></div>
+    </div>
+<!--Side Menu-->
+    <div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style="width:250px; top:0vh;" id="mySidebar">
+        <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
+        <a href="alteryx_2_2_filtering_data.html" style="text-decoration: none;"><div id="next">Next</div></a>
+        <p></p>
+        <!--<h5 id="side_head"><b>Data Wrangling with Alteryx</b></h5>-->
+        <h6 class="side_title">Getting Started</h6>
+            <a href="alteryx-introduction.html" class="w3-bar-item w3-button side_link" >Introduction</a>
+            <a href="alteryx-input-tool.html" class="w3-bar-item w3-button side_link">First Workflow</a>
+            <a href="alteryx-interface.html" class="w3-bar-item w3-button side_link">Designer Interface</a>
+        <h6 class="side_title">Data Preparation</h6>
+            <a href="alteryx-select-tool.html" class="w3-bar-item w3-button side_link" >Selecting Data</a>
+            <a href="alteryx-data-type-conversion.html" class="w3-bar-item w3-button side_link" >Data Type Conversion</a>
+            <a href="alteryx-data-cleansing.html" class="w3-bar-item w3-button side_link" >Cleaning Data</a>
+            <a href="alteryx-exercises.html" class="w3-bar-item w3-button side_link" >Exercises</a>
+        <h6 class="side_title">Filters & Joins</h6>
+            <a href="alteryx-documentation.html" class="w3-bar-item w3-button side_link" >Documentation</a>
+            <a id="sel" href="alteryx-filter.html" class="w3-bar-item w3-button side_link" >Filters</a>
+    </div>
+
+<!--Content----->
+    <div class="w3-main" style="margin-left:250px; margin-right:200px;">
+    <div >
+            
+        <!--Menu Button-->
+          <div class="h_left">
+              <button class="w3-button w3-xlarge w3-hide-large" onclick="w3_open()" style="left:0;">&#9776;</button>
+          </div>
+          
+          <!--Page Content -->
+          <div class="h_right">
+              <h1>Filtering Data</h1>
+            </div>
+        <!--TOP AD BANNER-->
+        <div class='horizontal_ad'>
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- top_ad_banner -->
+            <ins class="adsbygoogle"
+                 style="display:inline-block;width:100%;height:100px;
+                        text-align:center;"
+                 data-ad-client="ca-pub-4825364639199120"
+                 data-ad-slot="9607273384"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+          <div class="w3-container">
+              <p></p>
+
+              <p class="txt">
+                  Filter tools in Alteryx allows us to seperate our data based on some relational logic i.e. if we have sales data for a company by region we may wish to look at only sales that occurred in Europe, here we can apply a filter and tell it to seperate the records where Region = Europe. We can apply filters to string, date and numeric data types.
+              </p>
+              <p class="txt2">
+                  In Alteryx there are two filter tools: one for dates and one for all other data types.
+              </p>
+              <p class="txt2">
+                  
+                    In a filters configuration window we can build a relational expression to define the conditions that will seperate the data. Let’s explore these now.
+              </p>
+
+              
+              <h2 style="padding-top: 40px;" >Filter Tool</h2>
+              <p class="txt2">
+                The filter tool is located in the Preparation section of the tool pallet.
+              </p>
+              <p></p>
+              <img alt="Alteryx Filter Tool" class="tut_img2" 
+        src="img/Alteryx/2.1_Filters/v2/1_tool_pallet.PNG">
+              <p></p>
+              <p class="txt2">
+                The configuration has two sections Basic Filter and Custom Filter.
+                As the name suggests, the basic filter allows us to quickly build a simple conditional expression to determine what records stay and what records go using one field, a relation operator (equals, not to equal to, greater than etc) and a value (i.e. “Price” greater than 10). The custom filter allows you to build more elaborate expressions that can be as complex as required, containing one or more fields or values as well as sub expressions. You may have noticed that the filter tool has two output nodes labelled “T” and “F”. These stand for true and false, that is any values that evaluate to true based on our condition are output from the “T” node and everything else gets sent from the “F” node. This gives us the option to split our data and process these differently if required.
+              </p>
+              <p class="txt2">In our workflow we know that we are trying to get some information about the fiction genre. So let’s filter the product data to seperate the fiction products from the all the others.</p>
+              <div class="wide_box">
+                  <div class="box">
+                      <p class="txt2">Step 1:</p>
+                      <p class="txt2">Add a filter after the cleaning tool to the product data stream.</p></div>
+                  <div class="box">
+                    <img alt="Alteryx Add Filter Tool" class="tut_img" src="img/Alteryx/2.1_Filters/v2/2_add_filter.PNG"></div>
+             </div>
+              <p></p>
+             <div class="wide_box">
+                  <div class="box">
+                      <p class="txt2">Step 2:</p>
+                      <p class="txt2">In the basic filter section of the configuration window; set “Category” to be equal to “Fiction”.</p></div>
+                  <div class="box">
+                    <img alt="Alteryx Basic Filter" class="tut_img" src="img/Alteryx/2.1_Filters/v2/3_basic_filter.PNG"></div>
+             </div>
+             <div class="wide_box">
+                  <div class="box2">
+                      <p class="txt2">Step 3:</p>
+                      <p class="txt2">Run the workflow, click on the “T” node of the filter tool and in the results window you should only see “Fiction” records in the category field. Conversly, clicking on the “F” node should show records with anything but “Fiction” in the category field. </p></div>
+                  <div class="box2">
+                    <img alt="Alteryx Filter Results" class="tut_img2" src="img/Alteryx/2.1_Filters/5_results.PNG"></div>
+             </div>
+             <h2 style="padding-top: 40px;" >Date Filter Tool</h2>
+              <p></p>
+              <p class="txt2">
+                The date filter tool (again found in the preparation tab of the tool pallet) works in a similar way to the regular filter tool but is designed with specific features for creating conditional expressions that work with dates. 
+              </p>
+              <p></p>
+              <img alt="Alteryx Date Filter Tool" class="tut_img2" src="img/Alteryx/2.1_Filters/v2/5_tool_pallet.PNG">
+              <p class="txt2">
+                The date filter allows you to pass one date field and gives you two options for defining which records you would like to allow through to the remaining workflow.
+              </p>
+              <p></p>
+                      <p class="txt2">
+                        1)	We can select a start and end date (i.e.16th April 2018  - 23rd April 2018). All records that have a date within this range in the field we select to filter will be output from the “T” node of the tool. 
+                      </p>
+              <p class="txt2">
+                    2)	Select either a start date or end data, then select a period (either after or before this) of days, weeks, quarters or years. 
+              </p>
+              <p></p>
+              <p class="txt2">
+              In our workflow, we only want data from 2017 for our report. Let’s use a date filter to filter out anything that didn’t occur in this year.
+              </p>
+              <div class="wide_box">
+                  <div class="box2">
+                      <p class="txt2">Step 4:</p>
+                      <p class="txt2"> In our workflow, we only want data from 2017 for our report. Let’s use a date filter to filter out anything that didn’t occur in this year. Our order stream contains an “OrderDate” field which we’ve already converted to a date type so let’s add a date filter after the data cleansing tool in our Orders container. </p></div>
+                  <div class="box2">
+                    <img alt="Alteryx Add Date Filter Tool" class="tut_img" src="img/Alteryx/2.1_Filters/v2/4_add_date_filter.PNG"></div>
+             </div>
+              <div class="wide_box">
+                  <div class="box">
+                      <p class="txt2">Step 5:</p>
+                      <p class="txt2">In the Configuration window for the date filter, select the “OrderDate” field and then we are going to use an end date of 1st Jan 2018 with a 1 year preceding period to ensure the filter allows only records with an order date within 2017</p></div>
+                  <div class="box">
+                    <img alt="Alteryx Date Filter Configuration" class="tut_img" src="img/Alteryx/2.1_Filters/10_config.PNG"></div>
+                   <div class="box2">
+                      <p class="txt2">After running the workflow you should see only records of orders that occurred within 2017 coming from the “T” output node.</p>
+                  </div>
+             </div>
+              
+              
+        </div>
+    </div>
+    </div>
+    <a href="alteryx_2_2_filtering_data.html" style="text-decoration: none;"><div id="next_mobile">Next</div></a>
+<!-------------------------------------FOOTER---------------------------------->
+<div id="footer"></div>
+
+<!----------AD BANNER-------------------->
+<div class="ad_banner">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <ins class="adsbygoogle"
+             style="display:block; text-align:center;"
+             data-ad-layout="in-article"
+             data-ad-format="fluid"
+             data-ad-client="ca-pub-4825364639199120"
+             data-ad-slot="9368231129"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+</div>
+<!-------------------------------------SIDE AD BAR----------------------------->
+<div id="ad_bar" >
+    <!-- side_bar_1 -->
+    <ins class="adsbygoogle"
+         style="display:block; margin-top: 10vh;"
+         data-ad-client="ca-pub-4825364639199120"
+         data-ad-slot="2467780853"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+</div>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>    
+
+</body>
+</html>
