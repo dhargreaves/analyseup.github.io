@@ -7,61 +7,55 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.analyseup.com/alteryx-introduction.html</loc>
+    <loc>https://www.analyseup.com/learn-alteryx/alteryx-introduction.html</loc>
     <lastmod>2019-11-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.analyseup.com/index.html</loc>
+    <loc>https://www.analyseup.com/learn-alteryx/alteryx-select-tool.html</loc>
     <lastmod>2019-11-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.analyseup.com/alteryx-select-tool.html</loc>
+    <loc>https://www.analyseup.com/learn-alteryx/alteryx-filter.html</loc>
     <lastmod>2019-11-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.analyseup.com/alteryx-documentation.html</loc>
+    <loc>https://www.analyseup.com/learn-alteryx/alteryx-interface.html</loc>
     <lastmod>2019-11-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.analyseup.com/alteryx-input-tool.html</loc>
+    <loc>https://www.analyseup.com/learn-alteryx/alteryx-documentation.html</loc>
     <lastmod>2019-11-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.analyseup.com/alteryx-exercises.html</loc>
+    <loc>https://www.analyseup.com/learn-alteryx/alteryx-data-cleansing.html</loc>
     <lastmod>2019-11-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.analyseup.com/alteryx-interface.html</loc>
+    <loc>https://www.analyseup.com/learn-alteryx/alteryx-input-tool.html</loc>
     <lastmod>2019-11-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.analyseup.com/alteryx-filter.html</loc>
+    <loc>https://www.analyseup.com/learn-alteryx/alteryx-exercises.html</loc>
     <lastmod>2019-11-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.analyseup.com/alteryx-data-type-conversion.html</loc>
-    <lastmod>2019-11-20</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.analyseup.com/alteryx-data-cleansing.html</loc>
+    <loc>https://www.analyseup.com/learn-alteryx/alteryx-data-type-conversion.html</loc>
     <lastmod>2019-11-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
