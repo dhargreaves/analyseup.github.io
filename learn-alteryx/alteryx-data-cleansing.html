@@ -16,9 +16,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Learn how to clean data in Alteryx using the data cleansing tool">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link href='css/w3.css' rel='stylesheet' type="text/css">
-    <link href='css/page_style.css' rel='stylesheet' type='text/css'> 
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link href='../css/w3.css' rel='stylesheet' type="text/css">
+    <link href='../css/page_style.css' rel='stylesheet' type='text/css'> 
     
 <script>
         function w3_open() {
@@ -49,7 +49,7 @@
         <!--<h5 id="side_head"><b>Data Wrangling with Alteryx</b></h5>-->
         <h6 class="side_title">Getting Started</h6>
             <a href="alteryx-introduction.html" class="w3-bar-item w3-button side_link" >Introduction</a>
-            <a href="alteryx-input-tool.html" class="w3-bar-item w3-button side_link">First Workflow</a>
+            <a href="alteryx-input-tool.html" class="w3-bar-item w3-button side_link">Data Input</a>
             <a href="alteryx-interface.html" class="w3-bar-item w3-button side_link">Designer Interface</a>
         <h6 class="side_title">Data Preparation</h6>
             <a href="alteryx-select-tool.html" class="w3-bar-item w3-button side_link" >Selecting Data</a>
@@ -59,6 +59,7 @@
         <h6 class="side_title">Filters & Joins</h6>
             <a href="alteryx-documentation.html" class="w3-bar-item w3-button side_link" >Documentation</a>
             <a href="alteryx-filter.html" class="w3-bar-item w3-button side_link" >Filters</a>
+            <a href="alteryx-join-types.html" class="w3-bar-item w3-button side_link" >Join Types</a>
     </div>
 <!--Content-->
     <div class="w3-main" style="margin-left:250px; margin-right:200px;">
@@ -95,7 +96,7 @@
               
               <h2 style="padding-top: 40px;" >Data Cleansing Tool</h2>
               
-              <p  class="txt2">The data cleansing tool in the preparation tab of the tool pallet allows us to quickly deal with Null values, unwanted numbers, letters and whitespace plus convert strings to upper or lower case. </p>
+              <p  class="txt2">The <b>data cleansing tool</b> in the preparation tab of the tool pallet allows us to quickly deal with Null values, unwanted numbers, letters and whitespace plus convert strings to upper or lower case. </p>
               
               <p>                    
                   <img alt="Alteryx Data Cleansing Tool" class="tut_img"  src="img/Alteryx/1.7_Cleaning/1_1_data_cleansing_tool.PNG">
@@ -115,7 +116,7 @@
               
               <div class="wide_box">
                   <div class="box2">
-                      <p class="txt2">In our data set we can see that the PromoID field is NULL for many records where an item was ordered outside of a promotion. In addition we may have trailing whitespace that will cause issues later on when we attempt to join to other data sources using common fields. So let’s clean our data using the data cleansing tool.</p>
+                      <p class="txt2">In our data set we can see that the PromoID field is NULL for many records where an item was ordered outside of a promotion. In addition we may have trailing whitespace that will cause issues later on when we attempt to join to other data sources using common fields. So let’s clean our data using the <b>data cleansing tool</b>.</p>
                   </div>
                   <div class="box2">
                       <img alt="Alteryx Nulls" class="tut_img2" src="img/Alteryx/1.7_Cleaning/7_NULLs.PNG">
@@ -124,7 +125,7 @@
               <div class="wide_box">
                    <div class="box2">
                        <p class="txt2">Step 1:</p>
-                      <p class="txt2">Drag and drop a Data Cleansing tool between the 2nd select tool and the browse tool</p>
+                       <p class="txt2">Drag and drop a <b>Data Cleansing tool</b> between the 2nd select tool and the browse tool</p>
                   </div>
                   <div class="box2">
                       <img alt="Alteryx Add Cleaning Tool" class="tut_img" src="img/Alteryx/1.7_Cleaning/5_add_cleaning_tool_edit.PNG">

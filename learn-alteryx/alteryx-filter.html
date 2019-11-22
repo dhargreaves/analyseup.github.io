@@ -11,12 +11,13 @@
   gtag('config', 'UA-147504302-1');
 </script>
 
-    <title>AnalyseUp.com - Alteryx Filtering Data</title>
+    <title>Alteryx Filter Tool</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link href='css/w3.css' rel='stylesheet' type="text/css">
-    <link href='css/page_style.css' rel='stylesheet' type='text/css'> 
+    <meta name="description" content="Learn how to filter your data in Alteryx with the Filter Tool.">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link href='../css/w3.css' rel='stylesheet' type="text/css">
+    <link href='../css/page_style.css' rel='stylesheet' type='text/css'> 
 
 <script>
         function w3_open() {
@@ -41,7 +42,7 @@
         <!--<h5 id="side_head"><b>Data Wrangling with Alteryx</b></h5>-->
         <h6 class="side_title">Getting Started</h6>
             <a href="alteryx-introduction.html" class="w3-bar-item w3-button side_link" >Introduction</a>
-            <a href="alteryx-input-tool.html" class="w3-bar-item w3-button side_link">First Workflow</a>
+            <a href="alteryx-input-tool.html" class="w3-bar-item w3-button side_link">Input Data</a>
             <a href="alteryx-interface.html" class="w3-bar-item w3-button side_link">Designer Interface</a>
         <h6 class="side_title">Data Preparation</h6>
             <a href="alteryx-select-tool.html" class="w3-bar-item w3-button side_link" >Selecting Data</a>
@@ -51,6 +52,7 @@
         <h6 class="side_title">Filters & Joins</h6>
             <a href="alteryx-documentation.html" class="w3-bar-item w3-button side_link" >Documentation</a>
             <a id="sel" href="alteryx-filter.html" class="w3-bar-item w3-button side_link" >Filters</a>
+            <a href="alteryx-join-types.html" class="w3-bar-item w3-button side_link" >Join Types</a>
     </div>
 
 <!--Content----->
@@ -64,7 +66,7 @@
           
           <!--Page Content -->
           <div class="h_right">
-              <h1>Filtering Data</h1>
+              <h1>Alteryx Filter Tools</h1>
             </div>
         <!--TOP AD BANNER-->
         <div class='horizontal_ad'>
@@ -86,17 +88,20 @@
                   Filter tools in Alteryx allows us to seperate our data based on some relational logic i.e. if we have sales data for a company by region we may wish to look at only sales that occurred in Europe, here we can apply a filter and tell it to seperate the records where Region = Europe. We can apply filters to string, date and numeric data types.
               </p>
               <p class="txt2">
-                  In Alteryx there are two filter tools: one for dates and one for all other data types.
+                  In Alteryx there are two filter tools; one for dates and one for all other data types.
               </p>
+              <ul class="txt2">
+                  <li>Filter Tool</li>
+                  <li>Date Filter Tool</li>
+              </ul>
               <p class="txt2">
-                  
                     In a filters configuration window we can build a relational expression to define the conditions that will seperate the data. Let’s explore these now.
               </p>
 
               
               <h2 style="padding-top: 40px;" >Filter Tool</h2>
               <p class="txt2">
-                The filter tool is located in the Preparation section of the tool pallet.
+                  The <b>filter tool</b> is located in the Preparation section of the tool pallet.
               </p>
               <p></p>
               <img alt="Alteryx Filter Tool" class="tut_img2" 
@@ -110,7 +115,7 @@
               <div class="wide_box">
                   <div class="box">
                       <p class="txt2">Step 1:</p>
-                      <p class="txt2">Add a filter after the cleaning tool to the product data stream.</p></div>
+                      <p class="txt2">Add a <b>filter tool</b> after the cleaning tool to the product data stream.</p></div>
                   <div class="box">
                     <img alt="Alteryx Add Filter Tool" class="tut_img" src="img/Alteryx/2.1_Filters/v2/2_add_filter.PNG"></div>
              </div>
@@ -132,7 +137,7 @@
              <h2 style="padding-top: 40px;" >Date Filter Tool</h2>
               <p></p>
               <p class="txt2">
-                The date filter tool (again found in the preparation tab of the tool pallet) works in a similar way to the regular filter tool but is designed with specific features for creating conditional expressions that work with dates. 
+                  The <b>date filter tool</b> (again found in the preparation tab of the tool pallet) works in a similar way to the regular filter tool but is designed with specific features for creating conditional expressions that work with dates. 
               </p>
               <p></p>
               <img alt="Alteryx Date Filter Tool" class="tut_img2" src="img/Alteryx/2.1_Filters/v2/5_tool_pallet.PNG">
@@ -148,19 +153,19 @@
               </p>
               <p></p>
               <p class="txt2">
-              In our workflow, we only want data from 2017 for our report. Let’s use a date filter to filter out anything that didn’t occur in this year.
+                  In our workflow, we only want data from 2017 for our report. Let’s use a <b>date filter tool</b> to filter out anything that didn’t occur in this year.
               </p>
               <div class="wide_box">
                   <div class="box2">
                       <p class="txt2">Step 4:</p>
-                      <p class="txt2"> In our workflow, we only want data from 2017 for our report. Let’s use a date filter to filter out anything that didn’t occur in this year. Our order stream contains an “OrderDate” field which we’ve already converted to a date type so let’s add a date filter after the data cleansing tool in our Orders container. </p></div>
+                      <p class="txt2"> In our workflow, we only want data from 2017 for our report. Let’s use a <b>date filter tool</b> to filter out anything that didn’t occur in this year. Our order stream contains an “OrderDate” field which we’ve already converted to a date type so let’s add a date filter after the data cleansing tool in our Orders container. </p></div>
                   <div class="box2">
                     <img alt="Alteryx Add Date Filter Tool" class="tut_img" src="img/Alteryx/2.1_Filters/v2/4_add_date_filter.PNG"></div>
              </div>
               <div class="wide_box">
                   <div class="box">
                       <p class="txt2">Step 5:</p>
-                      <p class="txt2">In the Configuration window for the date filter, select the “OrderDate” field and then we are going to use an end date of 1st Jan 2018 with a 1 year preceding period to ensure the filter allows only records with an order date within 2017</p></div>
+                      <p class="txt2">In the Configuration window for the <b>date filter tool</b>, select the “OrderDate” field and then we are going to use an end date of 1st Jan 2018 with a 1 year preceding period to ensure the filter allows only records with an order date within 2017</p></div>
                   <div class="box">
                     <img alt="Alteryx Date Filter Configuration" class="tut_img" src="img/Alteryx/2.1_Filters/10_config.PNG"></div>
                    <div class="box2">
@@ -172,7 +177,7 @@
         </div>
     </div>
     </div>
-    <a href="alteryx-filter.html" style="text-decoration: none;"><div id="next_mobile">Next</div></a>
+    <a href="alteryx-join-types.html" style="text-decoration: none;"><div id="next_mobile">Next</div></a>
 <!-------------------------------------FOOTER---------------------------------->
 <div id="footer"></div>
 

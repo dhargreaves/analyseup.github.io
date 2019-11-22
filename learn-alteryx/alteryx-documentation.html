@@ -11,12 +11,13 @@
   gtag('config', 'UA-147504302-1');
 </script>
 
-    <title>AnalyseUp.com - Alteryx Housekeeping</title>
+    <title>Alteryx Documentation</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link href='css/w3.css' rel='stylesheet' type="text/css">
-    <link href='css/page_style.css' rel='stylesheet' type='text/css'> 
+    <meta name="description" content="Learn how to annotate Alteryx workflows with the comment tool and organise your workflows with tool containers">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link href='../css/w3.css' rel='stylesheet' type="text/css">
+    <link href='../css/page_style.css' rel='stylesheet' type='text/css'> 
   
 <script>
         function w3_open() {
@@ -42,7 +43,7 @@
         <!--<h5 id="side_head"><b>Data Wrangling with Alteryx</b></h5>-->
         <h6 class="side_title">Getting Started</h6>
             <a href="alteryx-introduction.html" class="w3-bar-item w3-button side_link" >Introduction</a>
-            <a href="alteryx-input-tool.html" class="w3-bar-item w3-button side_link">First Workflow</a>
+            <a href="alteryx-input-tool.html" class="w3-bar-item w3-button side_link">Data Input</a>
             <a href="alteryx-interface.html" class="w3-bar-item w3-button side_link">Designer Interface</a>
         <h6 class="side_title">Data Preparation</h6>
             <a href="alteryx-select-tool.html" class="w3-bar-item w3-button side_link" >Selecting Data</a>
@@ -52,6 +53,7 @@
         <h6 class="side_title">Filters & Joins</h6>
             <a id="sel" href="alteryx-documentation.html" class="w3-bar-item w3-button side_link" >Documentation</a>
             <a href="alteryx-filter.html" class="w3-bar-item w3-button side_link" >Filters</a>
+            <a href="alteryx-join-types.html" class="w3-bar-item w3-button side_link" >Join Types</a>
     </div>
 <!--Content----->
     <div class="w3-main" style="margin-left:250px; margin-right:200px;">
@@ -64,7 +66,7 @@
           
           <!--Page Content -->
           <div class="h_right">
-              <h1>Housekeeping</h1>
+              <h1>Alteryx Documentation</h1>
             </div>
         <!--TOP AD BANNER-->
         <div class='horizontal_ad'>
@@ -87,7 +89,7 @@
               </p>
 
               
-              <h2 style="padding-top: 40px;" >Annotations</h2>
+              <h2 style="padding-top: 40px;" >Alteryx Hide Annotations</h2>
               <p class="txt2">
                 As discussed previously and as you will have no doubt noticed, Alteryx by default adds annotations to tools whenever you drag them on to the canvas, displaying details about what function the tool is performing. This can be useful in some respects but often creates clutter in the workflow especially when there are a lot of tools performing multiple functions. 
               </p>
@@ -103,12 +105,12 @@
               
 
               
-              <h2 style="padding-top: 40px;" >Containers</h2>
+              <h2 style="padding-top: 40px;" >Alteryx Tool Container</h2>
               <p class="txt2">
                 Alteryx also comes with ability to place groups of tools inside collapsible containers. This allows us to group several tools that we combine to perform a specific task and make them appear as one block that can be collapsed to save space and to easily make changes to certain actions performed in our workflows. 
               </p>
               <p class="txt2">
-                To add tools to a container, drag the container tool onto the canvas from the Documentation tab on the tool pallet and then the tools you would like to group into the container.
+                  To add tools to a container, drag the <b>Tool Container</b> onto the canvas from the Documentation tab on the tool pallet and then the tools you would like to group into the container.
               </p>
               <p></p>
               <img alt="Alteryx Container Tool" class="tut_img_50" src="img/Alteryx/1.9_WorkflowTidy/5.Tool_containerPNG.PNG">
@@ -116,7 +118,7 @@
               <div class="wide_box">
                   <div class="box2">
                       <p class="txt2">Step 2:</p>
-                      <p class="txt2">Drag a Tool Container tool into the workflow and rename the caption "Orders".</p>
+                      <p class="txt2">Drag a <b>Tool Container</b> tool into the workflow and rename the caption "Orders".</p>
                 </div>
                 <div class="box2"><img alt="Alteryx Add Containers" class="tut_img" src="img/Alteryx/1.9_WorkflowTidy/2.PNG">
                 </div>     
@@ -125,7 +127,7 @@
               <div class="wide_box">
                   <div class="box">
                       <p class="txt2">Step 3:</p>
-                      <p class="txt2">Select the six tools that we used to import and process the orders csv file, then drag into the tool container.</p>
+                      <p class="txt2">Select the six tools that we used to import and process the orders csv file, then drag into the <b>tool container</b>.</p>
                 </div>
                 <div class="box"><img alt="Alteryx Select Tools for Tool Container" class="tut_img" src="img/Alteryx/1.9_WorkflowTidy/3.PNG">
                 </div>   
@@ -146,9 +148,9 @@
               <p></p>
               <img alt="Alteryx Collapse Container " class="tut_img2" src="img/Alteryx/1.9_WorkflowTidy/7_collapse.PNG">
               
-              <h2 style="padding-top: 40px;" >Comments</h2>
+              <h2 style="padding-top: 40px;" >Alteryx Comment Tool</h2>
               <p class="txt2">
-                Although Alteryx default annotations may make workflows difficult to read, we will often still want to add some sort of comment to parts of our workflows. In particular we may want to provide notes about what the workflow is doing or to detail the purpose of a particular part without the need to click in and look at the configurations. We can do this with the Comment tool which can be placed anywhere on the canvas. 
+                  Although Alteryx default annotations may make workflows difficult to read, we will often still want to add some sort of comment to parts of our workflows. In particular we may want to provide notes about what the workflow is doing or to detail the purpose of a particular part without the need to click in and look at the configurations. We can do this with the <b>Comment tool</b> which can be placed anywhere on the canvas. 
               </p>
               <p></p>
               <img alt="Alteryx Comment Tool" class="tut_img_50" src="img/Alteryx/1.9_WorkflowTidy/2_comment_tool.PNG">
