@@ -347,6 +347,9 @@ table {
   border-collapse: collapse;
   width: 99%;
 }
+.table {
+    overflow: scroll;
+}
 
 td, th {
   border: 1px solid #dddddd;

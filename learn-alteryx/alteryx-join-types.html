@@ -97,6 +97,7 @@
                 Let’s look at an example. In the two data sources below (order data and customer data) we can see that the Customer ID field appears in both sets of data and that they contain values that appear in both sources such as 4002. Therefore there is a relationship between the two sources through the “Customer_ID” fields that we can call the relational fields. In this case, joining the two data sources on the Customer ID field would result in matches between four out of the five records in each source. 
               </p>
               <p></p>
+              <div class='table'>
                <table>
                   <tr>
                     <th>Order_No</th>
@@ -135,7 +136,9 @@
                     <td>227774</td>
                   </tr>
                 </table> 
+              </div>
               <p></p>
+              <div class='table'>
               <table>
                   <tr>
                     <th>Customer_ID</th>
@@ -174,6 +177,7 @@
                     <td>US</td>
                   </tr>
                 </table> 
+              </div>
               <p></p>
               <p class="txt2">
                 We now know that we can join these two sources to create a new data set but the records contained in this new data will depend on the type of join we use. Let’s look at join types now. 
@@ -182,6 +186,7 @@
               <p class="txt2">
                   An inner join returns a data set that includes <b>ONLY</b> records where the values in the relational field(s) match. In the example below we have used an inner join to blend our order and customer data sources. As we saw above, there are four records from each source with matching customer IDs and therefore an inner join between the two data sources creates the following data set:
               </p>
+              <div class='table'>
               <table>
                   <tr>
                     <th>Order_No</th>
@@ -234,7 +239,7 @@
                     <td>US</td>
                   </tr>
                 </table> 
-
+              </div>
             <h2 style="padding-top: 40px;" >Outer Joins</h2>
               <p class="txt2">
                   Outer joins have three variation; left, right and outer. 
@@ -242,6 +247,7 @@
               <p class="txt2">
                 A full outer join creates a data set that contains all records from both data sources but where there is aisn’t a matching value in the relational field(s) in either of the then fields from this record will return as Nulls. As we can see below customer_ID 1681 only appears in table 2 and as such table 1 fields for this record are Null. The same is true for customer_ID 1654 in table 1.
               </p>
+              <div class='table'>
               <table>
                   <tr>
                     <th>Order_No</th>
@@ -314,10 +320,11 @@
                     <td>US</td>
                   </tr>
                 </table> 
-
+              </div>
               <p class="txt2" style="padding-top: 40px;">
                 If we take the order data source as the left (either written first in a SQL script or connected to the “L” input tool in Alteryx) and join this to the customer data source as the right data source then performing a left outer join means that we take all the records from order data regardless of whether there is a matching record in the customer data source. Any records that appear in the order data without a match in the customer data will appear with NULLs for the customer data fields in the joined data set. In the below example customer_ID 1654 doesn’t appear in the customer data, therefore performing a left outer join creates the following table with NULLs in the customer data fields for the records that includes the non-matching value in the relational field.
               </p>
+              <div class='table'>
               <table>
                   <tr>
                     <th>Order_No</th>
@@ -380,10 +387,11 @@
                     <td>NULL</td> 
                   </tr>
                 </table>
-
+              </div>
               <p class="txt2" style="padding-top: 40px;">
                  A right outer join does the same as the left outer join but with the logic reversed in that all records from the right data sources are retained and non-matching records from the left table are discarded as shown below.
               </p>
+              <div class='table'>
               <table>
                   <tr>
                     <th>Order_No</th>
@@ -446,11 +454,12 @@
                     <td>US</td>
                   </tr>
                 </table>
-
+              </div>
           <h2 style="padding-top: 40px;" >Union</h2>
               <p class="txt2">
                 The joins we have seen so far create new data sets by joining row-wise (side-by-side).  A union joins the data column-wise and basically appends any rows from one data set to another where there are common fields. In our example, if we performed a union the only common field is Customer_ID and we would create the following data set.
               </p>
+              <div class='table'>
                <table>
                   <tr>
                     <th>Order_No</th>
@@ -552,7 +561,7 @@
                     <td>US</td>
                   </tr>
                 </table>
-
+              </div>
               <p class="txt2" style="padding-top: 40px;">
                 Having discussed how joins work, let’s go ahead and utilise these to blend the data in our workflow.
               </p>
