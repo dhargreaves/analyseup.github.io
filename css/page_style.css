@@ -602,6 +602,10 @@ input {
             /*For sizing images that look too big on small screen*/
             width:50%;
         }
+        .large_img{
+            /*For sizing images that look too small on small screen*/
+            width:100%;
+        }
         .tut_img_50 {
             width: 75%;
         }
