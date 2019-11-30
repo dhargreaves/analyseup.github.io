@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-147504302-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-147504302-1');
+</script>
+
+    <title>Alteryx Outer Join - AnalyseUp</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Learn how to join do outer joins with Alteryx. ALteryx doesn't come with an out of the box solution to do outer joins but we will show you how to combine the Join Tool and Union Tool to create outer joins between data sources.">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link href='../css/w3.css' rel='stylesheet' type="text/css">
+    <link href='../css/page_style.css' rel='stylesheet' type='text/css'> 
+
+<script>
+        function w3_open() {
+            document.getElementById("mySidebar").style.display = "block";
+        }
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+        }
+</script>
+</head>
+<body>
+<!--Top Nav-->
+    <div id="top">
+        <a href="https://www.analyseup.com"><img alt="Upgrade your data skills with analyseup.com" id="banner" src="img/AnalyseUp_Black(v2.2).png" ></a>
+        <div class="sep"></div>
+    </div>
+<!--Side Menu-->
+    <div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style="width:250px; top:0vh;" id="mySidebar">
+        <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
+        <a href="alteryx-filter.html" style="text-decoration: none;"><div id="next">Next</div></a>
+        <p></p>
+        <!--<h5 id="side_head"><b>Data Wrangling with Alteryx</b></h5>-->
+        <h6 class="side_title">Getting Started</h6>
+            <a href="alteryx-introduction.html" class="w3-bar-item w3-button side_link" >Introduction</a>
+            <a href="alteryx-input-tool.html" class="w3-bar-item w3-button side_link">Input Data</a>
+            <a href="alteryx-interface.html" class="w3-bar-item w3-button side_link">Designer Interface</a>
+        <h6 class="side_title">Data Preparation</h6>
+            <a href="alteryx-select-tool.html" class="w3-bar-item w3-button side_link" >Selecting Data</a>
+            <a href="alteryx-data-type-conversion.html" class="w3-bar-item w3-button side_link" >Data Type Conversion</a>
+            <a href="alteryx-data-cleansing.html" class="w3-bar-item w3-button side_link" >Cleaning Data</a>
+            <a href="alteryx-exercises.html" class="w3-bar-item w3-button side_link" >Exercises</a>
+        <h6 class="side_title">Filters & Joins</h6>
+            <a href="alteryx-documentation.html" class="w3-bar-item w3-button side_link" >Documentation</a>
+            <a href="alteryx-filter.html" class="w3-bar-item w3-button side_link" >Filters</a>
+            <a href="alteryx-join-types.html" class="w3-bar-item w3-button side_link" >Join Types</a>
+            <a href="alteryx-inner-join.html" class="w3-bar-item w3-button side_link" >Inner Join</a>
+            <a id="sel" href="alteryx-outer-join.html" class="w3-bar-item w3-button side_link" >Outer Joins</a>
+    </div>
+
+<!--Content----->
+    <div class="w3-main" style="margin-left:250px; margin-right:200px;">
+    <div >
+            
+        <!--Menu Button-->
+          <div class="h_left">
+              <button class="w3-button w3-xlarge w3-hide-large" onclick="w3_open()" style="left:0;">&#9776;</button>
+          </div>
+          
+          <!--Page Content -->
+          <div class="h_right">
+              <h1>Alteryx Outer Joins</h1>
+            </div>
+        <!--TOP AD BANNER-->
+        <div class='horizontal_ad'>
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- top_ad_banner -->
+            <ins class="adsbygoogle"
+                 style="display:inline-block;width:100%;height:100px;
+                        text-align:center;"
+                 data-ad-client="ca-pub-4825364639199120"
+                 data-ad-slot="9607273384"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+          <div class="w3-container">
+              <p></p>
+
+              <p class="txt2">
+                  In the exercises section, we imported the promotions data set and now we need to join this to the main data set to see how much (if any) discount to apply to the retail price of the product sold for a given purchase. The problem we have here is that not all products were purchased as part of a promotion and if we perform an <b>inner join</b> between the main data set and the promotions data then we will only get records that were included in a promotion. In this case we want to perform an <b>outer join</b> so that we get all the records from the main data set and we get information from the promotions data about the products that were ordered in a promotion and the discount rate to apply.
+              </p>
+              <p class="txt2">
+                  Alteryx doesn’t actually come with an obvious out of the box <b>outer join</b> tool but we can build one using the <b>Join tool</b> in combination with the <b>union tool</b>. In our case we are going to use a left outer tool with the main dataset being the left input and promotions data being the right. Let’s do this now.
+              </p>
+              
+              <h2 style="padding-top: 40px;" >Alteryx Outer Joins Using the Join Tool and Union Tool</h2>
+              <div class="wide_box">
+                  <div class="box2">
+                      <p class="txt2">Step 1:</p>
+                      <p class="txt2">Drag a <b>Join Tool</b> onto the workspace and connect “J” output from our previous <b>Join tool</b> to the “L” input of our new <b>Join tool</b> and connect the output of <b>Data Cleansing tool</b> from the promotions data stream to the “R” input of the <b>Join tool</b>.</p></div>
+                  <div class="box2">
+                    <img alt="Alteryx Add Join Tool" class="tut_img" src="img/Alteryx/2.5-outer-joins/1-add-join-tool.PNG"></div>
+             </div>
+              <p></p>
+             <div class="wide_box">
+                  <div class="box">
+                      <p class="txt2">Step 2:</p>
+                      <p class="txt2">Go into the Join tools configuration window and set the tool to join on the “PromoID” field from both inputs.</p></div>
+                  <div class="box">
+                    <img alt="Alteryx Inner Join Condition" class="tut_img" src="img/Alteryx/2.5-outer-joins/2-join-condition.PNG"></div>
+             </div>
+             <div class="wide_box">
+                  <div class="box2">
+                      <p class="txt2">Step 3:</p>
+                      <p class="txt2"> If you look down the field names in the <b>Join tool</b> you will see the “PromoID” field from the right input has been renamed “Right_PromoID” and is a duplicate field that we can de-select. Drag a <b>Select Tool</b> from the tool pallet and connect the “J” output of the second <b>Join Tool</b> then de-select the “Right PromoID” field.</p></div>
+                  <div class="box2">
+                    <img alt="Alteryx Add Select Tool" class="tut_img" src="img/Alteryx/2.5-outer-joins/3-add-select-tool.PNG"></div>
+             </div>
+             <div class="wide_box">
+                  <div class="box2">
+                      <p class="txt2">Step 4:</p>
+                      <p class="txt2"> Next drag a <b>Union Tool</b> from the Join section of the tool pallet onto the workspace. Connect first the output of the <b>Select Tool</b> to the input of the <b>Union Tool</b> and the also connect the “L” output of the second <b>Join Tool</b> to the same input of the <b>Union Tool</b> (the union tool allows multiple connections to it’s input).</p></div>
+                  <div class="box2">
+                    <img alt="Alteryx Add Union Tool" class="tut_img" src="img/Alteryx/2.5-outer-joins/4-add-union-tool.PNG"></div>
+             </div>
+             <div class="wide_box">
+                  <div class="box2">
+                      <p class="txt2">Step 5:</p>
+                      <p class="txt2">Connect a Browse tool to the <b>Union tool</b> output and run to explore the results. What you should see now is the “Discount” field added to the main dataset. The field contains Null values for products not ordered as part of a promotion and a discount rate of either 0.2 or 0.3 for those products that were. 
+                      </p></div>
+                  <div class="box2">
+                    <img alt="Alteryx Left Outer Join Output" class="tut_img" src="img/Alteryx/2.5-outer-joins/5-left-outer-join-output.PNG"></div>
+             </div>
+             <div class="wide_box">
+                  <div class="box2">
+                      <p class="txt2">Step 6:</p>
+                      <p class="txt2">As we know, when the “Discount” field is NULL it means that the product wasn’t purchased as part of a promotion and the discount is zero so let’s use the <b>Data Cleansing Tool</b> to replace all NULLs with zeros. Drag a <b>Data Cleansing Tool</b> onto the workspace and connect the input to the output of the <b>Union Tool</b>.
+                      </p></div>
+                  <div class="box2">
+                    <img alt="Alteryx Add Data Cleansing Tool" class="tut_img" src="img/Alteryx/2.5-outer-joins/6-add-data-cleansing-tool.PNG"></div>
+             </div>
+             <div class="wide_box">
+                  <div class="box">
+                      <p class="txt2">Step 7:</p>
+                      <p class="txt2">Set the configuration as below to replace all NULLs with a 0 in the “Discount” field.
+                      </p></div>
+                  <div class="box">
+                    <img alt="Alteryx Data Cleansing Tool Configuration" class="tut_img" src="img/Alteryx/2.5-outer-joins/7-data-cleansing-tool-configuration.PNG"></div>
+             </div>
+             <div class="wide_box">
+                  <div class="box2">
+                      <p class="txt2">Step 8:</p>
+                      <p class="txt2"> Finally let’s run the workflow. Looking at the output we can see that any NULL values have been with replaced with 0 as expected.
+                      </p></div>
+                  <div class="box2">
+                    <img alt="Alteryx Data Cleansing Tool Configuration" class="tut_img" src="img/Alteryx/2.5-outer-joins/8-left-outer-join-clean-output.PNG"></div>
+             </div>
+              <p class="txt2" style="padding-top: 40px;">
+                  This is how we create <b>left outer joins</b> in Alteryx and we can use similar logic to create <b>right outer joins</b> and <b>full outer joins</b>.
+              </p>
+          
+        </div>
+    </div>
+    </div>
+    <a href="alteryx-outer-join.html" style="text-decoration: none;"><div id="next_mobile">Next</div></a>
+<!-------------------------------------FOOTER---------------------------------->
+<div id="footer"></div>
+
+<!----------AD BANNER-------------------->
+<div class="ad_banner">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <ins class="adsbygoogle"
+             style="display:block; text-align:center;"
+             data-ad-layout="in-article"
+             data-ad-format="fluid"
+             data-ad-client="ca-pub-4825364639199120"
+             data-ad-slot="9368231129"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+</div>
+<!-------------------------------------SIDE AD BAR----------------------------->
+<div id="ad_bar" >
+    <!-- side_bar_1 -->
+    <ins class="adsbygoogle"
+         style="display:block; margin-top: 10vh;"
+         data-ad-client="ca-pub-4825364639199120"
+         data-ad-slot="2467780853"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+</div>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>    
+
+</body>
+</html>
