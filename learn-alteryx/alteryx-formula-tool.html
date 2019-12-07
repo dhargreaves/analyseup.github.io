@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-147504302-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-147504302-1');
+</script>
+
+    <title>Alteryx Formula Tool - AnalyseUp</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Learn how to create new columns of calculated values in Alteryx using the Alteryx Formula Tool. We will show you how to build columns using basic arithmetic functions and exisiting columns from your data sources.">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link href='../css/w3.css' rel='stylesheet' type="text/css">
+    <link href='../css/page_style.css' rel='stylesheet' type='text/css'> 
+
+<script>
+        function w3_open() {
+            document.getElementById("mySidebar").style.display = "block";
+        }
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+        }
+</script>
+</head>
+<body>
+<!--Top Nav-->
+    <div id="top">
+        <a href="https://www.analyseup.com"><img alt="Upgrade your data skills with analyseup.com" id="banner" src="img/AnalyseUp_Black(v2.2).png" ></a>
+        <div class="sep"></div>
+    </div>
+<!--Side Menu-->
+    <div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style="width:250px; top:0vh;" id="mySidebar">
+        <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
+        <a href="alteryx-formula-tool.html" style="text-decoration: none;"><div id="next">Next</div></a>
+        <p></p>
+        <!--<h5 id="side_head"><b>Data Wrangling with Alteryx</b></h5>-->
+        <h6 class="side_title">Getting Started</h6>
+            <a href="alteryx-introduction.html" class="w3-bar-item w3-button side_link" >Introduction</a>
+            <a href="alteryx-input-tool.html" class="w3-bar-item w3-button side_link">Input Data</a>
+            <a href="alteryx-interface.html" class="w3-bar-item w3-button side_link">Designer Interface</a>
+        <h6 class="side_title">Data Preparation</h6>
+            <a href="alteryx-select-tool.html" class="w3-bar-item w3-button side_link" >Selecting Data</a>
+            <a href="alteryx-data-type-conversion.html" class="w3-bar-item w3-button side_link" >Data Type Conversion</a>
+            <a href="alteryx-data-cleansing.html" class="w3-bar-item w3-button side_link" >Cleaning Data</a>
+            <a href="alteryx-exercises.html" class="w3-bar-item w3-button side_link" >Exercises</a>
+        <h6 class="side_title">Filters & Joins</h6>
+            <a href="alteryx-documentation.html" class="w3-bar-item w3-button side_link" >Documentation</a>
+            <a href="alteryx-filter.html" class="w3-bar-item w3-button side_link" >Filters</a>
+            <a href="alteryx-join-types.html" class="w3-bar-item w3-button side_link" >Join Types</a>
+            <a href="alteryx-inner-join.html" class="w3-bar-item w3-button side_link" >Inner Join</a>
+            <a href="alteryx-outer-join.html" class="w3-bar-item w3-button side_link" >Outer Joins</a>
+        <h6 class="side_title">Formulas & Aggregations</h6>
+            <a id="sel" href="alteryx-formula-tool.html" class="w3-bar-item w3-button side_link" >Formulas </a>
+    </div>
+
+<!--Content----->
+    <div class="w3-main" style="margin-left:250px; margin-right:200px;">
+    <div >
+            
+        <!--Menu Button-->
+          <div class="h_left">
+              <button class="w3-button w3-xlarge w3-hide-large" onclick="w3_open()" style="left:0;">&#9776;</button>
+          </div>
+          
+          <!--Page Content -->
+          <div class="h_right">
+              <h1>Alteryx Formulas</h1>
+            </div>
+        <!--TOP AD BANNER-->
+        <div class='horizontal_ad'>
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- top_ad_banner -->
+            <ins class="adsbygoogle"
+                 style="display:inline-block;width:100%;height:100px;
+                        text-align:center;"
+                 data-ad-client="ca-pub-4825364639199120"
+                 data-ad-slot="9607273384"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+          <div class="w3-container">
+              <p></p>
+              <p class="txt2">
+                  Once we have imported data into our workflows we will often want to create additional columns of calculated values based on the data from our original sources or modify the values in existing columns. In Alteryx we can use the <b>Formula Tool</b> to do this using basic arithmetic functions along with more advanced functions provided within the tool.
+              </p>
+              <img alt="Alteryx Formula Tool" class="tut_img" src="img/Alteryx/2.6-formulas/1-alteryx-formula-tool.PNG">
+              
+              <h2 style="padding-top: 40px;" >Alteryx Formula Tool</h2>
+              <p></p>
+              <p class="txt2">
+                  Within the <b>Formula Tool</b> configuration window you can create new columns by clicking on the “Select Column” dropdown menu and selecting “New Column”. You will then be presented with a text box to type in the column name. You can also modify existing columns by clicking on the required column name.
+              </p>
+              <img alt="Alteryx Select Column" class="tut_img_50 large_img" src="img/Alteryx/2.6-formulas/2-alteryx-select-column.PNG">
+              <p class="txt2" style="padding-top: 40px;" >
+                When creating a new column you have the option to define the data type for the column by selecting the data type from the drop down menu along with precision. If modifying the values in an existing column then the data type cannot be changed.
+              </p>
+              <img alt="Alteryx Formula Data Type" class="tut_img_50" src="img/Alteryx/2.6-formulas/2.1-alteryx-formula-data-type.PNG">
+              
+             <h2 style="padding-top: 40px;" >Alteryx Expression Editor</h2>
+              <p></p>
+              <p class="txt2">
+                  Within the expression editor you can type all of your formulas manually.</p>
+             <img alt="Alteryx Expression Editor" class="tut_img_50" src="img/Alteryx/2.6-formulas/2.2-alteryx-expression-editor.PNG">
+              <p class="txt2" style="padding-top: 40px;" >
+                  To use any existing column in the formula, either type the column name inside brackets i.e. [Sales] or click on the “X” icon and select from the column list. 
+              </p>
+              <img alt="Alteryx Existing Columns" class="tut_img_50" src="img/Alteryx/2.6-formulas/3-alteryx-existing-columns.PNG">
+              <p class="txt2" style="padding-top: 40px;" >
+                  You can then use the following syntax to perform basic arithmetic operations between the existing columns:
+              </p>
+                <ul class="txt2">
+                    <li>+ Addition</li>
+                    <li>- Subtraction</li>
+                    <li>* Multiplication</li>
+                    <li>/ Division</li>
+                </ul>
+              
+              <h2 style="padding-top: 40px;" >Formula Tool Built-in Functions</h2>
+              <p></p>
+              <p class="txt2">
+                  If you are confident with using more advanced functions, you can click on the f(x) icon and insert any Alteryx built-in function that can be modified to your needs. Alteryx provides a large collection of functions to choose from and more details can be found on these in the Alteryx reference documentation <a class="txt" href="https://help.alteryx.com/current/Reference/Functions.htm">here</a>. These can also be typed manually once you are familiar with the function syntax.
+              </p>
+              <img alt="Alteryx Formula Functions" class="tut_img_50" src="img/Alteryx/2.6-formulas/4-alteryx-in-built-formulas.PNG">
+              <p class="txt2" style="padding-top: 40px;" >
+                Finally to create or modify another column, simply click on the “+” icon or the bin icon to delete the column.
+              </p>
+              <img alt="Alteryx Additional Column" class="tut_img_50" src="img/Alteryx/2.6-formulas/4.1-alteryx-formula-new-columns.PNG">
+              <p class="txt2" style="padding-top: 40px;" >
+                  Let’s see how we can use this tool in practice. In our workflow we have the retail price of the products bought and any promotion discount rate that was applied. From this we can use the <b>Formula Tool</b> to calculate the sales value for each order. Let’s do this now.
+              </p>
+              <div class="wide_box">
+                  <div class="box">
+                      <p class="txt2">Step 1:</p>
+                      <p class="txt2">Drag a <b>Formula Tool</b> from tool pallet to the workspace and connect to the input to the output of the Data Cleansing Tool.</p></div>
+                  <div class="box">
+                    <img alt="Alteryx Add Formula Tool" class="tut_img" src="img/Alteryx/2.6-formulas/5-alteryx-add-formula-tool.PNG"></div>
+             </div>
+              <p></p>
+             <div class="wide_box">
+                  <div class="box2">
+                      <p class="txt2">Step 2:</p>
+                      <p class="txt2">In the configuration window for the <b>Formula Tool</b> select “Add Column” from the “Select Column” dropdown. Name it “sales_value” and type the expression in the expression editor as below or construct it using the “Existing Columns” list.</p></div>
+                  <div class="box2">
+                    <img alt="Alteryx Formula Tool Configuration Window" class="tut_img" src="img/Alteryx/2.6-formulas/6-alteryx-formula-tool-configuration.PNG"></div>
+             </div>
+             <div class="wide_box">
+                  <div class="box2">
+                      <p class="txt2">Step 3:</p>
+                      <p class="txt2">Finally let’s run the workflow. You should see the “sales_value” field appear in the output of the <b>Formula Tool</b>.</p></div>
+                  <div class="box2">
+                    <img alt="Alteryx Formula Tool Output" class="tut_img" src="img/Alteryx/2.6-formulas/7-alteryx-formula-tool-output.PNG"></div>
+             </div>
+            
+          
+        </div>
+    </div>
+    </div>
+    <a href="alteryx-formula-tool.html" style="text-decoration: none; padding-top: 40px;"><div id="next_mobile">Next</div></a>
+<!-------------------------------------FOOTER---------------------------------->
+<div id="footer"></div>
+
+<!----------AD BANNER-------------------->
+<div class="ad_banner">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <ins class="adsbygoogle"
+             style="display:block; text-align:center;"
+             data-ad-layout="in-article"
+             data-ad-format="fluid"
+             data-ad-client="ca-pub-4825364639199120"
+             data-ad-slot="9368231129"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+</div>
+<!-------------------------------------SIDE AD BAR----------------------------->
+<div id="ad_bar" >
+    <!-- side_bar_1 -->
+    <ins class="adsbygoogle"
+         style="display:block; margin-top: 10vh;"
+         data-ad-client="ca-pub-4825364639199120"
+         data-ad-slot="2467780853"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+</div>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>    
+
+</body>
+</html>
