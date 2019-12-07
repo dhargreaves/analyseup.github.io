@@ -11,10 +11,10 @@
   gtag('config', 'UA-147504302-1');
 </script>
 
-    <title>Alteryx Formula Tool - AnalyseUp</title>
+    <title>Alteryx Summarize Tool - AnalyseUp</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Learn how to create new columns of calculated values in Alteryx using the Alteryx Formula Tool. We will show you how to build columns using basic arithmetic functions and exisiting columns from your data sources.">
+    <meta name="description" content="Learn how to use the Summarize Tool in Alteryx to aggregate data. See how we can use GroupBy, Sum, Count, Min, Max and Avg to analyse data.">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link href='../css/w3.css' rel='stylesheet' type="text/css">
     <link href='../css/page_style.css' rel='stylesheet' type='text/css'> 
@@ -56,8 +56,8 @@
             <a href="alteryx-inner-join.html" class="w3-bar-item w3-button side_link" >Inner Join</a>
             <a href="alteryx-outer-join.html" class="w3-bar-item w3-button side_link" >Outer Joins</a>
         <h6 class="side_title">Formulas & Aggregations</h6>
-            <a id="sel" href="alteryx-formula-tool.html" class="w3-bar-item w3-button side_link" >Formulas </a>
-            <a href="alteryx-summarize-tool.html" class="w3-bar-item w3-button side_link" >Aggregating Data</a>
+            <a href="alteryx-formula-tool.html" class="w3-bar-item w3-button side_link" >Formulas </a>
+            <a id="sel" href="alteryx-summarize-tool.html" class="w3-bar-item w3-button side_link" >Aggregating Data</a>
     </div>
 
 <!--Content----->
@@ -71,7 +71,7 @@
           
           <!--Page Content -->
           <div class="h_right">
-              <h1>Alteryx Formulas</h1>
+              <h1>Aggregating Data with Alteryx</h1>
             </div>
         <!--TOP AD BANNER-->
         <div class='horizontal_ad'>
@@ -89,75 +89,76 @@
           <div class="w3-container">
               <p></p>
               <p class="txt2">
-                  Once we have imported data into our workflows we will often want to create additional columns of calculated values based on the data from our original sources or modify the values in existing columns. In Alteryx we can use the <b>Formula Tool</b> to do this using basic arithmetic functions along with more advanced functions provided within the tool.
+                Often we will want to aggregate our data by groups, for example we may want to know the number of orders (aggregate) for each product (groups). For those experienced with SQL or Excel pivot tables will be familiar with grouping by one or more fields and then performing aggregations such as sum and count. 
               </p>
-              <img alt="Alteryx Formula Tool" class="tut_img" src="img/Alteryx/2.6-formulas/1-alteryx-formula-tool.PNG">
-              
-              <h2 style="padding-top: 40px;" >Alteryx Formula Tool</h2>
+              <h2 style="padding-top: 40px;" >Alteryx Summarize Tool</h2>
               <p></p>
               <p class="txt2">
-                  Within the <b>Formula Tool</b> configuration window you can create new columns by clicking on the “Select Column” dropdown menu and selecting “New Column”. You will then be presented with a text box to type in the column name. You can also modify existing columns by clicking on the required column name.
+                  In Alteryx we use the <b>Summarize Tool</b> to perform these summary processes. The tool can be found in the Transform tab of the tool pallet.
               </p>
-              <img alt="Alteryx Select Column" class="tut_img_50 large_img" src="img/Alteryx/2.6-formulas/2-alteryx-select-column.PNG">
+              <img alt="Alteryx Summarize Tool" class="tut_img_50" src="img/Alteryx/2.7-aggregations/1-summarize-tool.PNG">
               <p class="txt2" style="padding-top: 40px;" >
-                When creating a new column you have the option to define the data type for the column by selecting the data type from the drop down menu along with precision. If modifying the values in an existing column then the data type cannot be changed.
+                  In the <b>Summarize Tool</b> configuration window we can select which fields we want perform which summary process on. If we select a field in the “Fields” list at the top and then click the “Add” drop down menu you will be presented with a list of summary processes that can be performed on the field selected. 
               </p>
-              <img alt="Alteryx Formula Data Type" class="tut_img_50" src="img/Alteryx/2.6-formulas/2.1-alteryx-formula-data-type.PNG">
+              <div class="wide_box2">
+                <div class="wide_box2">
+                    <img alt="Alteryx Summarize Tool" class="tut_img_50" src="img/Alteryx/2.7-aggregations/2-summary-processes.PNG">
+                </div>
+                <div class="wide_box2">
+                    <img alt="Alteryx Summarize Tool" class="tut_img_50" src="img/Alteryx/2.7-aggregations/2.1-summary-processes.PNG">
+                  </div>
+              </div>
               
-             <h2 style="padding-top: 40px;" >Alteryx Expression Editor</h2>
+             <h2 style="padding-top: 40px;" >Alteryx Summary Processes</h2>
               <p></p>
               <p class="txt2">
-                  Within the expression editor you can type all of your formulas manually.</p>
-             <img alt="Alteryx Expression Editor" class="tut_img_50" src="img/Alteryx/2.6-formulas/2.2-alteryx-expression-editor.PNG">
-              <p class="txt2" style="padding-top: 40px;" >
-                  To use any existing column in the formula, either type the column name inside brackets i.e. [Sales] or click on the “X” icon and select from the column list. 
+                As you can see Alteryx comes with a large list of processes and which ones you can use on a given field will depend on the data type of the field(s) selected. You can find more detail on each process in the Alteryx reference documentation <a class="txt" href="https://help.alteryx.com/current/Reference/SummaryProceses.htm">here</a> but we will briefly describe a few of the most important below.
               </p>
-              <img alt="Alteryx Existing Columns" class="tut_img_50" src="img/Alteryx/2.6-formulas/3-alteryx-existing-columns.PNG">
-              <p class="txt2" style="padding-top: 40px;" >
-                  You can then use the following syntax to perform basic arithmetic operations between the existing columns:
-              </p>
-                <ul class="txt2">
-                    <li>+ Addition</li>
-                    <li>- Subtraction</li>
-                    <li>* Multiplication</li>
-                    <li>/ Division</li>
+               <ul class="txt2">
+                   <li><b>GroupBy</b> – Creating a group by field will mean that all records with the same field value in the data will be grouped together. For example we could group by order date and all records in the data with the same order date value will be treated as the same group and any aggregations performed on other fields will be done performed for each order date. Therefore each group will have it’s own set of aggregated values.</li>
+                   <li><b>Sum</b> – Performing a sum process on a given field will result in all values for each group being added together.</li>
+                   <li><b>Count</b> – Will count all records in the field belonging to each group</li>
+                   <li><b>Min</b> – Will take the minimum field value of each group</li>
+                   <li><b>Max</b> – Will take the maximum field value of each group</li>
+                   <li><b>Avg</b> – Will calculate the average or mean value of each group</li>
                 </ul>
+
+              <p class="txt2" style="padding-top: 40px;" >
+                  For our workflow we want to know the total sales value for each genre on each date in our data set so let’s use a <b>Summarize Tool</b> to create this output.
+              </p>
               
-              <h2 style="padding-top: 40px;" >Formula Tool Built-in Functions</h2>
-              <p></p>
-              <p class="txt2">
-                  If you are confident with using more advanced functions, you can click on the f(x) icon and insert any Alteryx built-in function that can be modified to your needs. Alteryx provides a large collection of functions to choose from and more details can be found on these in the Alteryx reference documentation <a class="txt" href="https://help.alteryx.com/current/Reference/Functions.htm">here</a>. These can also be typed manually once you are familiar with the function syntax.
-              </p>
-              <img alt="Alteryx Formula Functions" class="tut_img_50" src="img/Alteryx/2.6-formulas/4-alteryx-in-built-formulas.PNG">
-              <p class="txt2" style="padding-top: 40px;" >
-                Finally to create or modify another column, simply click on the “+” icon or the bin icon to delete the column.
-              </p>
-              <img alt="Alteryx Additional Column" class="tut_img_50" src="img/Alteryx/2.6-formulas/4.1-alteryx-formula-new-columns.PNG">
-              <p class="txt2" style="padding-top: 40px;" >
-                  Let’s see how we can use this tool in practice. In our workflow we have the retail price of the products bought and any promotion discount rate that was applied. From this we can use the <b>Formula Tool</b> to calculate the sales value for each order. Let’s do this now.
-              </p>
               <div class="wide_box">
                   <div class="box">
                       <p class="txt2">Step 1:</p>
-                      <p class="txt2">Drag a <b>Formula Tool</b> from tool pallet to the workspace and connect to the input to the output of the Data Cleansing Tool.</p></div>
+                      <p class="txt2">Drag the <b>Summarize Tool</b> onto the workspace and connect the output of the Formula Tool to the input of the <b>Summarize Tool</b>.</p></div>
                   <div class="box">
-                    <img alt="Alteryx Add Formula Tool" class="tut_img" src="img/Alteryx/2.6-formulas/5-alteryx-add-formula-tool.PNG"></div>
+                    <img alt="Alteryx Add Summarize Tool" class="tut_img" src="img/Alteryx/2.7-aggregations/3-add-summarize-tool.PNG"></div>
              </div>
               <p></p>
              <div class="wide_box">
-                  <div class="box2">
+                  <div class="box">
                       <p class="txt2">Step 2:</p>
-                      <p class="txt2">In the configuration window for the <b>Formula Tool</b> select “Add Column” from the “Select Column” dropdown. Name it “sales_value” and type the expression in the expression editor as below or construct it using the “Existing Columns” list.</p></div>
-                  <div class="box2">
-                    <img alt="Alteryx Formula Tool Configuration Window" class="tut_img" src="img/Alteryx/2.6-formulas/6-alteryx-formula-tool-configuration.PNG"></div>
+                      <p class="txt2">Select “OrderDate” then press Shift and click the “Genre” field in the Fields window to select both fields. Click the “Add” dropdown menu and select “GroupBy”.</p></div>
+                  <div class="box">
+                    <img alt="Alteryx Summarize Tool Configuration Window 1" class="tut_img" src="img/Alteryx/2.7-aggregations/4.1-summarize-tool-configuration.PNG"></div>
              </div>
              <div class="wide_box">
-                  <div class="box2">
+                  <div class="box">
                       <p class="txt2">Step 3:</p>
-                      <p class="txt2">Finally let’s run the workflow. You should see the “sales_value” field appear in the output of the <b>Formula Tool</b>.</p></div>
-                  <div class="box2">
-                    <img alt="Alteryx Formula Tool Output" class="tut_img" src="img/Alteryx/2.6-formulas/7-alteryx-formula-tool-output.PNG"></div>
+                      <p class="txt2">Select the “Sales_Value” field, click the “Add” drop down menu and then select “Sum”.</p></div>
+                  <div class="box">
+                    <img alt="Alteryx Summarize Tool Configuration Window 2" class="tut_img" src="img/Alteryx/2.7-aggregations/4.2-summarize-tool-configuration.PNG"></div>
              </div>
+             <div class="wide_box">
+                  <div class="box">
+                      <p class="txt2">Step 4:</p>
+                      <p class="txt2">Finally, run the workflow and click the output of the <b>Summarize Tool</b> and you should see the following output.</p></div>
+                  <div class="box">
+                    <img alt="Alteryx Summarize Tool Output" class="tut_img" src="img/Alteryx/2.7-aggregations/5-summarize-tool-output.PNG"></div>
+             </div>
+              <p class="txt2" style="padding-top: 40px;" >
+                    We have now managed to import our data sources, process, blend and aggregate to create an output that gives us the insight we require and is almost ready to be exported.
+              </p>
             
           
         </div>
