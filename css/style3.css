@@ -1,0 +1,353 @@
+/*------BANNER & TAGLINE-------*/
+#banner { 
+    /*Centre Image*/
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /*Set height & width*/
+    width: auto;
+    height: 70px;
+    /*Drop 20px from top*/
+    position: relative;
+    top: 20px;
+}
+#tagline {
+    width: 100%;
+    position: relative;
+    padding-top:25px;
+    color:grey;
+    font-size:17px; 
+    letter-spacing: 3px;
+    text-align:center;
+    padding-right: 20%;
+    padding-left: 20%;
+    font-family:"arial";
+}
+.horizontal_seperator {
+    width:100%;
+    height:1px;
+    background-color: lightgray;
+    position:relative;
+  
+}
+
+/*-------TUTORIAL LOGOS-------*/
+.logo_container {
+    display: inline-block;
+    top:100px;
+    width: 100%;
+    height:50px;
+}
+
+.logo {
+    top:80px;
+    width:auto;
+    left:calc(50% - 11vh);
+    height:180px;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.l_box {
+    display: block;
+    margin-top:20px;
+    margin-bottom:20px;
+    padding-left: 20px;
+    padding-right:20px; 
+}
+
+.t_box {
+    display: inline-block;
+    text-align: center;
+    padding-left: 20px;
+    padding-right:20px; 
+}
+
+/*Spacer for outside of logo box*/
+.outer_box {
+    display: inline-block;
+    width: 15%; 
+}
+
+.logo_box {
+    display: inline-block;
+    width: 35%;
+    text-align: center;
+    margin-top:20px;
+    margin-bottom:20px;
+    padding-left: 20px;
+    padding-right:20px;
+    /*vertical-align: middle;*/
+}
+.logo_text {
+    width: 100%;
+    position: inline-block;
+    top:80px;
+    color:#595959;
+    font-size:17px; 
+    letter-spacing: 3px;
+    text-align:center;
+    padding-right:15%;
+    padding-left: 15%;
+    font-family:"arial";  
+}
+
+/*-----FOOTER MENU------*/
+.footer_container{
+    width:100%;
+    height:400px;
+    position:relative;
+    top:30px;
+}
+
+.footer {
+    width:49%;
+    display:inline-block;
+    height: 80px;
+    color:gray;
+    position:relative;
+    font-weight: 200;
+    top: 25%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    
+}
+#right_footer{
+            float:right;
+        }
+.footer p{
+    position: relative;
+    text-align:center;
+    font-family:"arial";
+    font-size:15px;
+    letter-spacing: 2px;
+    vertical-align: middle;
+}
+.footer ul {
+    padding-left:0
+}
+.footer ul li{
+    position:relative;
+    font-size:15px;
+    margin:auto;
+    padding-left:0;
+    list-style: none;
+    font-family:"helvetica";
+    letter-spacing: 2px;
+    top:5px;
+    text-align:center;
+}
+
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+
+.vertical_seperator {
+    height: 180px;
+    width:1px;
+    background-color: lightgray;
+    position:relative;
+    display:inline;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*-----CONTENT SUMMARIES-----*/
+.content_summary {
+    display: block;
+    position:relative;
+    background-color: grey;
+    top:100%;
+    width: 100%;
+    height: 220px;
+}
+
+
+.summary_image {
+    display: inline-block;
+    width: 49%;
+    height: 100%;
+    text-align: center;
+    overflow: hidden;
+    background-color: grey;
+}
+
+.summary_image h1 {
+    font-family:"arial";
+    color: white;
+    font-size:17px;
+    letter-spacing: 2px;
+    position: absolute;
+    top: 40%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+}
+
+.summary_image img {
+    display:inline-block;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    height: 100%;
+    opacity: 0.3;
+    filter: alpha(opacity=30);
+}
+
+.summary_text {
+    padding-top:4%;
+    overflow:inherit;
+    color: white;
+    font-family:"arial";
+    font-size:14px;
+    letter-spacing: 1px;
+    display: inline-block;
+    width: 49%;
+    height: 100%;
+    text-align: center;
+    padding-left: 3%;
+    padding-right: 3%;
+    background-color: grey;
+    float:right;
+    vertical-align: middle;
+}
+
+.twitter_timeline {
+    position: relative;
+    display: block;
+    width:50%;
+}
+
+
+/*TABLET SIZE*/
+    @media (max-width: 980px) {
+        .logo_box {
+            display: block;
+            width:100%;
+        }
+        
+        .footer_container{
+            height: 200px;
+
+        }
+        .content_summary{
+            position: relative;
+        }
+        .summary_text{
+            display:block;
+            width:100%;
+            height: auto;
+        }
+        .summary_image{
+            display:block;
+            height: 70%;
+            width:auto;
+        }
+        .summary_image img {
+            width: auto;
+            height: 160%;
+        }
+        .summary_image h1 {
+            top: 30%;
+            left: 50%;
+        }
+        .site_summary {
+            top:130vh;
+        }
+        .summary_title {
+            font-family:"arial";
+            color: white;
+            font-size:2.5vh;
+            letter-spacing: 2px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+}
+
+/*MOBILE SIZE*/
+    @media (max-width: 450px) {
+        #banner { 
+            width: auto;
+            height: 50px;
+            top: 15px;
+        }
+
+        #tagline {
+            padding-top:22px;
+            font-size:12px; 
+            letter-spacing: 2.5px;
+            padding-right: 15%;
+            padding-left: 15%;
+        }
+
+        .logo_container {
+            display: inline-block;
+            width: 100%;
+            height:50px;
+
+        }
+
+        .logo {
+            top:80px;
+            height:120px;
+        }
+        .logo_text {
+
+            width: 100%;
+            position: inline-block;
+            top:80px;
+            color:#595959;
+            font-size:12px; 
+            letter-spacing: 3px;
+            text-align:center;
+            padding-right: 15%;
+            padding-left: 15%;
+            font-family:"arial";
+        }
+        .footer_container{
+            height:200px;
+        }
+        .footer {
+            display:block;
+            top:15%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        #right_footer{
+            float:none;
+        }
+        .footer p{
+            font-size:12px;
+            letter-spacing: 2px;
+
+        }
+        
+        .footer ul li{
+            font-size:12px;
+            letter-spacing: 2px;
+        }
+        
+        .summary_image{
+            height: 40%;
+        }
+        
+        .summary_image h1 {
+            font-size: 14px;
+            top:15%
+        }
+        
+        .summary_text{
+            font-size: 12px;
+        }
+        
+}
