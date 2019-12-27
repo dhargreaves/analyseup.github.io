@@ -34,8 +34,9 @@
 /*-------TUTORIAL LOGOS-------*/
 
 .tutorial_container {
+    top:3vh;
     width:25%;
-    height:500px;
+    height:450px;
     background-color:#F5F5F5;
     border: 1px solid #F5F5F5;
     border-radius: 10px;
@@ -69,7 +70,7 @@
 }
 
 .tutorial_desc{
-    height:36%;
+    height:30%;
     margin: 5% 5% 5% 5%;
     vertical-align: middle;
     text-align: center;
@@ -148,10 +149,10 @@
             width:60%;
             margin-left: 20%;
             margin-right: 20%;
-            height:500px;
+            height:370px;
         }
         .tutorial_desc{
-            height:160px;
+            height:80px;
         }
 
         .learn_button {
@@ -178,10 +179,11 @@
 
         #tagline {
             padding-top:22px;
-            font-size:14px; 
+            font-size:15px; 
             letter-spacing: 2.5px;
             padding-right: 15%;
             padding-left: 15%;
+            line-height: 20px;
   
         }
         
@@ -193,26 +195,26 @@
             width:80%;
             margin-left: 10%;
             margin-right: 10%;
-            height:450px;
+            height:400px;
         }
         .tutorial_desc{
-            height:140px;
+            height:100px;
         }
 
         .learn_button {
             height:45px;
-            width: 70%;
+            width: 75%;
             top:30px;
-            font-size:12px;
+            font-size:13px;
             margin-bottom: 10px;    
         }
         .tutorial_header h2 {
-            font-size: 20px;
+            font-size: 22px;
             letter-spacing: 0px;
         }
         .txt {
 
-            font-size:13px;
+            font-size:14px;
         }
 
         
