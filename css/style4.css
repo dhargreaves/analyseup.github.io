@@ -57,10 +57,11 @@
 .tutorial_header h2 {
     font-size: 24px;
     letter-spacing: 0px;
+    padding-top:15px;
 }
 
 .tutorial_image{
-    height:35%;
+    height:38%;
     width:auto;
     display: block;
     margin-left: auto;
@@ -70,7 +71,7 @@
 }
 
 .tutorial_desc{
-    height:30%;
+    height:25%;
     margin: 5% 5% 5% 5%;
     vertical-align: middle;
     text-align: center;
@@ -91,7 +92,7 @@
     margin:auto;
     position:relative;
     top:10px;
-    font-size:14px;
+    font-size:1vw;
     text-decoration: none;
     margin-bottom: 10px;    
     vertical-align: middle;
@@ -101,7 +102,7 @@
 
 .txt {
     font-family: "helvetica";
-    font-size:15px;
+    font-size:1.15vw;
     letter-spacing: 1px;
     /*color:#595959;*/
     color:dimgrey;
@@ -138,6 +139,9 @@
     top:5px;
     text-align:center;
 }
+.bottom_container {
+    padding-top:25%;
+}
 
 
 /*TABLET SIZE*/
@@ -146,26 +150,36 @@
         /*TUTORIAL CONTAINERS*/
         .tutorial_container {
             display: block;
-            width:60%;
-            margin-left: 20%;
-            margin-right: 20%;
-            height:370px;
+            width:40%;
+            margin-left: 30%;
+            margin-right: 30%;
+            height:50vw;
+        }
+        .tutorial_header h2 {
+            font-size: 3vw;
+            letter-spacing: 0px;
+            padding-top:1vw;
         }
         .tutorial_desc{
-            height:80px;
+            height:12vw;
         }
 
         .learn_button {
-            height:50px;
+            height:10%;
             width: 80%;
-            top:10px;
-            font-size:14px;
-            margin-bottom: 10px;    
+            top:1vw;
+            font-size:1.7vw;
+            margin-bottom: 1.8vw; 
+            line-height: 4vw;
         }
         .txt {
 
-            font-size:14px;
+            font-size:1.8vw;
         }
+        
+        .bottom_container {
+            padding-top:-10vw;
+}
 
 }
 
@@ -195,26 +209,33 @@
             width:80%;
             margin-left: 10%;
             margin-right: 10%;
-            height:400px;
+            height:100vw;
         }
+        .tutorial_image {
+            height:45%;
+        }
+        .tutorial_header h2 {
+            font-size: 5vw;
+            letter-spacing: 0px;
+            padding-top:1vw;
+        }
+
         .tutorial_desc{
-            height:100px;
+            height:22vw;
         }
 
         .learn_button {
-            height:45px;
-            width: 75%;
-            top:30px;
-            font-size:13px;
-            margin-bottom: 10px;    
-        }
-        .tutorial_header h2 {
-            font-size: 22px;
-            letter-spacing: 0px;
+            height:10%;
+            width: 80%;
+            top:1vw;
+            font-size:3vw;
+            margin-bottom: 1.8vw; 
+            line-height: 7vw;
+  
         }
         .txt {
 
-            font-size:14px;
+            font-size:3.5vw;
         }
 
         
