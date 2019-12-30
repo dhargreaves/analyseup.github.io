@@ -37,10 +37,12 @@
     top:3vh;
     width:25%;
     height:450px;
-    background-color:#F5F5F5;
+    /*
+    background-color:#F5F5F5;*/
+    background-color: #E8E8E8;
     border: 1px solid #F5F5F5;
-    border-radius: 2px;
-    box-shadow: 10px 7px 10px #E0E0E0;
+    border-radius: 10px;
+    /*box-shadow: 10px 7px 10px #E0E0E0;*/
     margin-top: 5%;  
     margin-left: 4%;
     margin-right:4%;
@@ -61,14 +63,22 @@
 
 .tutorial_image{
     height:38%;
-    width:auto;
+    width:96%;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius:0px;
-    padding-top:3%;
     /*
-    box-shadow: 10px 7px 10px #E0E0E0;*/
+    margin-left: auto;
+    margin-right: auto;*/
+    border-radius:0px;
+    margin-top:2%;
+    margin-right:0%;
+    margin-left:2%;
+    box-shadow: 10px 7px 10px darkgrey;
+    overflow: hidden;
+}
+
+.tutorial_image img {
+    height:100%;
+    width:auto;
 }
 
 .tutorial_desc{
@@ -98,6 +108,7 @@
     margin-bottom: 10px;    
     vertical-align: middle;
     line-height: 40px;
+    box-shadow: 10px 7px 10px darkgrey;
     
 }
 
@@ -150,14 +161,14 @@
     /*TUTORAL LOGOS*/
 
     .learn_button {
-        font-size:15px;
+        font-size:16px;
         margin-bottom: 10px;    
         line-height: 40px;
 
     }
 
     .txt {
-        font-size:15px;
+        font-size:16px;
     }
 }
 
