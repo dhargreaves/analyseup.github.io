@@ -47,7 +47,6 @@
     position:relative;
     overflow: hidden;
     display: inline-block;
-    
 
 }
 .tutorial_header {
@@ -145,9 +144,25 @@
     padding-top:25%;
 }
 
+/*LARGE SCREEN*/
+@media (min-width:1280px){
+    
+    /*TUTORAL LOGOS*/
+
+    .learn_button {
+        font-size:17px;
+        margin-bottom: 10px;    
+        line-height: 40px;
+
+    }
+
+    .txt {
+        font-size:14px;
+    }
+}
 
 /*TABLET SIZE*/
-    @media (max-width: 980px) {
+    @media (max-width: 1024px) {
         
         /*TUTORIAL CONTAINERS*/
         .tutorial_container {
