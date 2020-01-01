@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <!-- GOOGLE ANALYTICS -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-147504302-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-147504302-1');
+    </script>
+
+    <title>Python Variables & Comments - Learn Python for Data Science - AnalyseUp.com</title>
+    
+    <!--META TAGS-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Learn how to assign variables in Python and the different data types that can be used. We'll also look at how to add comments to your Python code to improve readability.">
+    <!--SOCIAL MEDIA META TAGS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--STYLESHEETS-->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link href='../css/w3.css' rel='stylesheet' type="text/css">
+    <link href='../css/page_style.css' rel='stylesheet' type='text/css'> 
+
+    <!--JAVASCRIPT FOR BURGER MENU-->
+    <script>
+        function w3_open() {
+            document.getElementById("mySidebar").style.display = "block";
+        }
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+        }
+    </script>
+</head>
+    
+<body>
+    <!--TOP BANNER-->
+
+
+    <div id="top">
+        <a href="https://www.analyseup.com"><img alt="Upgrade your data skills with analyseup.com" id="banner" src="../img/AnalyseUp_Black(v2.2).png" ></a>
+        <div class="sep"></div>
+    </div>
+    
+
+    
+    <!--SIDE MENU-->
+    <div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style="width:250px; top:0vh;" id="mySidebar">
+        <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
+        <!--NEXT BUTTON-->
+        <a href="" style="text-decoration: none;"><div id="next">Next</div></a>
+        <p></p>
+        <!--MENU LINKS-->
+        <h6 class="side_title">Python Basics</h6>
+            <a id="sel" href="python-variables-and-data-types.html" class="w3-bar-item w3-button side_link" >Variables & Comments</a>
+            <a href="python-sequence-data-types.html" class="w3-bar-item w3-button side_link" >Sequence Data Types</a>
+            <a href="python-strings.html" class="w3-bar-item w3-button side_link" >Strings</a>
+            <a href="python-lists-and-tuples.html" class="w3-bar-item w3-button side_link" >Lists & Tuples</a>
+        <h6 class="side_title">Data Wrangling with Pandas</h6>
+            <a href="" class="w3-bar-item w3-button side_link" >Coming Soon</a>
+        <h6 class="side_title">Visualisation</h6>
+            <a href="" class="w3-bar-item w3-button side_link" >Coming Soon</a>
+        <h6 class="side_title">Machine Learning</h6>
+            <a href="" class="w3-bar-item w3-button side_link" >Coming Soon</a>
+    </div>
+
+    <!--MAIN PAGE----->
+    <div class="w3-main" style="margin-left:250px; margin-right:200px;">
+    <div>
+            
+        <!--MENU BUTTON-->
+          <div class="h_left">
+              <button class="w3-button w3-xlarge w3-hide-large" onclick="w3_open()" style="left:0;">&#9776;</button>
+          </div>
+        
+          <!--HEADER-->
+          <div class="h_right">
+              <h1>Python Variables & Comments</h1>
+          </div>
+        
+        <!--TOP AD BANNER-->
+        <div class='horizontal_ad'>
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- top_ad_banner -->
+            <ins class="adsbygoogle"
+                 style="display:inline-block;width:100%;height:100px;
+                        text-align:center;"
+                 data-ad-client="ca-pub-4825364639199120"
+                 data-ad-slot="9607273384"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+        
+        <!--CONTENT-->
+        <div class="w3-container">
+              
+            <div class="share_buttons">
+                  <!--TWITTER FOLLOW-->
+                  <a href="https://twitter.com/AnalyseUp?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @AnalyseUp</a>
+                  <!--TWEET-->
+                  <a href="https://twitter.com/share?text=www.analyseup.com/learn-python-for-data-science/python-variables-and-data-types.html" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                  <!--FACEBOOK SHARE-->
+                  <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fwww.analyseup.com/learn-python-for-data-science/python-variables-and-data-types.html&layout=button_count&size=small&width=77&height=20&appId" width="77" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                  
+            </div>
+            <p></p>
+            <img src="../img/learn-python-for-data-science/variables-comments/python-variables.jpg" alt="Python Variables" class="photo" >
+            <h2 class="txt_pad">Python Variables</h2>
+              <p class="txt">Python uses variables to store pieces of information or values in memory. A variable name refers to the block of memory that stores this value. You can think of the block of memory as a box that we store something in and the variable name as the box label. Whenever we call the box label we get the contents of the box. This is how variables work in Python and most other general purpose programming languages.</p>
+            <p class="txt2">Variables can contain many data types including:</p>
+                <ul class="txt2">
+                 <li>Numbers (integers, floats, complex numbers)</li>
+                <li>Boolean values (True/False)</li>
+                <li>Sequence Types (Strings, Lists & Tuples)</li>
+                <li>Dictionaries</li>    
+            </ul>
+            <p class="txt2">Variables are assigned or updated in the following way with the variable name on the left and the information being stored on the right of the equals sign.
+            </p>
+            
+                <div class="wide_box code_wide_box">
+                  <div class="code_box">
+                      <div class="txt2 code">
+                            variable_number = 32 <br/>
+                            variable_string = <span class='string'>'today'</span> <br/>
+                          boolean = <span class="key_word">True</span> <br/>
+                      </div>
+                  </div>
+              </div>
+            <p class="txt2 txt_pad">When the variable name is referenced (called) the value stored in the variable will be returned.</p>
+                <div class="wide_box code_wide_box">
+                  <div class="code_box">
+                      <div class="txt2 code">
+                          <span class="key_word">print</span> (variable_number)<br/>
+                      </div>
+                  </div>
+                  <div class="output_box">
+                    <div class="txt2 output_txt">
+                        > 32
+                      </div>
+                  </div>
+              </div>
+            <p class="txt2 txt_pad">We can also use the variable name to pass the stored value into other tasks or manipulate other values.</p>
+            
+                <div class="wide_box code_wide_box">
+                  <div class="code_box">
+                      <div class="txt2 code">
+                          <span class="key_word">print</span> (<span class="string">'Variable String: '</span> + variable_string)<br/>
+                          <span class="key_word">print</span> (variable_number + 10)<br/>
+                      </div>
+                  </div>
+                  <div class="output_box">
+                    <div class="txt2 output_txt">
+                        > Variable String: today <br/>
+                        > 42
+                      </div>
+                  </div>
+              </div>
+              <p class="txt2 txt_pad">Variable names must start with a letter or an underscore but can contain numbers and other characters after the first character. The common convention for naming variables in Python is to use either a single word or multiple words joined together by underscores such as:</p>  
+              <ul class="txt2">
+                    <li>variable</li>
+                    <li>variable_name</li>
+              </ul>
+              <h2 class="txt_pad">Python Comments</h2>
+              <p class="txt">In our Python scripts and notebooks we will often want to place comments in our scripts. Comments in code are free text that are ignored when the code is run put provide information to ourselves or others reading the code about the purpose for a particular snippet of code.</p>
+              <p class="txt2">There are two ways to add comments within Python code. The first is that we can add a hash # at the start of a line and anything that is written after the hash on the same line will be treated as a comment and therefore ignored at run time.</p>
+              <div class="wide_box code_wide_box">
+                  <div class="code_box">
+                      <div class="txt2 code">
+                            <span class="comment">#Hash Comment</span> <br/>
+                      </div>
+                  </div>
+              </div>
+              <p class="txt2 txt_pad">The hash comment is useful for writing just a few brief words on your code, however if you require more scope then you can place your comments in between two sets of three quotation marks. Anything that appears after the first set of quotation marks is treated as a comment and remains the case until a second set of quotation marks is reached. This means we are not restricted to placing comments on a single line but can be over as many lines as required.</p>
+              <div class="wide_box code_wide_box">
+                  <div class="code_box">
+                      <div class="txt2 code">
+                         <span class="comment">"""1st Comment Line</span> <br/>
+                         <span class="comment">2nd Comment Line"""</span> <br/>
+                      </div>
+                  </div>
+              </div>
+        </div>
+    </div>
+    </div>
+    <a href="alteryx-formula-tool.html" style="text-decoration: none;"><div id="next_mobile">Next</div></a>
+<!-------------------------------------FOOTER---------------------------------->
+<div id="footer"></div>
+
+<!--AD BANNER-->
+<div class="ad_banner">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <ins class="adsbygoogle"
+             style="display:block; text-align:center;"
+             data-ad-layout="in-article"
+             data-ad-format="fluid"
+             data-ad-client="ca-pub-4825364639199120"
+             data-ad-slot="9368231129"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+</div>
+        
+<!--SIDE AD BAR-->
+<div id="ad_bar" >
+    <!-- side_bar_1 -->
+    <ins class="adsbygoogle"
+         style="display:block; margin-top: 10vh;"
+         data-ad-client="ca-pub-4825364639199120"
+         data-ad-slot="2467780853"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+</div>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>    
+
+</body>
+</html>

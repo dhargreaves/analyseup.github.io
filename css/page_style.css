@@ -195,6 +195,12 @@ h2 {
     /*color:#ff7700ff;*/
 }
 
+h3 {
+    font-size:16px;
+    font-weight:600;
+    color:#595959;
+}
+
 #sub {
     background-color: #F0F0F0;
     padding-top:5px;
@@ -458,6 +464,19 @@ tr:nth-child(even) {
     top:20px;
 }
 
+/*PHOTOS*/
+.photo {
+    display:block;
+    height:auto; 
+    width:99%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.photo_50{
+    width:50%;
+}
+
 /*QUIZ*/
 .q_card {
     height: auto;
@@ -697,6 +716,11 @@ input {
         }
         .output_txt {
             font-size:11px;
+        }
+    /*PHOTOS*/
+        .photo_50 {
+
+            width:100%;
         }
 
 

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <!-- GOOGLE ANALYTICS -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-147504302-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-147504302-1');
+    </script>
+
+    <title>Python Sequence Data Types - Learn Python for Data Science at AnalyseUp</title>
+    
+    <!--META TAGS-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Learn the fundamentals of working with Sequence Data Types in Python. Learn how to assign them, about Indexing and Slicing. We also cover the commone pitfalls of working with these data types.">
+    <!--SOCIAL MEDIA META TAGS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--STYLESHEETS-->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link href='../css/w3.css' rel='stylesheet' type="text/css">
+    <link href='../css/page_style.css' rel='stylesheet' type='text/css'> 
+
+    <!--JAVASCRIPT FOR BURGER MENU-->
+    <script>
+        function w3_open() {
+            document.getElementById("mySidebar").style.display = "block";
+        }
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+        }
+    </script>
+</head>
+    
+<body>
+    <!--TOP BANNER-->
+
+
+    <div id="top">
+        <a href="../index.html"><img alt="Get Started with Data Science, Data Analysis and BI" id="banner" src="../img/AnalyseUp_Black(v2.2).png" ></a>
+        <div class="sep"></div>
+    </div>
+    
+
+    
+    <!--SIDE MENU-->
+    <div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style="width:250px; top:0vh;" id="mySidebar">
+        <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
+        <!--NEXT BUTTON-->
+        <a href="" style="text-decoration: none;"><div id="next">Next</div></a>
+        <p></p>
+        <!--MENU LINKS-->
+        <h6 class="side_title">Python Basics</h6>
+            <a href="python-variables-and-data-types.html" class="w3-bar-item w3-button side_link" >Variables & Comments</a>
+            <a id="sel" href="python-sequence-data-types.html" class="w3-bar-item w3-button side_link" >Sequence Data Types</a>
+            <a href="python-strings.html" class="w3-bar-item w3-button side_link" >Strings</a>
+            <a href="python-lists-and-tuples.html" class="w3-bar-item w3-button side_link" >Lists & Tuples</a>
+        <h6 class="side_title">Data Wrangling with Pandas</h6>
+            <a href="" class="w3-bar-item w3-button side_link" >Coming Soon</a>
+        <h6 class="side_title">Visualisation</h6>
+            <a href="" class="w3-bar-item w3-button side_link" >Coming Soon</a>
+        <h6 class="side_title">Machine Learning</h6>
+            <a href="" class="w3-bar-item w3-button side_link" >Coming Soon</a>
+    </div>
+
+    <!--MAIN PAGE----->
+    <div class="w3-main" style="margin-left:250px; margin-right:200px;">
+    <div>
+            
+        <!--MENU BUTTON-->
+          <div class="h_left">
+              <button class="w3-button w3-xlarge w3-hide-large" onclick="w3_open()" style="left:0;">&#9776;</button>
+          </div>
+        
+          <!--HEADER-->
+          <div class="h_right">
+              <h1>Python Sequence Data Types</h1>
+          </div>
+        
+        <!--TOP AD BANNER-->
+        <div class='horizontal_ad'>
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- top_ad_banner -->
+            <ins class="adsbygoogle"
+                 style="display:inline-block;width:100%;height:100px;
+                        text-align:center;"
+                 data-ad-client="ca-pub-4825364639199120"
+                 data-ad-slot="9607273384"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+        
+        <!--CONTENT-->
+        <div class="w3-container">
+              
+            <div class="share_buttons">
+                  <!--TWITTER FOLLOW-->
+                  <a href="https://twitter.com/AnalyseUp?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @AnalyseUp</a>
+                  <!--TWEET-->
+                  <a href="https://twitter.com/share?text=www.analyseup.com/learn-python-for-data-science/python-sequence-data-types" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                  <!--FACEBOOK SHARE-->
+                  <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fwww.analyseup.com/learn-python-for-data-science/python-sequence-data-types.html&layout=button_count&size=small&width=77&height=20&appId" width="77" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                  
+            </div>
+            <p></p>
+            <h2 class="txt_pad">Sequence Data Types in Python</h2>
+              <img src="../img/learn-python-for-data-science/lists-tuples-strings/python-sequence-data-types.jpg" alt="Python sequence data types" class="photo" >
+              <p class="txt txt_pad">Python Sequence Data Types come in several forms including Strings, Lists and Tuples. If we think of regular variables like boxes or containers that hold some information then imagine if we placed a line or queue of people inside one of these boxes. Each person in the line takes up a unique position in the line and we can refer to the line of people as a whole by the name we’ve given to the box or we can refer to an individual person by the name of the box and the position that they are standing (1st, 2nd, 3rd etc). Sequence data types are very much like this.</p>
+            <p class="txt2">A sequence data type is assigned a variable name just like a regular variable but we can then define what chunks of data or elements to add and what position in the line they should occupy.</p>
+            <p class="txt2">Each position within the sequence data type is labelled with a number, know as the Index, which starts at 0 for the 1st position (I know, not very intuitive). Let’s look at an example.
+            </p>
+            <img src="../img/learn-python-for-data-science/lists-tuples-strings/python-list.png" alt="Python Lists" class="photo photo_50" >
+            <p class="txt2 txt_pad">Here we have a variable called “week_days” that contains a sequence data type. The name for each weekday is in it’s own position within the variable’s structure and therefore has it’s own index. </p>
+            <p class="txt2">If we call the name of the variable and an index number inside brackets we will get the element that is stored at this position. For example if we call week_days[1] we will get the value “Tuesday”.  This is known as Indexing.  
+            </p>
+            <div class="wide_box code_wide_box">
+                  <div class="code_box">
+                      <div class="txt2 code">
+                            week_days[1] <br/>
+                      </div>
+                    </div>
+                    <div class="output_box">
+                        <div class="txt2 output_txt">
+                        > 'Tuesday'
+                        </div>
+                  </div>
+            </div>
+            <p class="txt2 txt_pad">As part of indexing we can use index ranges which means that instead of referencing a single position between brackets, [1], we refer to a range of positions starting at one position and ending at another separated by a colon [1:3]. This is known as Slicing. For example week_days[2:4] will return the weekdays stored at positions 2 and 3.</p>
+            <div class="wide_box code_wide_box">
+                  <div class="code_box">
+                      <div class="txt2 code">
+                          week_days[2:4]<br/>
+                      </div>
+                  </div>
+                  <div class="output_box">
+                    <div class="txt2 output_txt">
+                        > ['Wednesday', 'Thursday'] <br/>
+                      </div>
+                  </div>
+              </div>
+              <p class="txt2 txt_pad"><i>Note that closing values in index ranges are not inclusive so index range [2:4] does not represent position 2, 3 and 4.</i></p>  
+              <p class="txt2">All sequence data types allow us to use the Python’s inbuilt LEN function, which will give us the length of a sequence type variable. For example our week_days variable will have length 5 as it contain 5 elements. 
+              </p>
+              <div class="wide_box code_wide_box">
+                  <div class="code_box">
+                      <div class="txt2 code">
+                          <span class="key_word">len</span>(week_days)<br/>
+                      </div>
+                  </div>
+                  <div class="output_box">
+                    <div class="txt2 output_txt">
+                        > 5<br/>
+                      </div>
+                  </div>
+            </div>
+            <p class="txt_pad"></p>
+            <h2 class="txt_pad">IndexError: index out of range</h2>
+            <p class="txt">One of the common errors experienced with sequence data types is the “index out of range” error. This arises if we refer to an index that doesn’t exist, in other words an index that is larger than one less than the number of elements in the variable. In the example above, the elements are stored in positions with indexes 0 to 4. There is no element with index 5 and if we try to call that index we will get an “index out of range” error.</p> 
+            <div class="wide_box code_wide_box">
+                  <div class="code_box">
+                      <div class="txt2 code">
+                            week_days[5] <br/>
+                      </div>
+                    </div>
+                    <div class="output_box">
+                        <div class="txt2 output_txt">
+                        > IndexError: index out of range
+                        </div>
+                  </div>
+            </div>
+            
+
+        </div>
+    </div>
+    </div>
+    <a href="alteryx-formula-tool.html" style="text-decoration: none;"><div id="next_mobile">Next</div></a>
+<!-------------------------------------FOOTER---------------------------------->
+<div id="footer"></div>
+
+<!--AD BANNER-->
+<div class="ad_banner">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <ins class="adsbygoogle"
+             style="display:block; text-align:center;"
+             data-ad-layout="in-article"
+             data-ad-format="fluid"
+             data-ad-client="ca-pub-4825364639199120"
+             data-ad-slot="9368231129"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+</div>
+        
+<!--SIDE AD BAR-->
+<div id="ad_bar" >
+    <!-- side_bar_1 -->
+    <ins class="adsbygoogle"
+         style="display:block; margin-top: 10vh;"
+         data-ad-client="ca-pub-4825364639199120"
+         data-ad-slot="2467780853"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+</div>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>    
+
+</body>
+</html>
