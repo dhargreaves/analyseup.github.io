@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 Allow: /sitemap.htm
-Sitemap: http://www.analyseup.com/sitemap.xml
+Sitemap: https://www.analyseup.com/sitemap.xml
