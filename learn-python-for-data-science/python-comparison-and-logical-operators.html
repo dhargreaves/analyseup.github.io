@@ -12,12 +12,12 @@
       gtag('config', 'UA-147504302-1');
     </script>
 
-    <title>Python Lists and Tuples - Learn Python for Data Science at AnalyseUp</title>
+    <title>Python Comparison and Logical Operators - Learn Python for Data Science</title>
     
     <!--META TAGS-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Learn the fundamentals of working with Lists and Tuples in Python. We show how to create lists and tuples, how to use Indexes and how to modify lists">
+    <meta name="description" content="We continue working our way through Python Basics by explaining how to use Comparison and Logical Operators such as AND, OR and NOT. We'll show how to implement as part of logical statements that evaluate to true or false.">
     <!--SOCIAL MEDIA META TAGS-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--STYLESHEETS-->
@@ -51,7 +51,7 @@
     <div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style="width:250px; top:0vh;" id="mySidebar">
         <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
         <!--NEXT BUTTON-->
-        <a href="python-comparison-and-logical-operators.html" style="text-decoration: none;"><div id="next">Next</div></a>
+        <a href="" style="text-decoration: none;"><div id="next">Next</div></a>
         <p></p>
         <!--MENU LINKS-->
         <h6 class="side_title">Python Basics</h6>
@@ -59,8 +59,8 @@
             <a href="python-math-operators.html" class="w3-bar-item w3-button side_link" >Math Operators</a>
             <a href="python-sequence-data-types.html" class="w3-bar-item w3-button side_link" >Sequence Data Types</a>
             <a href="python-strings.html" class="w3-bar-item w3-button side_link" >Strings</a>
-            <a id="sel" href="python-lists-and-tuples.html" class="w3-bar-item w3-button side_link" >Lists & Tuples</a>
-            <a href="python-comparison-and-logical-operators.html" class="w3-bar-item w3-button side_link" >Logical Operators</a>
+            <a href="python-lists-and-tuples.html" class="w3-bar-item w3-button side_link" >Lists & Tuples</a>
+            <a id="sel" href="python-comparison-and-logical-operators.html" class="w3-bar-item w3-button side_link" >Logical Operators</a>
         <h6 class="side_title">Data Wrangling with Pandas</h6>
             <a href="" class="w3-bar-item w3-button side_link" >Coming Soon</a>
         <h6 class="side_title">Visualisation</h6>
@@ -80,7 +80,7 @@
         
           <!--HEADER-->
           <div class="h_right">
-              <h1>Python Lists & Tuples</h1>
+              <h1>Python Comparison & Logical Operators</h1>
           </div>
         
         <!--TOP AD BANNER-->
@@ -104,181 +104,192 @@
                   <!--TWITTER FOLLOW-->
                   <a href="https://twitter.com/AnalyseUp?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @AnalyseUp</a>
                   <!--TWEET-->
-                  <a href="https://twitter.com/share?text=www.analyseup.com/learn-python-for-data-science/python-lists-and-tuples.html" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                  <a href="https://twitter.com/share?text=www.analyseup.com/learn-python-for-data-science/python-comparison-and-logical-operators.html" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                   <!--FACEBOOK SHARE-->
-                  <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fwww.analyseup.com/learn-python-for-data-science/python-lists-and-tuples.html&layout=button_count&size=small&width=77&height=20&appId" width="77" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>   
+                  <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fwww.analyseup.com/learn-python-for-data-science/python-comparison-and-logical-operators.html&layout=button_count&size=small&width=77&height=20&appId" width="77" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>   
             </div>
 
-             <img src="../img/learn-python-for-data-science/lists-tuples-strings/python-lists.jpg" alt="Python Lists" class="photo" >
-            <h2 class="txt_pad">Creating Lists in Python</h2>
-             <p class="txt">Python Lists are created by assigning elements between brackets with a comma separating each list element. Lists can be as large as required and can contain a mixture of data types; elements can even be another sequence type.</p>
+             <img src="../img/learn-python-for-data-science/logical-and-comparison-operators/comparison-operators.jpg" alt="Python Lists" class="photo" >
+            <p class="txt2"  style="text-align: center;">Photo by Dietmar Becker on Unsplash</p>
+            <p class="txt txt_pad">This statement is either true or false depending, of course, on your actual age. This is based on comparing your actual age to the number 30 to evaluate if the statement is true or false. In Python we do this by taking two values and placing a comparison operator between them that tells Python how we are trying to compare the values in order for it to evaluate the statement. </p>
+            <h2 class="txt_pad">Comparison Operators in Python 3</h2>
+             <p class="txt2">Suppose we were to make the following statement: <i>Your age is greater than 30.</i></p>
+            <p class="txt2">This statement is either true or false depending, of course, on your actual age. This is based on comparing your actual age to the number 30 to evaluate if the statement is true or false. In Python we do this by taking two values and placing a comparison operator between them that tells Python how we are trying to compare the values in order for it to evaluate the statement.</p>
+            <p class="txt2">The comparison operators are:</p>
+            <div class='table txt2'>
+               <table>
+                  <tr>
+                    <td style='width:5%; text-align:center'>==</td>
+                    <td style='text-align:center'>Evaluates if the value on the left is equal to the value on right</td>
+                  </tr>
+                  <tr>
+                    <td style='width:5%; text-align:center'>!=</td>
+                    <td style='text-align:center'>Evaluates if the value on the left is not equal to the value on right</td>
+                  </tr>
+                  <tr>
+                    <td style='width:5%; text-align:center'>&gt</td>
+                    <td style='text-align:center'>Evaluates if the value on the left is greater than the value on the right</td>
+                  </tr>
+                  <tr>
+                    <td style='width:5%; text-align:center'>&lt</td>
+                    <td style='text-align:center'>Evaluates if the value on the left is less than the value on right</td>
+                  </tr>
+                  <tr>
+                    <td style='width:5%; text-align:center'>&gt=</td>
+                    <td style='text-align:center'>Evaluates if the value on the left is greater than or equal to the value on the right</td>
+                  </tr>
+                  <tr>
+                    <td style='width:5%; text-align:center'>&lt=</td>
+                    <td style='text-align:center'>Evaluates if the value on the left is less than or equal to the value on the right </td>
+                  </tr>
+                </table>
+            <p class="txt2 txt_pad">We use these comparison operators in Python to build conditional statements in the following way:</p>
+             <h3 class="txt_pad">Python Equal To</h3>
              <div class="wide_box code_wide_box">
                   <div class="code_box">
                       <div class="txt2 code">
-                          string_list = [<span class='string'>'one'</span>,
-                          <span class='string'> 'two'</span>,
-                          <span class='string'> 'three'</span>]
+                          5 == 10
                           <br/>
-                          int_list = [1, 2, 3, 4]<br/>
-                          mixed_list = [1,<span class='string'> 'two'</span>, 3]<br/>
-                          <span class="key_word">print</span>(string_list)<br/>
                       </div>
                   </div>
                   <div class="output_box">
                     <div class="txt2 output_txt">
-                        > ['one', 'two', 'three']<br/>
+                        > False<br/>
                       </div>
                   </div>
               </div>
-            <h2 class="txt_pad">Python List Index</h2>
+
+             <h3 class="txt_pad">Python Not Equal To</h3>
+             <div class="wide_box code_wide_box">
+                  <div class="code_box">
+                      <div class="txt2 code">
+                          5 != 10
+                          <br/>
+                      </div>
+                  </div>
+                  <div class="output_box">
+                    <div class="txt2 output_txt">
+                        > True<br/>
+                      </div>
+                  </div>
+              </div>
+                
+             <h3 class="txt_pad">Python Greater Than</h3>
+             <div class="wide_box code_wide_box">
+                  <div class="code_box">
+                      <div class="txt2 code">
+                          5 > 10
+                          <br/>
+                      </div>
+                  </div>
+                  <div class="output_box">
+                    <div class="txt2 output_txt">
+                        > False<br/>
+                      </div>
+                  </div>
+              </div>
+
+             <h3 class="txt_pad">Python Less Than</h3>
+             <div class="wide_box code_wide_box">
+                  <div class="code_box">
+                      <div class="txt2 code">
+                          5 < 10
+                          <br/>
+                      </div>
+                  </div>
+                  <div class="output_box">
+                    <div class="txt2 output_txt">
+                        > True<br/>
+                      </div>
+                  </div>
+              </div>
+
+             <h3 class="txt_pad">Python Greater Than or Equal To</h3>
+             <div class="wide_box code_wide_box">
+                  <div class="code_box">
+                      <div class="txt2 code">
+                          5 >= 10
+                          <br/>
+                      </div>
+                  </div>
+                  <div class="output_box">
+                    <div class="txt2 output_txt">
+                        > False<br/>
+                      </div>
+                  </div>
+              </div>
+                
+             <h3 class="txt_pad">Python Less Than or Equal To</h3>
+             <div class="wide_box code_wide_box">
+                  <div class="code_box">
+                      <div class="txt2 code">
+                          5 <= 10
+                          <br/>
+                      </div>
+                  </div>
+                  <div class="output_box">
+                    <div class="txt2 output_txt">
+                        > True<br/>
+                      </div>
+                  </div>
+              </div>
+                
+            <h2 class="txt_pad">Logical Operators in Python 3</h2>
              <p class="txt">
-                Elements in a list can be referenced by calling the list name followed by the index of the position between brackets or by referencing an index range just like with Strings.  
+                Logical operators allow us to join two or more logical statements together and evaluate the statement as a whole with the output depending on which logical operators used to join the statements together.
              </p>
-            
+             <p class="txt2">
+                Let’s consider the statement we made above about your age and join this to another statement about you: <i>Your age is greater than 30 and you have 1 child.</i>
+             </p>
+             <p class="txt2">
+                This statement contains two sub-statements that if evaluated independently might have two different results i.e. you are 30 but you have two children rather than one. In this case for the statement as a whole to be true then both logical sub-statements have to be true because we joined them using the word “and”. Therefore if you are 30 but have two children, the statement evaluates to false. However, if we had used the word “or” instead of “and”, then only one of the sub-statements would need to be true in order for the whole statement to evaluate to true and therefore as you are 30 then the statement as a whole is true. 
+             </p>
+              <p class="txt2">
+                This is the same in Python. We can use the logical operators “and”, “or” and “not” to join logical statements together to create larger and more complex statements for evaluation. We do this in the following way.
+             </p>
+                
+             <h3 class="txt_pad">And Operator in Python</h3>
              <div class="wide_box code_wide_box">
                   <div class="code_box">
                       <div class="txt2 code">
-                          <span class="key_word">print</span>(string_list[0])<br/>
-                          <span class="key_word">print</span>(int_list[0:2])<br/>
-                      </div>
-                  </div>
-                  <div class="output_box">
-                    <div class="txt2 output_txt">
-                        > one<br/>
-                        > [1, 2]<br/>
-                      </div>
-                  </div>
-              </div>
-            
-            <h2 class="txt_pad">Using List Elements</h2>
-              <p class="txt">
-                We can treat each List element as a separate variable that then can be used in other tasks just like regular variables can be.
-             </p>
-              <div class="wide_box code_wide_box">
-                  <div class="code_box">
-                      <div class="txt2 code">
-                          new_int = int_list[0] + int_list[1]
+                          a = 10
                           <br/>
-                          <span class="key_word">print</span>(new_int)<br/>
-                      </div>
-                  </div>
-                  <div class="output_box">
-                    <div class="txt2 output_txt">
-                        > 3<br/>
-                      </div>
-                  </div>
-              </div>
-            
-            <h2 class="txt_pad">Python List Length</h2>
-            <p class="txt">
-                Just like all sequence data types, we can use the Pyton LEN function to find out how elements are in a list.
-             </p>
-              <div class="wide_box code_wide_box">
-                  <div class="code_box">
-                      <div class="txt2 code">
-                          <span class="key_word">len</span>(int_list)
+                          b = 50
                           <br/>
+                          a == 5 <span class="key_word">and</span> b > 20
                       </div>
                   </div>
                   <div class="output_box">
                     <div class="txt2 output_txt">
-                        > 4<br/>
-                      </div>
-                  </div>
-              </div>
-            <h2 class="txt_pad">Python Append to List</h2>
-            <p class="txt">
-                Python Lists come with a couple of functions that allow us to quickly add and remove elements. To add an element to the end of a list we simply use the Append function and the new element we want to add. 
-             </p>
-              <div class="wide_box code_wide_box">
-                  <div class="code_box">
-                      <div class="txt2 code">
-                          string_list.append(<span class="string">'four'</span>) <br/>
-                          <span class="key_word">print</span>(string_list)
-                      </div>
-                  </div>
-                  <div class="output_box">
-                    <div class="txt2 output_txt">
-                        > ['one', 'two', 'three', 'four']<br/>
-                      </div>
-                  </div>
-              </div>
-            <h2 class="txt_pad">Python Remove from List</h2>
-            <p class="txt">
-                Similarly, to remove an element we can use the Remove function.
-             </p>
-             <div class="wide_box code_wide_box">
-                  <div class="code_box">
-                      <div class="txt2 code">
-                          string_list.remove(<span class="string">'four'</span>) <br/>
-                          <span class="key_word">print</span>(string_list)
-                      </div>
-                  </div>
-                  <div class="output_box">
-                    <div class="txt2 output_txt">
-                        > ['one', 'two', 'three']<br/>
-                      </div>
-                  </div>
-              </div>
-              <p class="txt2 txt_pad"><i>In the case of the Remove function, it’s worth remembering that removing an element will cause all values that were stored in later indexes to be moved up to an earlier position in the list.</i></p> 
-            
-            <h2 class="txt_pad">Reassigning Python List Elements</h2>
-            <p class="txt">
-                Finally, we can reassign any part of a list with another value, as we can with regular variables. 
-             </p>
-             <div class="wide_box code_wide_box">
-                  <div class="code_box">
-                      <div class="txt2 code">
-                          string_list[0] = 1
-                          <br/>
-                          <span class="key_word">print</span>(string_list)<br/>
-                      </div>
-                  </div>
-                  <div class="output_box">
-                    <div class="txt2 output_txt">
-                        > [1, 'two', 'three']<br/>
+                        > False<br/>
                       </div>
                   </div>
               </div>
 
-            <h2 class="txt_pad">Python Tuples</h2>
-            <p class="txt">
-                Tuples are very similar to Python Lists and are assigned by declaring the Tuple elements within open brackets, separated by a comma. 
-             </p>
+             <h3 class="txt_pad">Or Operator in Python</h3>
              <div class="wide_box code_wide_box">
                   <div class="code_box">
                       <div class="txt2 code">
-                          new_tuple = [<span class='string'>'Mon'</span>,
-                          <span class='string'> 'Tues'</span>,
-                          <span class='string'> 'Wed'</span>]
-                          <br/>
-                          <span class="key_word">print</span>(new_tuple)<br/>
-                          <span class="key_word">print</span>(new_tuple[0])<br/>
+                          a == 5 <span class="key_word">or</span> b > 20
                       </div>
                   </div>
                   <div class="output_box">
                     <div class="txt2 output_txt">
-                        > ('Mon', 'Tues', 'Wed')<br/>
-                        > Mon
+                        > True<br/>
                       </div>
                   </div>
               </div>
-
-            <h2 class="txt_pad">Tuple TypeError</h2>
-            <p class="txt">
-                Python Tuples can be comprised of different data types, can be referenced using index numbers or index ranges and we can use the Python LEN function to determine the length of a Tuple. However unlike Python Lists, Python Tuples are constant, meaning they cannot be changed. If we attempt to reassign any element within a Tuple we will get a Type Error. 
-             </p>
+                
+             <h3 class="txt_pad">Not Operator in Python</h3>
              <div class="wide_box code_wide_box">
                   <div class="code_box">
                       <div class="txt2 code">
-                          new_tuple[2] = <span class='string'>'Thur'</span><br/>
-                          <br/>
+                          <span class="key_word">not</span>(a == 5 <span class="key_word">and</span> b > 20)
                       </div>
                   </div>
                   <div class="output_box">
                     <div class="txt2 output_txt">
-                        > TypeError: 'tuple' object does not support item assignment<br/>
-                        <br/>
+                        > True<br/>
                       </div>
                   </div>
               </div>
@@ -287,7 +298,7 @@
         </div>
     </div>
     </div>
-    <a href="python-comparison-and-logical-operators.html" style="text-decoration: none;"><div id="next_mobile">Next</div></a>
+    <a href="" style="text-decoration: none;"><div id="next_mobile">Next</div></a>
 <!-------------------------------------FOOTER---------------------------------->
 <div id="footer"></div>
 
