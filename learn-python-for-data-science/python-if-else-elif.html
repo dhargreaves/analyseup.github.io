@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <!-- GOOGLE ANALYTICS -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-147504302-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-147504302-1');
+    </script>
+
+    <title>Python If Else Elif - Learn Conditional Statements</title>
+    
+    <!--META TAGS-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="See how to use Python IF ELSE and ELIF statements to create different outputs depending on the conditions of one or more variables. Learn how to use multiple conditions in your conditional statements using the OR, AND & NOT logical operators.">
+    <!--SOCIAL MEDIA META TAGS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--STYLESHEETS-->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link href='../css/w3.css' rel='stylesheet' type="text/css">
+    <link href='../css/page_style.css' rel='stylesheet' type='text/css'> 
+
+    <!--JAVASCRIPT FOR BURGER MENU-->
+    <script>
+        function w3_open() {
+            document.getElementById("mySidebar").style.display = "block";
+        }
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+        }
+    </script>
+</head>
+    
+<body>
+    <!--TOP BANNER-->
+
+
+    <div id="top">
+        <a href="../index.html"><img alt="Get Started with Data Science, Data Analysis and BI" id="banner" src="../img/AnalyseUp_Black(v2.2).png" ></a>
+        <div class="sep"></div>
+    </div>
+    
+
+    
+    <!--SIDE MENU-->
+    <div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style="width:250px; top:0vh;" id="mySidebar">
+        <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
+        <!--NEXT BUTTON-->
+        <a href="python-if-else-elif.html" style="text-decoration: none;"><div id="next">Next</div></a>
+        <p></p>
+        <!--MENU LINKS-->
+        <h6 class="side_title">Python Basics</h6>
+            <a href="python-variables-and-data-types.html" class="w3-bar-item w3-button side_link" >Variables & Comments</a>
+            <a href="python-math-operators.html" class="w3-bar-item w3-button side_link" >Math Operators</a>
+            <a href="python-sequence-data-types.html" class="w3-bar-item w3-button side_link" >Sequence Data Types</a>
+            <a href="python-strings.html" class="w3-bar-item w3-button side_link" >Strings</a>
+            <a href="python-lists-and-tuples.html" class="w3-bar-item w3-button side_link" >Lists & Tuples</a>
+            <a href="python-comparison-and-logical-operators.html" class="w3-bar-item w3-button side_link" >Logical Operators</a>
+            <a id="sel" href="python-if-else-elif.html" class="w3-bar-item w3-button side_link" >Conditional Statements</a>
+        <h6 class="side_title">Data Wrangling with Pandas</h6>
+            <a href="" class="w3-bar-item w3-button side_link" >Coming Soon</a>
+        <h6 class="side_title">Visualisation</h6>
+            <a href="" class="w3-bar-item w3-button side_link" >Coming Soon</a>
+        <h6 class="side_title">Machine Learning</h6>
+            <a href="" class="w3-bar-item w3-button side_link" >Coming Soon</a>
+    </div>
+
+    <!--MAIN PAGE----->
+    <div class="w3-main" style="margin-left:250px; margin-right:200px;">
+    <div>
+            
+        <!--MENU BUTTON-->
+          <div class="h_left">
+              <button class="w3-button w3-xlarge w3-hide-large" onclick="w3_open()" style="left:0;">&#9776;</button>
+          </div>
+        
+          <!--HEADER-->
+          <div class="h_right">
+              <h1>Python Conditional Statements</h1>
+          </div>
+        
+        <!--TOP AD BANNER-->
+        <div class='horizontal_ad'>
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- top_ad_banner -->
+            <ins class="adsbygoogle"
+                 style="display:inline-block;width:100%;height:100px;
+                        text-align:center;"
+                 data-ad-client="ca-pub-4825364639199120"
+                 data-ad-slot="9607273384"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+        
+        <!--CONTENT-->
+        <div class="w3-container">
+              
+            <div class="share_buttons">
+                  <!--TWITTER FOLLOW-->
+                  <a href="https://twitter.com/AnalyseUp?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @AnalyseUp</a>
+                  <!--TWEET-->
+                  <a class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                  <!--FACEBOOK SHARE-->
+                  <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fwww.analyseup.com/learn-python-for-data-science/python-if-else-elif.html&layout=button_count&size=small&width=77&height=20&appId" width="77" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                  
+            </div>
+            <p></p>
+             <img src="../img/learn-python-for-data-science/if-else-elif/python-if-else-elif.jpg" alt="Python If Else Elif" class="photo" >
+            <p class="txt2"  style="text-align: center;">Photo by Javier Allegue Barros on Unsplash</p>
+              <p class="txt txt_pad">IF, ELSE and ELIF statements (conditional statements) allow us to build algorithms to create different outputs depending on whether a logical statement, such as whether a variable is equal to a certain value, is true or false. The statements can be based on the values stored in a variable or multiple variables and we can stack these statements to create complex decision logic within our code.</p>
+            <p class="txt2">In real life we might decide to wear a coat when we leave home if the temperature is forecast to be below 10 degrees and not wear a coat if the temperature is 10 degrees or above. Here we evaluate the statement that the temperature is below 10 degrees and determine if it is true or false. If it’s true then the outcome is that we will leave home with a coat on. The process works the same when we program with IF, ELSE & ELIF statements. Let’s look at how to implement these statements in Python.</p>
+            
+            <h3 class="txt_pad">Python IF Statement</h3>
+            <div class="wide_box code_wide_box">
+                  <div class="code_box">
+                      <div class="txt2 code">
+                            temp = 5<br/><br/>
+                          <span class="key_word">if</span> temp &lt; 10:
+                          <br/>
+                          <div class="function1"><span class="key_word">print</span>("Take a coat!")</div>
+                      </div>
+                    </div>
+                    <div class="output_box">
+                        <div class="txt2 output_txt">
+                        > Take a coat!
+                        </div>
+                  </div>
+            </div>
+            <p class="txt2 txt_pad">In the above scenario, if the logical statement that temp &lt; 10 is true then we get an output that tells us to wear a coat. If the statement is false however then nothing happens but we might want a different output in this case. We can do this using an ELSE statement. </p>
+            
+            <h3 class="txt_pad">Python IF ELSE Statement</h3>
+            <div class="wide_box code_wide_box">
+                  <div class="code_box">
+                      <div class="txt2 code">
+                          temp = 18<br/><br/>
+                          <span class="key_word">if</span> temp &lt; 10:
+                          <br/>
+                          <div class="function1"><span class="key_word">print</span>("Take a coat!")</div>
+                          <span class="key_word">else</span>:
+                          <div class="function1"><span class="key_word">print</span>("Leave the coat at home!")</div>
+                          
+                      </div>
+                    </div>
+                    <div class="output_box">
+                        <div class="txt2 output_txt">
+                        > Leave the coat at home!
+                        </div>
+                  </div>
+            </div>
+            
+            <h3 class="txt_pad">Python IF ELIF Statement</h3>   
+            <p class="txt2">Now suppose the temperature is forecast to be above 10 degrees, making the statement evaluate to false. However, instead of just leaving our coat at home we want to also check if there is rain forecast. If this is true then we’ll want to take a waterproof. We can implement this using an ELIF statement. 
+            </p>
+            <p class="txt2">The ELIF statement allows us to stack multiple conditional statements to handle potentially complex decisions in our code.
+            </p>
+            <div class="wide_box code_wide_box">
+                  <div class="code_box">
+                      <div class="txt2 code">
+                          temp = 18<br/>
+                          rain_forecast = True<br/><br/>
+                          <span class="key_word">if</span> temp &lt; 10:
+                          <br/>
+                          <div class="function1"><span class="key_word">print</span>("Take a coat!")</div>
+                          <span class="key_word">elif</span> rain_forecast:
+                          <div class="function1"><span class="key_word">print</span>("Take a waterproof!")</div>
+                          <span class="key_word">else</span>:
+                          <div class="function1"><span class="key_word">print</span>("Leave the coat at home!")</div>
+                          
+                      </div>
+                    </div>
+                    <div class="output_box">
+                        <div class="txt2 output_txt">
+                        > Take a waterproof!
+                        </div>
+                  </div>
+            </div>
+
+            <h2 class="txt_pad">Python IF Statement – Multiple Conditions</h2>   
+            <p class="txt2">In our examples above, we only considered one variable in our statements but we can use as many as required to define the condition we are trying to evaluate. How these evaluate will depend on which of the operators (OR, AND, NOT) we use and in what combination.
+            </p>
+            
+            <h3 class="txt_pad">Python IF OR Statement</h3>   
+            <div class="wide_box code_wide_box">
+                  <div class="code_box">
+                      <div class="txt2 code">
+                          temp = 18<br/>
+                          hours_away_from_home = 10<br/>
+                          <br/>
+                          <span class="key_word">if</span> temp &lt; 10:
+                          <span class="key_word">or</span> hours_away_from_home &gt; 6:
+                          <br/>
+                          <div class="function1"><span class="key_word">print</span>("Take a coat!")</div>
+                          <span class="key_word">else</span>:
+                          <div class="function1"><span class="key_word">print</span>("Leave the coat at home!")</div>
+                          
+                      </div>
+                    </div>
+                    <div class="output_box">
+                        <div class="txt2 output_txt">
+                        > Take a coat!
+                        </div>
+                  </div>
+            </div>
+            
+            <h3 class="txt_pad">Python IF AND Statement</h3>   
+            <div class="wide_box code_wide_box">
+                  <div class="code_box">
+                      <div class="txt2 code">
+                          temp = 18<br/>
+                          hours_away_from_home = 10<br/>
+                          <br/>
+                          <span class="key_word">if</span> temp &lt; 10:
+                          <span class="key_word">or</span> hours_away_from_home &gt; 1:
+                          <br/>
+                          <div class="function1"><span class="key_word">print</span>("Take a coat!")</div>
+                          <span class="key_word">else</span>:
+                          <div class="function1"><span class="key_word">print</span>("Leave the coat at home!")</div>
+                          
+                      </div>
+                    </div>
+                    <div class="output_box">
+                        <div class="txt2 output_txt">
+                        > Leave the coat at home!
+                        </div>
+                  </div>
+            </div>
+            
+            <h3 class="txt_pad">Python IF NOT Statement</h3>   
+            <div class="wide_box code_wide_box">
+                  <div class="code_box">
+                      <div class="txt2 code">
+                          temp = 18<br/>
+                          hours_away_from_home = 10<br/>
+                          <br/>
+                          <span class="key_word">if</span> 
+                          <span class="key_word">not</span>(temp &lt;= 10):
+                          <br/>
+                          <div class="function1"><span class="key_word">print</span>("Take a coat!")</div>
+                          <span class="key_word">else</span>:
+                          <div class="function1"><span class="key_word">print</span>("Leave the coat at home!")</div>
+                          
+                      </div>
+                    </div>
+                    <div class="output_box">
+                        <div class="txt2 output_txt">
+                        > Leave the coat at home!
+                        </div>
+                  </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+    <a href="python-if-else-elif.html" style="text-decoration: none;"><div id="next_mobile">Next</div></a>
+<!-------------------------------------FOOTER---------------------------------->
+<div id="footer"></div>
+
+<!--AD BANNER-->
+<div class="ad_banner">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <ins class="adsbygoogle"
+             style="display:block; text-align:center;"
+             data-ad-layout="in-article"
+             data-ad-format="fluid"
+             data-ad-client="ca-pub-4825364639199120"
+             data-ad-slot="9368231129"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+</div>
+        
+<!--SIDE AD BAR-->
+<div id="ad_bar" >
+    <!-- side_bar_1 -->
+    <ins class="adsbygoogle"
+         style="display:block; margin-top: 10vh;"
+         data-ad-client="ca-pub-4825364639199120"
+         data-ad-slot="2467780853"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+</div>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>    
+
+</body>
+</html>
