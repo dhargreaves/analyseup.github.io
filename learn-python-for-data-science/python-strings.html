@@ -186,6 +186,54 @@
                   </div>
               </div>
             
+            <h2 class="txt_pad">Python Remove Character from String</h2>
+            <p class="txt2">
+                Sometimes we will find that we have unwanted characters in our strings. This will be less of a concern when we define our own string variables but when we start working with imported data, where we have less control over the source data, it will be a more frequent occurrence that can cause issues when processing text. To solve this, we can use the <b>Python Strip</b> function to remove a character or sequence of characters from a string. In the example below, the variable “country” contains an unwanted character at the start of the string. Let’s use the <b>Python Strip</b> function to remove this character.
+             </p>
+             <div class="wide_box code_wide_box">
+                  <div class="code_box">
+                      <div class="txt2 code">
+                          <span class="key_word">print</span>(country)
+                          <br/>
+                          country = country.strip(<span class="string">'&amp;'</span>)
+                          <br/>
+                          <span class="key_word">print</span>(country)
+                          <br/>
+                      </div>
+                  </div>
+                  <div class="output_box">
+                    <div class="txt2 output_txt">
+                        > &amp;United_Kingdom<br/>
+                        > United_Kingdom<br/>
+                      </div>
+                  </div>
+              </div>
+            
+            <h2 class="txt_pad">Python Replace Character in String</h2>
+            <p class="txt2">
+                There will be times when we will want to replace characters in a string rather than just remove them. For this purpose we can use the <b>Python Replace</b> function. Again, with the variable country we can see that the two words in the string are separated by an underscore. Let’s use the <b>Python Replace</b> function to replace the underscore with a space.
+             </p>
+             <div class="wide_box code_wide_box">
+                  <div class="code_box">
+                      <div class="txt2 code">
+                          <span class="key_word">print</span>(country)
+                          <br/>
+                          country = country.replace(<span class="string">'_'</span>,<span class="string">' '</span>)
+                          <br/>
+                          <span class="key_word">print</span>(country)
+                          <br/>
+                      </div>
+                  </div>
+                  <div class="output_box">
+                    <div class="txt2 output_txt">
+                        > United_Kingdom<br/>
+                        > United Kingdom<br/>
+                      </div>
+                  </div>
+              </div>
+            
+            
+            
 
         </div>
     </div>
