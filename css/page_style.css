@@ -308,6 +308,13 @@ rather than side by side*/
     color:#595959;
 }
 
+.txt3 {
+    font-family:"opensans";
+    font-size:12px;
+    font-weight:100;
+    color:#595959;
+}
+
 .txt_pad {
     padding-top:30px;
 }
@@ -426,6 +433,11 @@ tr:nth-child(even) {
 }
 .code{
     font-family: "Consolas";
+    overflow: scroll;
+}
+
+.code_line {
+    white-space:nowrap;
 }
 
 .key_word{
@@ -446,6 +458,12 @@ tr:nth-child(even) {
 
 .function2 {
     text-indent: 100px;  
+}
+.function3 {
+    text-indent: 200px;  
+}
+.function4 {
+    text-indent: 300px;  
 }
 
 .output_box {
@@ -490,6 +508,16 @@ tr:nth-child(even) {
     height: 100%;
     position:relative;
     top:20px;
+    margin:auto;
+}
+
+.output_image_60 {
+    display:block;
+    width: 60%;
+    height: 100%;
+    position:relative;
+    top:20px;
+    margin:auto;
 }
 
 /*PHOTOS*/
@@ -745,10 +773,21 @@ input {
         .function2 {
             text-indent: 50px;  
         }
+        .function3 {
+            text-indent: 100px;  
+        }
+
+        .function4 {
+            text-indent: 150px;  
+        }
         .output_image img {
             width: 100%;
             height: auto;
         }
+        .output_image_60 {
+            width: 100%;
+        }
+
         .output_txt {
             font-size:11px;
         }
