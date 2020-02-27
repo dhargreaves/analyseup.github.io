@@ -147,7 +147,7 @@ a{
 
 .ad_banner {
     width:100%;
-    height: 7vh;
+    height: auto;
     background-color: white;
     display: inline-block;
 }
