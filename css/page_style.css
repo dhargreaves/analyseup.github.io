@@ -148,6 +148,7 @@ a{
 .ad_banner {
     width:100%;
     height: auto;
+    margin-left:270px;
     background-color: white;
     display: inline-block;
 }
