@@ -197,7 +197,7 @@
         }
 
         .learn_button {
-            height:10%;
+            height:48px;
             width: 80%;
             top:1vw;
             font-size:1.7vw;
@@ -241,7 +241,7 @@
             width:80%;
             margin-left: 10%;
             margin-right: 10%;
-            height:110vw;
+            height:130vw;
         }
         .tutorial_image {
             height:45%;
@@ -257,17 +257,17 @@
         }
 
         .learn_button {
-            height:10%;
+            height:60px;
             width: 70%;
-            top:1vw;
-            font-size:3.5vw;
+            top:6vw;
+            font-size:4vw;
             margin-bottom: 1.8vw; 
             line-height: 8vw;
   
         }
         .txt {
 
-            font-size:3.5vw;
+            font-size:4vw;
         }
 
         
