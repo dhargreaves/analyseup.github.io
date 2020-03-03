@@ -257,12 +257,12 @@
         }
 
         .learn_button {
-            height:80px;
+            height:60px;
             width: 70%;
             top:6vw;
             font-size:4vw;
             margin-bottom: 1.8vw; 
-            line-height: 8vw;
+            line-height: 6vw;
   
         }
         .txt {
