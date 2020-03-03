@@ -698,7 +698,7 @@ input {
         /*Mobile next button that is displayed at bottom of screen on mobile*/
         #next_mobile {
             display: block;
-            height:30px;
+            height:48px;
             width: 50%;
             color:white;
             background-color: #ff7700ff;
@@ -712,7 +712,6 @@ input {
             font-size:14px;
             text-decoration: none;
             margin-bottom: 10px;
-
         }
     /*CODE*/
         .code_box {
