@@ -11,10 +11,10 @@
   gtag('config', 'UA-147504302-1');
 </script>
 
-    <title>Alteryx Summarize Tool - Learn How to Aggregate Data in Alteryx | AnalyseUp</title>
+    <title>Alteryx Sort Tool - Learn How to Order Your Data Based on Multiple Fields | AnalyseUp</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Learn how to use the Summarize Tool in Alteryx to aggregate data. See how we can use GroupBy, Sum, Count, Min, Max and Avg to analyse data.">
+    <meta name="description" content="Learn how to use the Sort Tool in Alteryx to quickly sort your data according to one or more fields in either ascending or descending order">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link href='../css/w3.css' rel='stylesheet' type="text/css">
     <link href='../css/page_style.css' rel='stylesheet' type='text/css'> 
@@ -57,9 +57,9 @@
             <a href="alteryx-outer-join.html" class="w3-bar-item w3-button side_link" >Outer Joins</a>
         <h6 class="side_title">Formulas & Aggregations</h6>
             <a href="alteryx-formula-tool.html" class="w3-bar-item w3-button side_link" >Formulas </a>
-            <a id="sel" href="alteryx-summarize-tool.html" class="w3-bar-item w3-button side_link" >Aggregating Data</a>
+            <a href="alteryx-summarize-tool.html" class="w3-bar-item w3-button side_link" >Aggregating Data</a>
         <h6 class="side_title">Sort & Output</h6>
-            <a href="alteryx-sort-tool.html" class="w3-bar-item w3-button side_link" >Sorting Data</a>
+            <a id="sel" href="alteryx-sort-tool.html" class="w3-bar-item w3-button side_link" >Sorting Data</a>
     </div>
 
 <!--Content----->
@@ -73,7 +73,7 @@
           
           <!--Page Content -->
           <div class="h_right">
-              <h1>Aggregating Data with Alteryx</h1>
+              <h1>Sorting Data in Alteryx with the Sort Tool</h1>
             </div>
         <!--TOP AD BANNER-->
         <div class='horizontal_ad'>
@@ -91,75 +91,44 @@
           <div class="w3-container">
               <p></p>
               <p class="txt2">
-                Often we will want to aggregate our data by groups, for example we may want to know the number of orders (aggregate) for each product (groups). For those experienced with SQL or Excel pivot tables will be familiar with grouping by one or more fields and then performing aggregations such as sum and count. 
+                Sometimes we will want to order the records in our data set in ascending or descending order according to a specific field or by multiple fields for example in chronological order. This is useful if we want to take only a certain number of records from the data based on certain criteria or we want to view the data in a certain order. 
               </p>
-              <h2 style="padding-top: 40px;" >Alteryx Summarize Tool</h2>
+              <h2 style="padding-top: 40px;" >Alteryx Sort Tool</h2>
               <p></p>
               <p class="txt2">
-                  In Alteryx we use the <b>Summarize Tool</b> to perform these summary processes. The tool can be found in the Transform tab of the tool pallet.
+                  Alteryx provides us with the <b>Sort Tool</b> for ordering our data and can be found in the Preparation tab of the tool pallet. Let’s see how we use the <b>Sort Tool</b> by ordering the data in our sales report workflow
               </p>
-              <img alt="Alteryx Summarize Tool" class="tut_img_50" src="img/Alteryx/2.7-aggregations/1-summarize-tool.PNG">
+              <img alt="Alteryx Sort Tool" class="tut_img" src="img/Alteryx/3.1-sort/sort-tool.PNG">
               <p class="txt2" style="padding-top: 40px;" >
-                  In the <b>Summarize Tool</b> configuration window we can select which fields we want perform which summary process on. If we select a field in the “Fields” list at the top and then click the “Add” drop down menu you will be presented with a list of summary processes that can be performed on the field selected. 
+                  In our workflow as a final step before we output the data to file, let’s sort to make the data easier to understand. We are going to sort the records by Genre and then by OrderDate so that we can easily see how the sales for each genre progressed over time. 
               </p>
-              <div class="wide_box2">
-                <div class="wide_box2">
-                    <img alt="Alteryx Summarize Tool" class="tut_img_50" src="img/Alteryx/2.7-aggregations/2-summary-processes.PNG">
-                </div>
-                <div class="wide_box2">
-                    <img alt="Alteryx Summarize Tool" class="tut_img_50" src="img/Alteryx/2.7-aggregations/2.1-summary-processes.PNG">
-                  </div>
-              </div>
               
-             <h2 style="padding-top: 40px;" >Alteryx Summary Processes</h2>
-              <p></p>
-              <p class="txt2">
-                As you can see Alteryx comes with a large list of processes and which ones you can use on a given field will depend on the data type of the field(s) selected. You can find more detail on each process in the Alteryx reference documentation <a class="txt" href="https://help.alteryx.com/current/Reference/SummaryProceses.htm">here</a> but we will briefly describe a few of the most important below.
-              </p>
-               <ul class="txt2">
-                   <li><b>GroupBy</b> – Creating a group by field will mean that all records with the same field value in the data will be grouped together. For example we could group by order date and all records in the data with the same order date value will be treated as the same group and any aggregations performed on other fields will be done performed for each order date. Therefore each group will have it’s own set of aggregated values.</li>
-                   <li><b>Sum</b> – Performing a sum process on a given field will result in all values for each group being added together.</li>
-                   <li><b>Count</b> – Will count all records in the field belonging to each group</li>
-                   <li><b>Min</b> – Will take the minimum field value of each group</li>
-                   <li><b>Max</b> – Will take the maximum field value of each group</li>
-                   <li><b>Avg</b> – Will calculate the average or mean value of each group</li>
-                </ul>
-
-              <p class="txt2" style="padding-top: 40px;" >
-                  For our workflow we want to know the total sales value for each genre on each date in our data set so let’s use a <b>Summarize Tool</b> to create this output.
-              </p>
               
               <div class="wide_box">
-                  <div class="box">
+                  <div class="box2">
                       <p class="txt2">Step 1:</p>
-                      <p class="txt2">Drag the <b>Summarize Tool</b> onto the workspace and connect the output of the Formula Tool to the input of the <b>Summarize Tool</b>.</p></div>
-                  <div class="box">
-                    <img alt="Alteryx Add Summarize Tool" class="tut_img" src="img/Alteryx/2.7-aggregations/3-add-summarize-tool.PNG"></div>
+                      <p class="txt2">First let’s drag the Sort Tool into the workspace, connecting the input to the output of the Summarize tool.</p></div>
+                  <div class="box2">
+                    <img alt="Alteryx Add Sort Tool" class="tut_img" src="img/Alteryx/3.1-sort/add-sort-tool.PNG"></div>
              </div>
               <p></p>
              <div class="wide_box">
-                  <div class="box">
+                  <div class="box2">
                       <p class="txt2">Step 2:</p>
-                      <p class="txt2">Select “OrderDate” then press Shift and click the “Genre” field in the Fields window to select both fields. Click the “Add” dropdown menu and select “GroupBy”.</p></div>
-                  <div class="box">
-                    <img alt="Alteryx Summarize Tool Configuration Window 1" class="tut_img" src="img/Alteryx/2.7-aggregations/4.1-summarize-tool-configuration.PNG"></div>
+                      <p class="txt2">Next select the Sort Tool and move to the configuration window. Set the Name in the first row of the fields list to “Genre” and the Order to “Ascending”. This will ensure that each record will be ordered alphabetically according to the Genre field. Then set the second row of the fields list to have Name “OrderDate” and Order to be again “Ascending”. This means that once sorted alphabetically based on Genre, each record will then be sorted chronologically.</p></div>
+                  <div class="box2">
+                    <img alt="Alteryx Sort Tool Configuration Window" class="tut_img" src="img/Alteryx/3.1-sort/sort-tool-configuration-window.PNG"></div>
              </div>
              <div class="wide_box">
                   <div class="box">
                       <p class="txt2">Step 3:</p>
-                      <p class="txt2">Select the “Sales_Value” field, click the “Add” drop down menu and then select “Sum”.</p></div>
+                      <p class="txt2">Finally run the workflow and check the output. You should see that all records appear in order of Genre and then by OrderDate</p></div>
                   <div class="box">
-                    <img alt="Alteryx Summarize Tool Configuration Window 2" class="tut_img" src="img/Alteryx/2.7-aggregations/4.2-summarize-tool-configuration.PNG"></div>
+                    <img alt="Alteryx Sort Tool Output" class="tut_img" src="img/Alteryx/3.1-sort/sort-output.PNG"></div>
              </div>
-             <div class="wide_box">
-                  <div class="box">
-                      <p class="txt2">Step 4:</p>
-                      <p class="txt2">Finally, run the workflow and click the output of the <b>Summarize Tool</b> and you should see the following output.</p></div>
-                  <div class="box">
-                    <img alt="Alteryx Summarize Tool Output" class="tut_img" src="img/Alteryx/2.7-aggregations/5-summarize-tool-output.PNG"></div>
-             </div>
+
               <p class="txt2" style="padding-top: 40px;" >
-                    We have now managed to import our data sources, process, blend and aggregate to create an output that gives us the insight we require and is almost ready to be exported.
+                    Now we have completed all the processing of our data, it’s time to output the data to file. Let’s move onto exporting the data to a CSV file using the Export Tool.
               </p>
             <a href="alteryx-sort-tool.html" style="text-decoration: none; padding-top: 40px;"><div id="next_mobile">Next</div></a>
             <!----------AD BANNER-------------------->

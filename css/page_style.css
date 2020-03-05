@@ -56,9 +56,9 @@
 }
 
 #next_mobile {
-    display:none;
+    display:block;
     height:30px;
-    width: 50%;
+    width: 30%;
     color:white;
     background-color: #ff7700ff;
     text-align: center;
