@@ -11,10 +11,10 @@
   gtag('config', 'UA-147504302-1');
 </script>
 
-    <title>Alteryx Summarize Tool - Learn How to Aggregate Data in Alteryx | AnalyseUp</title>
+    <title>Alteryx Output Data Tool - Learn How to Write Your Data to Excel in Alteryx | AnalyseUp</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Learn how to use the Summarize Tool in Alteryx to aggregate data. See how we can use GroupBy, Sum, Count, Min, Max and Avg to analyse data.">
+    <meta name="description" content="Learn how to use the Output Tool in Alteryx to write your data to an Excel file, how to declare the worksheet name and ensure the worksheet can be overwritten">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link href='../css/w3.css' rel='stylesheet' type="text/css">
     <link href='../css/page_style.css' rel='stylesheet' type='text/css'> 
@@ -37,7 +37,7 @@
 <!--Side Menu-->
     <div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style="width:250px; top:0vh;" id="mySidebar">
         <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
-        <a href="alteryx-sort-tool.html" style="text-decoration: none;"><div id="next">Next</div></a>
+        <!--<a href="alteryx-sort-tool.html" style="text-decoration: none;"><div id="next">Next</div></a>-->
         <p></p>
         <!--<h5 id="side_head"><b>Data Wrangling with Alteryx</b></h5>-->
         <h6 class="side_title">Getting Started</h6>
@@ -57,9 +57,10 @@
             <a href="alteryx-outer-join.html" class="w3-bar-item w3-button side_link" >Outer Joins</a>
         <h6 class="side_title">Formulas & Aggregations</h6>
             <a href="alteryx-formula-tool.html" class="w3-bar-item w3-button side_link" >Formulas </a>
-            <a id="sel" href="alteryx-summarize-tool.html" class="w3-bar-item w3-button side_link" >Aggregating Data</a>
+            <a href="alteryx-summarize-tool.html" class="w3-bar-item w3-button side_link" >Aggregating Data</a>
         <h6 class="side_title">Sort & Output</h6>
             <a href="alteryx-sort-tool.html" class="w3-bar-item w3-button side_link" >Sorting Data</a>
+            <a id="sel" href="alteryx-output-tool.html" class="w3-bar-item w3-button side_link" >Output Data</a>
             <a href="alteryx-output-tool.html" class="w3-bar-item w3-button side_link" >Output Data</a>
     </div>
 
@@ -74,7 +75,7 @@
           
           <!--Page Content -->
           <div class="h_right">
-              <h1>Aggregating Data with Alteryx</h1>
+              <h1>Output Data Tool - Writing Your Data to Excel</h1>
             </div>
         <!--TOP AD BANNER-->
         <div class='horizontal_ad'>
@@ -92,77 +93,67 @@
           <div class="w3-container">
               <p></p>
               <p class="txt2">
-                Often we will want to aggregate our data by groups, for example we may want to know the number of orders (aggregate) for each product (groups). For those experienced with SQL or Excel pivot tables will be familiar with grouping by one or more fields and then performing aggregations such as sum and count. 
+                Finally we are at a stage where the data we have processed and blended is ready to be output to a file. Alteryx gives us many options for exporting data to both files and databases including popular options such as csv, Excel, Tableau TDE and SQL servers. In addition, this list is increasing all the time increasing the utility Alteryx can bring to our data pipelines. 
               </p>
-              <h2 style="padding-top: 40px;" >Alteryx Summarize Tool</h2>
+              <h2 style="padding-top: 40px;" >Alteryx Output Data Tool</h2>
               <p></p>
               <p class="txt2">
-                  In Alteryx we use the <b>Summarize Tool</b> to perform these summary processes. The tool can be found in the Transform tab of the tool pallet.
+                  To output data in Alteryx we use the Output Data Tool located in the In/Out tab of the tool pallet.
               </p>
-              <img alt="Alteryx Summarize Tool" class="tut_img_50" src="img/Alteryx/2.7-aggregations/1-summarize-tool.PNG">
+              <img alt="Alteryx Output Data Tool" class="tut_img" src="img/Alteryx/3.2-output/alteryx-output-tool.PNG">
               <p class="txt2" style="padding-top: 40px;" >
-                  In the <b>Summarize Tool</b> configuration window we can select which fields we want perform which summary process on. If we select a field in the “Fields” list at the top and then click the “Add” drop down menu you will be presented with a list of summary processes that can be performed on the field selected. 
+                  For our workflow we are simply going to output the data to an Excel file. Let’s get started.
               </p>
-              <div class="wide_box2">
-                <div class="wide_box2">
-                    <img alt="Alteryx Summarize Tool" class="tut_img_50" src="img/Alteryx/2.7-aggregations/2-summary-processes.PNG">
-                </div>
-                <div class="wide_box2">
-                    <img alt="Alteryx Summarize Tool" class="tut_img_50" src="img/Alteryx/2.7-aggregations/2.1-summary-processes.PNG">
-                  </div>
-              </div>
               
-             <h2 style="padding-top: 40px;" >Alteryx Summary Processes</h2>
-              <p></p>
-              <p class="txt2">
-                As you can see Alteryx comes with a large list of processes and which ones you can use on a given field will depend on the data type of the field(s) selected. You can find more detail on each process in the Alteryx reference documentation <a class="txt" href="https://help.alteryx.com/current/Reference/SummaryProceses.htm">here</a> but we will briefly describe a few of the most important below.
-              </p>
-               <ul class="txt2">
-                   <li><b>GroupBy</b> – Creating a group by field will mean that all records with the same field value in the data will be grouped together. For example we could group by order date and all records in the data with the same order date value will be treated as the same group and any aggregations performed on other fields will be done performed for each order date. Therefore each group will have it’s own set of aggregated values.</li>
-                   <li><b>Sum</b> – Performing a sum process on a given field will result in all values for each group being added together.</li>
-                   <li><b>Count</b> – Will count all records in the field belonging to each group</li>
-                   <li><b>Min</b> – Will take the minimum field value of each group</li>
-                   <li><b>Max</b> – Will take the maximum field value of each group</li>
-                   <li><b>Avg</b> – Will calculate the average or mean value of each group</li>
-                </ul>
-
-              <p class="txt2" style="padding-top: 40px;" >
-                  For our workflow we want to know the total sales value for each genre on each date in our data set so let’s use a <b>Summarize Tool</b> to create this output.
-              </p>
               
               <div class="wide_box">
-                  <div class="box">
+                  <div class="box2">
                       <p class="txt2">Step 1:</p>
-                      <p class="txt2">Drag the <b>Summarize Tool</b> onto the workspace and connect the output of the Formula Tool to the input of the <b>Summarize Tool</b>.</p></div>
-                  <div class="box">
-                    <img alt="Alteryx Add Summarize Tool" class="tut_img" src="img/Alteryx/2.7-aggregations/3-add-summarize-tool.PNG"></div>
+                      <p class="txt2">Let’s begin by dragging the Output Data Tool into the workspace and connecting the input to the output of the Sort Tool.</p></div>
+                  <div class="box2">
+                    <img alt="Alteryx Add Output Data Tool" class="tut_img" src="img/Alteryx/3.2-output/add-output-tool.PNG"></div>
              </div>
               <p></p>
              <div class="wide_box">
                   <div class="box">
                       <p class="txt2">Step 2:</p>
-                      <p class="txt2">Select “OrderDate” then press Shift and click the “Genre” field in the Fields window to select both fields. Click the “Add” dropdown menu and select “GroupBy”.</p></div>
+                      <p class="txt2">In the configuration window click the drop down in the “Write to File or Database” option and select “File…”. </p></div>
                   <div class="box">
-                    <img alt="Alteryx Summarize Tool Configuration Window 1" class="tut_img" src="img/Alteryx/2.7-aggregations/4.1-summarize-tool-configuration.PNG"></div>
+                    <img alt="Alteryx Output Data Tool File" class="tut_img" src="img/Alteryx/3.2-output/alteryx-output-tool-file.PNG"></div>
              </div>
              <div class="wide_box">
-                  <div class="box">
+                  <div class="box2">
                       <p class="txt2">Step 3:</p>
-                      <p class="txt2">Select the “Sales_Value” field, click the “Add” drop down menu and then select “Sum”.</p></div>
-                  <div class="box">
-                    <img alt="Alteryx Summarize Tool Configuration Window 2" class="tut_img" src="img/Alteryx/2.7-aggregations/4.2-summarize-tool-configuration.PNG"></div>
+                      <p class="txt2">Now navigate to where you would like to save the file (in our case we are going to save to the Desktop). Name the file “sales_report”, select “Microsoft Excel (*.xlsx)” from the Save as type dropdown and click Save.</p></div>
+                  <div class="box2">
+                    <img alt="Alteryx Save File" class="tut_img" src="img/Alteryx/3.2-output/alteryx-output-tool-save-file.PNG"></div>
              </div>
              <div class="wide_box">
                   <div class="box">
                       <p class="txt2">Step 4:</p>
-                      <p class="txt2">Finally, run the workflow and click the output of the <b>Summarize Tool</b> and you should see the following output.</p></div>
+                      <p class="txt2">You should now be presented with pop-up asking you declare a name for the table or worksheet. This is just the name that the worksheet or tab that will be given in our Excel file that will be generated. Let’s simply name this sales_report and click OK.</p></div>
                   <div class="box">
-                    <img alt="Alteryx Summarize Tool Output" class="tut_img" src="img/Alteryx/2.7-aggregations/5-summarize-tool-output.PNG"></div>
+                    <img alt="Alteryx Output Data Tool Name Worksheet" class="tut_img" src="img/Alteryx/3.2-output/output-tool-worksheet.PNG"></div>
              </div>
+             <div class="wide_box">
+                  <div class="box2">
+                      <p class="txt2">Step 4:</p>
+                      <p class="txt2">The final step is to find the Output Options dropdown in the Data Output Tool configuration window and change this to “Overwrite Sheet (Drop)”. Selecting this option allows us to run the workflow as many times as required and the latest output will overwrite anything that is already in the Excel file.</p></div>
+                  <div class="box2">
+                    <img alt="Alteryx Output Data Tool Overwrite Worksheet" class="tut_img" src="img/Alteryx/3.2-output/alteryx-output-tool-overwrite-sheet.PNG"></div>
+             </div>
+
               <p class="txt2" style="padding-top: 40px;" >
-                    We have now managed to import our data sources, process, blend and aggregate to create an output that gives us the insight we require and is almost ready to be exported.
+                    Finally let’s run the workflow. Once this has completed you should be able to see the Excel file that has been created in the location specified in the previous steps with the data from our workflow
               </p>
-            <a href="alteryx-sort-tool.html" style="text-decoration: none; padding-top: 40px;"><div id="next_mobile">Next</div></a>
+              <p class="txt2">
+                    It’s worth noting that we can add as many Output tools to our workflow as required and we can connect them to any tool in the workflow. For example we may wish to have one output tool writing to an Excel file and another writing to a Tableau TDE file to feed a dashboard.
+              </p>
+              
+              <p class="txt2" style="padding-top: 40px;" >
+                    That’s it; you’ve made it through our Learn Alteryx for Beginners tutorial. We hope you are now confident in using Alteryx to build your own workflows for processing and blending data. We’re happy to receive feedback on every our content or requests for new tutorials and you can follow us on twitter for any future updates.
+              </p>
+            <!--<a href="alteryx-sort-tool.html" style="text-decoration: none; padding-top: 40px;"><div id="next_mobile">Next</div></a>-->
             <!----------AD BANNER-------------------->
             <div class="ad_banner">
                     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>

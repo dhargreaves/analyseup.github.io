@@ -707,8 +707,9 @@ input {
             border-radius:5px;
             margin:auto;
             position:relative;
-            top:10px;
-            padding: 4px 0;
+            top:25px;
+            bottom:25px;
+            padding: 4px;
             font-size:14px;
             text-decoration: none;
             margin-bottom: 10px;
@@ -762,6 +763,12 @@ input {
         }
         .tut_img_50 {
             width: 75%;
+        }
+        .txt {
+        font-size:18px;
+        }
+        .txt2 {
+        font-size:18px;
         }
     /*CODE*/
         .code {
