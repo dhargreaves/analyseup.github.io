@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <!-- GOOGLE ANALYTICS -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-147504302-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-147504302-1');
+    </script>
+
+    <title>Pandas Cleaning Data - Python Data Science Reference</title>
+    
+    <!--META TAGS-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="See examples of how to deal with NAs and impute data in your data using Python and Pandas">
+    <!--SOCIAL MEDIA META TAGS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--STYLESHEETS-->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link href='../css/w3.css' rel='stylesheet' type="text/css">
+    <link href='../css/page_style.css' rel='stylesheet' type='text/css'> 
+
+    <!--JAVASCRIPT FOR BURGER MENU-->
+    <script>
+        function w3_open() {
+            document.getElementById("mySidebar").style.display = "block";
+        }
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+        }
+    </script>
+</head>
+    
+<body>
+    <!--TOP BANNER-->
+
+
+    <div id="top">
+        <a href="../index.html"><img alt="Get Started with Data Science, Data Analysis and BI" id="banner" src="../img/AnalyseUp_Black(v2.2).png" ></a>
+        <div class="sep"></div>
+    </div>
+    
+
+    
+    <!--SIDE MENU-->
+    <div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style="width:250px; top:0vh;" id="mySidebar">
+        <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
+        <!--NEXT BUTTON
+        <a href="python-lists-and-tuples.html" style="text-decoration: none;"><div id="next">Next</div></a>-->
+        <p></p>
+        <!--MENU LINKS-->
+        <h6 class="side_title">Data Wrangling</h6>
+            <a href="../python-data-science-reference/pandas-create-dataframe.html" class="w3-bar-item w3-button side_link" >Importing Data</a>
+            <a href="../python-data-science-reference/pandas-selecting-dropping-and-renaming-columns.html" class="w3-bar-item w3-button side_link" >Select, Drop & Rename</a>
+            <a href="../python-data-science-reference/pandas-filter-sort-and-sample.html" class="w3-bar-item w3-button side_link" >Filter, Sort & Sample</a>
+            <a href="../python-data-science-reference/pandas-clean-data.html" class="w3-bar-item w3-button side_link" >Cleaning Data</a>
+        <h6 class="side_title">Visualisation</h6>
+            <a href="" class="w3-bar-item w3-button side_link" >Coming Soon</a>
+        <h6 class="side_title">Machine Learning</h6>
+            <a href="" class="w3-bar-item w3-button side_link" >Coming Soon</a>
+    </div>
+
+    <!--MAIN PAGE----->
+    <div class="w3-main" style="margin-left:250px; margin-right:200px;">
+    <div>
+            
+        <!--MENU BUTTON-->
+          <div class="h_left">
+              <button class="w3-button w3-xlarge w3-hide-large" onclick="w3_open()" style="left:0;">&#9776;</button>
+          </div>
+        
+          <!--HEADER-->
+          <div class="h_right">
+              <h1>Cleaning Data with Pandas</h1>
+          </div>
+        
+        <!--PY-REF-TOP-BANNER-->
+        <div class='horizontal_ad'>
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- top_ad_banner -->
+            <ins class="adsbygoogle"
+                 style="display:inline-block;width:100%;height:100px;
+                        text-align:center;"
+                 data-ad-client="ca-pub-4825364639199120"
+                 data-ad-slot="6723525876"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+        
+        <!--CONTENT-->
+        <div class="w3-container">
+              
+            <!--SOCIAL MEDIA BUTTONS-->
+            <div class="share_buttons">
+                  <!--TWITTER FOLLOW-->
+                  <a href="https://twitter.com/AnalyseUp?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @AnalyseUp</a>
+                  <!--TWEET-->
+                  <a class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+            </div>
+            <p class="txt_pad"></p>
+            
+            
+            <h2 class="txt_pad">Fill NA with Pandas</h2>
+            <p class="txt2">Fill NAs in the PromoID column of the orders dataframe with "None":</p>
+            <div class="wide_box code_wide_box">
+                  <div class="code_box_wide">
+                      <div class="txt2 code">
+                          <div class="code_line">
+                              orders[<span class="string">'PromoID'</span>].fillna(<span class="string">'None'</span>,inplace=<span class=key_word>True</span>)
+                          </div>
+                      </div>
+                    </div>
+            </div>
+            
+            <h2 class="txt_pad">Drop NAs with Pandas</h2>
+            <p class="txt2">Drop any rows from the orders dataframe where the ProductID column contains an NA:</p>
+            <div class="wide_box code_wide_box">
+                  <div class="code_box_wide">
+                      <div class="txt2 code">
+                          <div class="code_line">
+                              orders[<span class=string>'ProductID'</span>].dropna(inplace=<span class=key_word>True</span>)
+                          </div>
+                      </div>
+                    </div>
+            </div>
+            
+            <h2 class="txt_pad">Imputing Data</h2>
+            <p class="txt2">Replace NAs in the shipping_cost column with 3 if the retail price is greater then 30 otherwise replace with 0.</p>
+            <div class="wide_box code_wide_box">
+                  <div class="code_box_wide">
+                      <div class="txt2 code">
+                          <div class="code_line">
+                              <span class=key_word>def</span> impute_shipping_cost(row):
+                          </div>
+                          <div class="code_line function1">
+                            shipping_cost = row[<span class=string>'Shipping_Cost'</span>]
+                          </div>
+                          <div class="code_line function1">
+                            price = row[<span class=string>'Retail_Price'</span>]
+                          </div>
+                          <div class="code_line function1">
+                              <span class=key_word>if</span> pd.isnull(shipping_cost):
+                          </div>
+                          <div class="code_line function2">
+                              <span class=key_word>if</span> price > <span class=number>30</span>:
+                          </div>
+                          <div class="code_line function3">
+                              <span class=key_word>return</span> <span class=number>0</span>
+                          </div> 
+                          <div class="code_line function2">
+                              <span class="key_word">else</span>:
+                          </div>
+                          <div class="code_line function3">
+                              <span class=key_word>return</span> <span class=number>3</span>
+                          </div> 
+                          <div class="code_line function1">
+                              <span class="key_word">else</span>:
+                          </div>
+                          <div class="code_line function2">
+                              <span class=key_word>return</span> shipping_cost
+                          </div>  
+                          <br/>
+                          <div class="code_line">
+                              products[<span class=string>'Shipping_Cost'</span>] = products[[<span class=string>'Retail_Price'</span>,<span class=string>'Shipping_Cost'</span>]].apply(impute_shipping_cost, axis=<span class=number>1</span>)
+                          </div>  
+                          <br/>
+                      </div>
+                    </div>
+            </div>
+            
+            
+            
+            <!--
+             <a href="python-lists-and-tuples.html" style="text-decoration: none;"><div id="next_mobile">Next</div></a>
+            -->
+            <!--PY-REF-FOOTER-->
+            <div class="ad_banner">
+                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <ins class="adsbygoogle"
+                         style="display:block; text-align:center;"
+                         data-ad-layout="in-article"
+                         data-ad-format="fluid"
+                         data-ad-client="ca-pub-4825364639199120"
+                         data-ad-slot="7601493277"></ins>
+                    <script>
+                         (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+            </div>
+        
+            
+
+        </div>
+    </div>
+    </div>
+<!-------------------------------------FOOTER---------------------------------->
+<div id="footer"></div>
+        
+<!--PY-REF-SIDE-BANNER-->
+<div id="ad_bar" >
+    <!-- side_bar_1 -->
+    <ins class="adsbygoogle"
+         style="display:block; margin-top: 10vh;"
+         data-ad-client="ca-pub-4825364639199120"
+         data-ad-slot="6943017726"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+</div>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>    
+
+</body>
+</html>
