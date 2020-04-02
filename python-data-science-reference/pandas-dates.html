@@ -12,13 +12,15 @@
       gtag('config', 'UA-147504302-1');
     </script>
 
-    <title>Add Columns to Pandas Dataframes Using Formulas & Functions  - Python Data Science Reference</title>
+    <title>Pandas Dates & Time - Python Data Science Reference</title>
 
     <!--META TAGS-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="See examples of how to add additional columns to Pandas dataframes using formulas and functions.
-    See how to create columns with basic formulas and if else statements using lambda.">
+    <meta name="description" content="See examples of how to work with dates and
+    time in Pandas using dt and the datetime library.See how to split out the
+    year, month and day from a date column, find the days inbetween two dates
+    and find dates in the past or future.">
     <!--SOCIAL MEDIA META TAGS-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--STYLESHEETS-->
@@ -79,7 +81,7 @@
 
           <!--HEADER-->
           <div class="h_right">
-              <h1>Add Columns to Pandas Dataframes</h1>
+              <h1>Pandas Dates & Time</h1>
           </div>
 
         <!--PY-REF-TOP-BANNER-->
@@ -109,26 +111,125 @@
             <p class="txt_pad"></p>
 
 
-            <h2 class="txt_pad">Basic Formulas</h2>
+            <h2 class="txt_pad">Today</h2>
+            <p class="txt2">Create a dataframe column containing the current date:</p>
             <div class="wide_box code_wide_box">
                   <div class="code_box_wide">
                       <div class="txt2 code">
                           <div class="code_line">
-                              products[<span class=string>'gross_margin'</span>] = products[<span class=string>'Retail_Price'</span>] - products[<span class=string>'Cost'</span>]
+                            <span class=key_word>import</span> datetime <span class=key_word>as</span> dt
                           </div>
                           <div class="code_line">
-                              products[<span class=string>'gross_margin_rate'</span>] = products[<span class=string>'gross_margin'</span>] / products[<span class=string>'Retail_Price'</span>]
+                            orders[<span class=string>'today'</span>] = pd.to_datetime(dt.date.today())
                           </div>
                       </div>
                     </div>
             </div>
 
-            <h2 class="txt_pad">If Else Statement Using Lambda</h2>
+            <h2 class="txt_pad">Now</h2>
+            <p class="txt2">Create a dataframe column containing the current date and time:</p>
             <div class="wide_box code_wide_box">
                   <div class="code_box_wide">
                       <div class="txt2 code">
                           <div class="code_line">
-                              orders[<span class=string>'in_promo'</span>] = orders[<span class=string>'PromoID'</span>].apply(<span class=key_word>lambda</span> x: <span class=string>'N'</span> <span class=key_word>if</span> x == <span class=string>'None'</span> <span class=key_word>else</span> <span class=string>'Y'</span>)
+                            orders[<span class=string>'now'</span>] = dt.datetime.now()
+                          </div>
+                      </div>
+                    </div>
+            </div>
+
+            <h2 class="txt_pad">Date</h2>
+            <p class="txt2">Create a dataframe column containing the date 2020-02-01:</p>
+            <div class="wide_box code_wide_box">
+                  <div class="code_box_wide">
+                      <div class="txt2 code">
+                          <div class="code_line">
+                            orders[<span class=string>'date'</span>] =
+                            dt.datetime(<span class=number>2020</span>, <span class=number>2</span>, <span class=number>1</span>)
+                          </div>
+                      </div>
+                    </div>
+            </div>
+
+            <h2 class="txt_pad">Pandas dt (Year, Month, Day, Hour etc)</h2>
+            <p class="txt2">Extract date and time features from the "order_date" datetime column in Pandas dataframe :</p>
+            <div class="wide_box code_wide_box">
+                  <div class="code_box_wide">
+                      <div class="txt2 code">
+                          <div class="code_line">
+                            orders[<span class=string>'year'</span>] = orders[<span class=string>'Order_Date'</span>].dt.year
+                          </div>
+                          <div class="code_line">
+                            orders[<span class=string>'qtr'</span>] = orders[<span class=string>'Order_Date'</span>].dt.quarter
+                          </div>
+                          <div class="code_line">
+                            orders[<span class=string>'month'</span>] = orders[<span class=string>'Order_Date'</span>].dt.month
+                          </div>
+                          <div class="code_line">
+                            orders[<span class=string>'week'</span>] = orders[<span class=string>'Order_Date'</span>].dt.week
+                          </div>
+                          <div class="code_line">
+                            orders[<span class=string>'day'</span>] = orders[<span class=string>'Order_Date'</span>].dt.day
+                          </div>
+                          <div class="code_line">
+                            orders[<span class=string>'weekday'</span>] = orders[<span class=string>'Order_Date'</span>].dt.weekday
+                          </div>
+                          <div class="code_line">
+                            orders[<span class=string>'hour'</span>] = orders[<span class=string>'Order_Date'</span>].dt.hour
+                          </div>
+                          <div class="code_line">
+                            orders[<span class=string>'minute'</span>] = orders[<span class=string>'Order_Date'</span>].dt.minute
+                          </div>
+                      </div>
+                    </div>
+            </div>
+
+            <h2 class="txt_pad">Weekend</h2>
+            <p class="txt2">Create a dataframe column indicating if the date in the "order_date" column occured at the weekend:</p>
+            <div class="wide_box code_wide_box">
+                  <div class="code_box_wide">
+                      <div class="txt2 code">
+                          <div class="code_line">
+                            orders[<span class=string>'weekend'</span>] =
+                            orders[<span class=string>'weekday'</span>].apply(<span class=key_word>lambda</span>
+                             x: <span class=number>1</span> <span class=key_word>if</span> x == <span class=number>5</span>
+                               <span class=key_word>or</span> x == <span class=number>6</span>
+                               <span class=key_word>else</span> <span class=number>0</span>)
+                          </div>
+                      </div>
+                    </div>
+            </div>
+
+            <h2 class="txt_pad">Days Between Dates</h2>
+            <p class="txt2">Create a dataframe column containing the number of
+              days between the dates in the "order_date" and "today" columns:</p>
+            <div class="wide_box code_wide_box">
+                  <div class="code_box_wide">
+                      <div class="txt2 code">
+                          <div class="code_line">
+                            orders[<span class=string>'days_since_order'</span>] =
+                            (orders[<span class=string>'today'</span>] -
+                            orders[<span class=string>'Order_Date'</span>]).dt.days
+                          </div>
+                      </div>
+                    </div>
+            </div>
+
+            <h2 class="txt_pad">Dates Before and After</h2>
+            <p class="txt2">Create two dataframe columns containing the dates 7 days
+              after and 7 days before the date in the "order_date" column:</p>
+            <div class="wide_box code_wide_box">
+                  <div class="code_box_wide">
+                      <div class="txt2 code">
+                          <div class="code_line">
+                            orders[<span class=string>'week_after_order'</span>] =
+                            orders[<span class=string>'Order_Date'</span>] +
+                            dt.timedelta(days=<span class=number>7</span>)
+                          </div>
+                          <div class="code_line">
+                            orders[<span class=string>'week_before_order'</span>] =
+                            orders[<span class=string>'Order_Date'</span>] -
+                            dt.timedelta(days=<span class=number>7</span>)
                           </div>
                       </div>
                     </div>
