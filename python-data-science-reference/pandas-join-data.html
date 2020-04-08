@@ -12,12 +12,12 @@
       gtag('config', 'UA-147504302-1');
     </script>
 
-    <title>Pandas Create Dataframes - Python Data Science Reference</title>
+    <title>Join & Blend DataFrames with Pandas - Python Data Science Reference</title>
 
     <!--META TAGS-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="See examples of how to create Pandas Dataframes and import data from various sources including csv, Excel & SQL Server.">
+    <meta name="description" content="See examples of how to join DataFrames together using Merge and Concat. See how to create different join types and concatenations">
     <!--SOCIAL MEDIA META TAGS-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--STYLESHEETS-->
@@ -61,7 +61,7 @@
             <a href="../python-data-science-reference/pandas-add-column.html" class="w3-bar-item w3-button side_link" >Add Columns</a>
             <a href="../python-data-science-reference/pandas-clean-data.html" class="w3-bar-item w3-button side_link" >Cleaning Data</a>
             <a href="../python-data-science-reference/pandas-dates.html" class="w3-bar-item w3-button side_link" >Dates & Time</a>
-        <a href="../python-data-science-reference/pandas-join-data.html" class="w3-bar-item w3-button side_link" >Join Data</a>
+            <a href="../python-data-science-reference/pandas-join-data.html" class="w3-bar-item w3-button side_link" >Join Data</a>
             <a href="../python-data-science-reference/pandas-aggregating-data.html" class="w3-bar-item w3-button side_link" >Aggregate & Transform</a>
         <h6 class="side_title">Visualisation</h6>
             <a href="" class="w3-bar-item w3-button side_link" >Coming Soon</a>
@@ -80,7 +80,7 @@
 
           <!--HEADER-->
           <div class="h_right">
-              <h1>Importing Data into Pandas Dataframes</h1>
+              <h1>Join DataFrames with Python Pandas</h1>
           </div>
 
         <!--PY-REF-TOP-BANNER-->
@@ -110,90 +110,95 @@
             <p class="txt_pad"></p>
 
 
-            <h2 class="txt_pad">Import CSV File into Pandas Dataframe</h2>
-            <p class="txt2">Import data from the "orders.csv" file into a Pandas dataframe. Here we will parse the field "Order_Date" as a date, take a subset of columns and only import the first 500 rows.</p>
+            <h2 class="txt_pad">Inner Join Using Merge</h2>
+            <p class="txt2">Create a new DataFrame called order_lines that joins the orders and products DataFrames on the "ProductID"
+                and "Product_ID" fields using an inner join:</p>
             <div class="wide_box code_wide_box">
                   <div class="code_box_wide">
                       <div class="txt2 code">
                           <div class="code_line">
-                          <span class="key_word">import</span> pandas <span class="key_word">as </span>pd
-                          </div>
-                          <div class="code_line">
-                              orders = pd.read_csv(<span class='string'>'data/orders.csv'</span>, parse_dates=[<span class='string'>'Order_Date'</span>],
-                          </div>
-                          <div class="code_line function3">
-                              usecols=[<span class='string'>'Order_No', 'Order_Date','ProductID'</span>], nrows=<span class='number'>500</span>)
-                          </div>
-                      </div>
-                    </div>
-            </div>
-
-            <h2 class="txt_pad">Import Excel Worksheet into Pandas Dataframe</h2>
-            <p class="txt2">Import data from the xlsx file "Returns.xslx" into a Pandas dataframe. The data in this case is stored in the "Returns" worksheet.</p>
-            <div class="wide_box code_wide_box">
-                  <div class="code_box_wide">
-                      <div class="txt2 code">
-                          <div class="code_line">
-                              returns = pd.read_excel(<span class='string'>'data/Returns.xlsx'</span>, sheet_name=<span class='string'>'Returns'</span>)
-                          </div>
-                      </div>
-                    </div>
-            </div>
-
-            <h2 class="txt_pad">Import Pickle File into Pandas Dataframe</h2>
-            <div class="wide_box code_wide_box">
-                  <div class="code_box_wide">
-                      <div class="txt2 code">
-                          <div class="code_line">
-                              df = pd.read_pickle(<span class='string'>'data/input.pkl'</span>)
-                          </div>
-                      </div>
-                    </div>
-            </div>
-
-            <h2 class="txt_pad">Import SQL Server Query into Pandas Dataframe</h2>
-            <p class="txt2">Connect to SQL Server, run SQL query and import the resulting data into a Pandas dataframe. Note, this assumes that you don't have to enter a username and password to connect to the server you are querying.</p>
-            <div class="wide_box code_wide_box">
-                  <div class="code_box_wide">
-                      <div class="txt2 code">
-                          <div class="code_line">
-                            <span class="key_word">import</span> pandas <span class="key_word">as </span>pd
-                          </div>
-                          <div class="code_line">
-                            <span class="key_word">import</span> pyodbc <span class="key_word">as </span>db
+                            order_lines = orders.merge(products,
+                              left_on=<span class=string>'ProductID'</span>, right_on=<span class=string>'Product_ID'</span>
+                              , how=<span class=string>'inner'</span>)
                           </div>
                           <br/>
+                      </div>
+                    </div>
+            </div>
+            
+            <h2 class="txt_pad">Left Outer Join Using Merge</h2>
+            <p class="txt2">Create a new DataFrame called order_lines that joins the orders and products DataFrames on the "ProductID"
+                and "Product_ID" fields using a left outer join:</p>
+            <div class="wide_box code_wide_box">
+                  <div class="code_box_wide">
+                      <div class="txt2 code">
                           <div class="code_line">
-                            <span class="comment">#Connect to SQL Server using ODBC Driver 13 for SQL Server.</span>
-                          </div>
-                           <div class="code_line">
-                            <span class="comment">#You may need to declare a different driver depending on the server you are connecting to.</span>
-                          </div>
-                          <div class="code_line">
-                             conn = db.connect(<span class="string">'DRIVER={ODBC Driver 13 for SQL Server};SERVER=ST787554;</span>
-                          </div>
-                          <div class="code_line function3">
-                             <span class="string">Trusted_Connection=yes;DATABASE=Orders'</span>)
+                            order_lines = orders.merge(products,
+                              left_on=<span class=string>'ProductID'</span>, right_on=<span class=string>'Product_ID'</span>
+                              , how=<span class=string>'left'</span>)
                           </div>
                           <br/>
+                      </div>
+                    </div>
+            </div>
+            
+            <h2 class="txt_pad">Right Outer Join Using Merge</h2>
+            <p class="txt2">Create a new DataFrame called order_lines that joins the orders and products DataFrames on the "ProductID"
+                and "Product_ID" fields using a right outer join:</p>
+            <div class="wide_box code_wide_box">
+                  <div class="code_box_wide">
+                      <div class="txt2 code">
                           <div class="code_line">
-                            <span class="comment">#Declare SQL Query</span>
-                          </div>
-                          <div class="code_line">
-                             qry = <span class="string">'SELECT * FROM SALE_ITEMS'</span>
+                            order_lines = orders.merge(products,
+                              left_on=<span class=string>'ProductID'</span>, right_on=<span class=string>'Product_ID'</span>
+                              , how=<span class=string>'right'</span>)
                           </div>
                           <br/>
+                      </div>
+                    </div>
+            </div>
+            
+            <h2 class="txt_pad">Full Outer Join Using Merge</h2>
+            <p class="txt2">Create a new DataFrame called order_lines that joins the orders and products DataFrames on the "ProductID"
+                and "Product_ID" fields using a full outer join:</p>
+            <div class="wide_box code_wide_box">
+                  <div class="code_box_wide">
+                      <div class="txt2 code">
                           <div class="code_line">
-                            <span class="comment">#Run query and import data into Pandas dataframe</span>
+                            order_lines = orders.merge(products,
+                              left_on=<span class=string>'ProductID'</span>, right_on=<span class=string>'Product_ID'</span>
+                              , how=<span class=string>'outer'</span>)
                           </div>
-                          <div class="code_line">
-                              sale_items = pd.read_sql(qry, conn)
-                          </div>
+                          <br/>
                       </div>
                     </div>
             </div>
 
-
+            <h2 class="txt_pad">Concatenate Rows Using Concat</h2>
+            <p class="txt2">Concatenate the rows in the order_lines DataFrame with the rows in the promo_lines Dataframe:</p>
+            <div class="wide_box code_wide_box">
+                  <div class="code_box_wide">
+                      <div class="txt2 code">
+                          <div class="code_line">
+                              pd.concat([orders_lines,promo_lines],axis=<span class=number>1</span>)
+                          </div>
+                      </div>
+                      <br/>
+                    </div>
+            </div>
+            
+            <h2 class="txt_pad">Concatenate Columns (Union) Using Concat</h2>
+            <p class="txt2">Concatenate the columns in the fiction_orders DataFrame with the columns in the non_fiction_orders Dataframe:</p>
+            <div class="wide_box code_wide_box">
+                  <div class="code_box_wide">
+                      <div class="txt2 code">
+                          <div class="code_line">
+                              pd.concat([fiction_orders, non_fiction_orders],axis=<span class=number>0</span>)
+                          </div>
+                      </div>
+                      <br/>
+                    </div>
+            </div>
 
             <!--
              <a href="python-lists-and-tuples.html" style="text-decoration: none;"><div id="next_mobile">Next</div></a>
