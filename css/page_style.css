@@ -517,9 +517,28 @@ tr:nth-child(even) {
     margin:auto;
 }
 
+.output_image_80 {
+    display:block;
+    width: 80%;
+    height: 100%;
+    position:relative;
+    top:20px;
+    margin:auto;
+}
+
+
 .output_image_60 {
     display:block;
     width: 60%;
+    height: 100%;
+    position:relative;
+    top:20px;
+    margin:auto;
+}
+
+.output_image_40 {
+    display:block;
+    width: 40%;
     height: 100%;
     position:relative;
     top:20px;
@@ -799,6 +818,12 @@ input {
             height: auto;
         }
         .output_image_60 {
+            width: 100%;
+        }
+        .output_image_40 {
+            width: 100%;
+        }
+        .output_image_80 {
             width: 100%;
         }
 
