@@ -12,12 +12,12 @@
       gtag('config', 'UA-147504302-1');
     </script>
 
-    <title>Filter, Sort and Sample Data with Pandas - Python Data Science Reference</title>
+    <title>Continuous Variable Plots with Seaborn & Matplotlib - Python Data Science Reference | AnalyseUp.com</title>
 
     <!--META TAGS-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="See examples of how to filter, sort and sample data in Pandas dataframes.">
+    <meta name="description" content="See examples of how to use Seaborn and Matplotlib to plot different visualisations of continuous variables from Pandas DataFrames. See how to plot scatter plots, histograms, frequency charts and box plots">
     <!--SOCIAL MEDIA META TAGS-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--STYLESHEETS-->
@@ -61,7 +61,7 @@
             <a href="../python-data-science-reference/pandas-add-column.html" class="w3-bar-item w3-button side_link" >Add Columns</a>
             <a href="../python-data-science-reference/pandas-clean-data.html" class="w3-bar-item w3-button side_link" >Cleaning Data</a>
             <a href="../python-data-science-reference/pandas-dates.html" class="w3-bar-item w3-button side_link" >Dates & Time</a>
-        <a href="../python-data-science-reference/pandas-join-data.html" class="w3-bar-item w3-button side_link" >Join Data</a>
+            <a href="../python-data-science-reference/pandas-join-data.html" class="w3-bar-item w3-button side_link" >Join Data</a>
             <a href="../python-data-science-reference/pandas-aggregating-data.html" class="w3-bar-item w3-button side_link" >Aggregate & Transform</a>
         <h6 class="side_title">Data Analysis</h6>
             <a href="../python-data-science-reference/pandas-exploring-data.html" class="w3-bar-item w3-button side_link" >Exploring Data</a>
@@ -81,7 +81,7 @@
 
           <!--HEADER-->
           <div class="h_right">
-              <h1>Pandas Filter, Sort and Sample</h1>
+              <h1>Continuous Variable Plots with Seaborn & Matplotlib</h1>
           </div>
 
         <!--PY-REF-TOP-BANNER-->
@@ -111,95 +111,146 @@
             <p class="txt_pad"></p>
 
 
-            <h2 class="txt_pad">Pandas Filter Rows</h2>
-            <p class="txt2">Filter the orders data frame to only include rows where the PromoID is 30_OFF:</p>
+            <h2 class="txt_pad">Import Visualisation Libraries</h2>
             <div class="wide_box code_wide_box">
                   <div class="code_box_wide">
                       <div class="txt2 code">
                           <div class="code_line">
-                              orders[orders[<span class='string'>'PromoID'</span>] == <span class='string'>'30_OFF'</span>]
+                              <span class=key_word>import</span> matplotlib.pyplot <span class=key_word>as</span> plt
+                          </div>
+                          <div class="code_line">
+                              <span class=key_word>import</span> seaborn <span class=key_word>as</span> sns
+                              </div>
+                            <div class="code_line">
+                              <span class=comment>#Required if using Jupyter Notebook</span>
+                              %matplotlib inline
                           </div>
                       </div>
                     </div>
             </div>
-            <p class="txt2 txt_pad">Filter the orders data frame to only include rows where the PromoID is 30_OFF and the ProductID is 228722:</p>
+            
+            <h2 class="txt_pad">Scatter Plot</h2>
+            <p class="txt2">Scatterplot showing price in relation to availability using Seaborn and Matplotlib:</p>
             <div class="wide_box code_wide_box">
                   <div class="code_box_wide">
                       <div class="txt2 code">
                           <div class="code_line">
-                              orders[(orders[<span class='string'>'PromoID'</span>] == <span class='string'>'30_OFF'</span>) &amp;
-                              (orders[<span class='string'>'ProductID'</span>] == <span class='number'>228722</span>)]
+                              plt.figure(figsize=(<span class=number>10</span>,<span class=number>5</span>))
+                          </div>
+                          <div class="code_line">
+                              plt.title(<span class=string>'Availability & Price'</span>)
+                          </div>
+                          <div class="code_line">
+                              plt.xlabel(<span class=string>'Availability'</span>)
+                          </div>
+                              plt.ylabel(<span class=string>'Price'</span>)
+                          <div class="code_line">
+                              sns.scatterplot(data[<span class=string>'availability_365'</span>],data[<span class=string>'price'</span>])
+                          </div>
+                           <div class="code_line">
+                                plt.show()
                           </div>
                       </div>
                     </div>
             </div>
-            <p class="txt2 txt_pad">Filter the orders data frame to only include rows where the PromoID is 30_OFF or the ProductID is 228722:</p>
+            <img class="output_image_60" src="../img/python-data-science-reference/continuous-plots/seaborn-scatterplot.png">
+
+            <h2 class="txt_pad">Histogram</h2>
+            <p class="txt2">Histogram of the column price group into 100 bins using Seaborn DistPlot with the X axis set to a range of 0 - 2000:</p>
             <div class="wide_box code_wide_box">
                   <div class="code_box_wide">
                       <div class="txt2 code">
                           <div class="code_line">
-                              orders[(orders[<span class='string'>'PromoID'</span>] == <span class='string'>'30_OFF'</span>) |
-                              (orders[<span class='string'>'ProductID'</span>] == <span class='number'>228722</span>)]
+                              plt.figure(figsize=(<span class=number>10</span>,<span class=number>5</span>))
+                          </div>
+                          <div class="code_line">
+                              plt.xlim(<span class=number>0</span>,<span class=number>2000</span>)
+                          </div>
+                          <div class="code_line">
+                              plt.xlabel(<span class=string>'Price'</span>)
+                          </div>
+                          <div class="code_line">
+                              plt.ylabel(<span class=string>'Records'</span>)
+                          </div>
+                          <div class="code_line">
+                              sns.distplot(data[<span class=string>'price'</span>],bins=<span class=number>100</span>,kde=<span class=key_word>False</span>)
+                          </div>
+                        <div class="code_line">
+                                plt.show()
                           </div>
                       </div>
                     </div>
             </div>
-
-            <h2 class="txt_pad">Pandas Sort Rows</h2>
-            <p class="txt2">Sort the orders dataframe by ProductID and then Order_Date in descending order.</p>
+            <img class="output_image_60" src="../img/python-data-science-reference/continuous-plots/seaborn-distplot.png">
+            
+            <h2 class="txt_pad">DataFrame Histogram</h2>
+            <p class="txt2">Histograms for all numerical columns in the data DataFrame using Pandas Hist:</p>
             <div class="wide_box code_wide_box">
                   <div class="code_box_wide">
                       <div class="txt2 code">
                           <div class="code_line">
-                              orders.sort_values(by=[<span class='string'>'ProductID'</span>,<span class='string'> 'Order_Date'</span>], ascending=<span class='key_word'>False</span>, inplace=<span class='key_word'>True</span>)
+                              data.hist(figsize=(<span class=number>15</span>,<span class=number>30</span>),layout=(<span class=number>9</span>,<span class=number>3</span>))
                           </div>
                       </div>
                     </div>
             </div>
-
-            <h2 class="txt_pad">Pandas Sample Rows</h2>
-            <p class="txt2">Sample 100 rows from the orders dataframe</p>
+            <img class="output_image_60" src="../img/python-data-science-reference/continuous-plots/pandas-hist.png">
+            
+            <h2 class="txt_pad">Density Plot</h2>
+            <p class="txt2">Density plot for the price variable using Seaborn kdeplot:</p>
             <div class="wide_box code_wide_box">
                   <div class="code_box_wide">
                       <div class="txt2 code">
                           <div class="code_line">
-                              orders.sample(n=<span class='number'>100</span>, random_state=101)
+                              plt.figure(figsize=(<span class=number>10</span>,<span class=number>5</span>))
+                          </div>
+                          <div class="code_line">
+                              plt.xlim(<span class=number>0</span>,<span class=number>2000</span>)
+                          </div>
+                          <div class="code_line">
+                              plt.xlabel(<span class=string>'Price'</span>)
+                          </div>
+                          <div class="code_line">
+                              plt.ylabel(<span class=string>'Density'</span>)
+                          </div>
+                          <div class="code_line">
+                              sns.kdeplot(data[<span class=string>'price'</span>],shade=<span class=key_word>True</span>)
+                          </div>
+                           <div class="code_line">
+                                plt.show()
                           </div>
                       </div>
                     </div>
             </div>
-            <p class="txt2 txt_pad">Sample 10% of rows from the orders dataframe</p>
+            <img class="output_image_60" src="../img/python-data-science-reference/continuous-plots/seaborn-density-plot.png">
+            
+            <h2 class="txt_pad">Box Plot</h2>
+            <p class="txt2">Box plot for the price variable using Seaborn and Matplotlib:</p>
             <div class="wide_box code_wide_box">
                   <div class="code_box_wide">
                       <div class="txt2 code">
                           <div class="code_line">
-                              orders.sample(frac=<span class='number'>0.1</span>, random_state=101)
+                              plt.figure(figsize=(<span class=number>10</span>,<span class=number>5</span>))
+                          </div>
+                          <div class="code_line">
+                              plt.xlim(<span class=number>0</span>,<span class=number>1000</span>)
+                          </div>
+                          <div class="code_line">
+                              plt.ylabel(<span class=string>'Price'</span>)
+                          </div>
+                          <div class="code_line">
+                              sns.boxplot(x=data[<span class=string>'price'</span>])
+                          </div>
+                          <div class="code_line">
+                              plt.show()
                           </div>
                       </div>
                     </div>
             </div>
+            <img class="output_image_60" src="../img/python-data-science-reference/continuous-plots/seaborn-boxplot.png">
 
 
-
-            <!--
-             <a href="python-lists-and-tuples.html" style="text-decoration: none;"><div id="next_mobile">Next</div></a>
-            -->
-            <!--PY-REF-FOOTER-->
-            <div class="ad_banner">
-                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                    <ins class="adsbygoogle"
-                         style="display:block; text-align:center;"
-                         data-ad-layout="in-article"
-                         data-ad-format="fluid"
-                         data-ad-client="ca-pub-4825364639199120"
-                         data-ad-slot="7601493277"></ins>
-                    <script>
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
-            </div>
-
-
-
+            
         </div>
     </div>
     </div>
