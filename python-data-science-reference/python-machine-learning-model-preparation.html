@@ -12,15 +12,13 @@
       gtag('config', 'UA-147504302-1');
     </script>
 
-    <title>Pandas Dates & Time - Python Data Science Reference</title>
+    <title>Python Machine Learning Data Preparation - Python Data Science Reference | AnalyseUp.com</title>
+
 
     <!--META TAGS-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="See examples of how to work with dates and
-    time in Pandas using dt and the datetime library.See how to split out the
-    year, month and day from a date column, find the days inbetween two dates
-    and find dates in the past or future.">
+    <meta name="description" content="See examples of how to prepare your data machine learning in Python. See how to split your data, deal with categorical features and scale your data.">
     <!--SOCIAL MEDIA META TAGS-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--STYLESHEETS-->
@@ -64,7 +62,7 @@
             <a href="../python-data-science-reference/pandas-add-column.html" class="w3-bar-item w3-button side_link" >Add Columns</a>
             <a href="../python-data-science-reference/pandas-clean-data.html" class="w3-bar-item w3-button side_link" >Cleaning Data</a>
             <a href="../python-data-science-reference/pandas-dates.html" class="w3-bar-item w3-button side_link" >Dates & Time</a>
-        <a href="../python-data-science-reference/pandas-join-data.html" class="w3-bar-item w3-button side_link" >Join Data</a>
+            <a href="../python-data-science-reference/pandas-join-data.html" class="w3-bar-item w3-button side_link" >Join Data</a>
             <a href="../python-data-science-reference/pandas-aggregating-data.html" class="w3-bar-item w3-button side_link" >Aggregate & Transform</a>
         <h6 class="side_title">Data Analysis</h6>
             <a href="../python-data-science-reference/pandas-exploring-data.html" class="w3-bar-item w3-button side_link" >Exploring Data</a>
@@ -85,7 +83,7 @@
 
           <!--HEADER-->
           <div class="h_right">
-              <h1>Pandas Dates & Time</h1>
+              <h1>Machine Learning Data Preparation</h1>
           </div>
 
         <!--PY-REF-TOP-BANNER-->
@@ -115,149 +113,89 @@
             <p class="txt_pad"></p>
 
 
-            <h2 class="txt_pad">Today</h2>
-            <p class="txt2">Create a dataframe column containing the current date:</p>
+            <h2 class="txt_pad">Split Data Into Features & Target</h2>
+            <p class="txt2">Create a DataFrame that contains the features (X) that will be used to predict the target and seperate Series that contain just the target (y):</p>
             <div class="wide_box code_wide_box">
                   <div class="code_box_wide">
                       <div class="txt2 code">
                           <div class="code_line">
-                            <span class=key_word>import</span> datetime <span class=key_word>as</span> dt
+                              X = data[[<span class=string>'neighbourhood_group'</span>, <span class=string>'latitude'</span>, 
+                               <span class=string>'longitude'</span>, <span class=string>'room_type'</span>]]
                           </div>
-                          <div class="code_line">
-                            orders[<span class=string>'today'</span>] = pd.to_datetime(dt.date.today())
+                           <div class="code_line">
+                               y = data[<span class=string>'price'</span>]
                           </div>
+                          <br/>
                       </div>
                     </div>
             </div>
-
-            <h2 class="txt_pad">Now</h2>
-            <p class="txt2">Create a dataframe column containing the current date and time:</p>
+            
+            <h2 class="txt_pad">Create Dummy Variables Using Pandas get_dummies</h2>
+            <p class="txt2">Convert the categorical features "neighbourhood_group" and "room_type" into dummy variables with first level of each feature dropped:</p>
             <div class="wide_box code_wide_box">
                   <div class="code_box_wide">
                       <div class="txt2 code">
                           <div class="code_line">
-                            orders[<span class=string>'now'</span>] = dt.datetime.now()
+                              X = pd.get_dummies(X, columns=[<span class=string>'neighbourhood_group'</span>,<span class=string>'room_type'</span>], drop_first=<span class=key_word>True</span>)
                           </div>
+                          <br/>
                       </div>
                     </div>
             </div>
-
-            <h2 class="txt_pad">Date</h2>
-            <p class="txt2">Create a dataframe column containing the date 2020-02-01:</p>
+           
+            <h2 class="txt_pad">Split Data Into Train & Test Sets Using Sklearn train_test_split</h2>
+            <p class="txt2">Split the data into train and test sets where the test set with train taking 70% of the data and test taking 30%:</p>
             <div class="wide_box code_wide_box">
                   <div class="code_box_wide">
                       <div class="txt2 code">
                           <div class="code_line">
-                            orders[<span class=string>'date'</span>] =
-                            dt.datetime(<span class=number>2020</span>, <span class=number>2</span>, <span class=number>1</span>)
+                              <span class=key_word>from</span> sklearn.model_selection <span class=key_word>import</span> train_test_split
                           </div>
+                          <div class="code_line">
+                              X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=<span class=number>0.3</span>, random_state=<span class=number>101</span>)
+                          </div>
+                          <br/>
                       </div>
                     </div>
             </div>
-
-            <h2 class="txt_pad">Pandas dt (Year, Month, Day, Hour etc)</h2>
-            <p class="txt2">Extract date and time features from the "order_date" datetime column in Pandas dataframe :</p>
+            
+            <h2 class="txt_pad">Scale Data Using Standard Scaler from Sklearn</h2>
+            <p class="txt2">Fit the standard scaler to X_train data then transform X_train and X_test using the fitted scaler. As the transform function outputs the data as a Numpy array then we convert back this back to Pandas DataFrame.</p>
             <div class="wide_box code_wide_box">
                   <div class="code_box_wide">
                       <div class="txt2 code">
                           <div class="code_line">
-                            orders[<span class=string>'year'</span>] = orders[<span class=string>'Order_Date'</span>].dt.year
+                              <span class=key_word>from</span> sklearn.preprocessing <span class=key_word>import</span> StandardScaler
                           </div>
                           <div class="code_line">
-                            orders[<span class=string>'qtr'</span>] = orders[<span class=string>'Order_Date'</span>].dt.quarter
+                              <span class=comment>#Initalise standard scaler</span>
+                          </div>
+                           <div class="code_line">
+                              scaler = StandardScaler()
                           </div>
                           <div class="code_line">
-                            orders[<span class=string>'month'</span>] = orders[<span class=string>'Order_Date'</span>].dt.month
+                              <span class=comment>#Fit the scaler using X_train data</span>
                           </div>
                           <div class="code_line">
-                            orders[<span class=string>'week'</span>] = orders[<span class=string>'Order_Date'</span>].dt.week
+                              scaler.fit(X_train)
                           </div>
                           <div class="code_line">
-                            orders[<span class=string>'day'</span>] = orders[<span class=string>'Order_Date'</span>].dt.day
+                              <span class=comment>#Transform X_train and X_test using the scaler and convert back to DataFrame</span>
                           </div>
                           <div class="code_line">
-                            orders[<span class=string>'weekday'</span>] = orders[<span class=string>'Order_Date'</span>].dt.weekday
+                              X_train = pd.DataFrame(scaler.transform(X_train), columns = X_train.columns)
                           </div>
                           <div class="code_line">
-                            orders[<span class=string>'hour'</span>] = orders[<span class=string>'Order_Date'</span>].dt.hour
+                              X_test = pd.DataFrame(scaler.transform(X_test), columns = X_test.columns)
                           </div>
-                          <div class="code_line">
-                            orders[<span class=string>'minute'</span>] = orders[<span class=string>'Order_Date'</span>].dt.minute
-                          </div>
+                          <br/>
                       </div>
                     </div>
             </div>
+            
+            
 
-            <h2 class="txt_pad">Weekend</h2>
-            <p class="txt2">Create a dataframe column indicating if the date in the "order_date" column occured at the weekend:</p>
-            <div class="wide_box code_wide_box">
-                  <div class="code_box_wide">
-                      <div class="txt2 code">
-                          <div class="code_line">
-                            orders[<span class=string>'weekend'</span>] =
-                            orders[<span class=string>'weekday'</span>].apply(<span class=key_word>lambda</span>
-                             x: <span class=number>1</span> <span class=key_word>if</span> x == <span class=number>5</span>
-                               <span class=key_word>or</span> x == <span class=number>6</span>
-                               <span class=key_word>else</span> <span class=number>0</span>)
-                          </div>
-                      </div>
-                    </div>
-            </div>
-
-            <h2 class="txt_pad">Days Between Dates</h2>
-            <p class="txt2">Create a dataframe column containing the number of
-              days between the dates in the "order_date" and "today" columns:</p>
-            <div class="wide_box code_wide_box">
-                  <div class="code_box_wide">
-                      <div class="txt2 code">
-                          <div class="code_line">
-                            orders[<span class=string>'days_since_order'</span>] =
-                            (orders[<span class=string>'today'</span>] -
-                            orders[<span class=string>'Order_Date'</span>]).dt.days
-                          </div>
-                      </div>
-                    </div>
-            </div>
-
-            <h2 class="txt_pad">Dates Before and After</h2>
-            <p class="txt2">Create two dataframe columns containing the dates 7 days
-              after and 7 days before the date in the "order_date" column:</p>
-            <div class="wide_box code_wide_box">
-                  <div class="code_box_wide">
-                      <div class="txt2 code">
-                          <div class="code_line">
-                            orders[<span class=string>'week_after_order'</span>] =
-                            orders[<span class=string>'Order_Date'</span>] +
-                            dt.timedelta(days=<span class=number>7</span>)
-                          </div>
-                          <div class="code_line">
-                            orders[<span class=string>'week_before_order'</span>] =
-                            orders[<span class=string>'Order_Date'</span>] -
-                            dt.timedelta(days=<span class=number>7</span>)
-                          </div>
-                      </div>
-                    </div>
-            </div>
-
-            <!--
-             <a href="python-lists-and-tuples.html" style="text-decoration: none;"><div id="next_mobile">Next</div></a>
-            -->
-            <!--PY-REF-FOOTER-->
-            <div class="ad_banner">
-                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                    <ins class="adsbygoogle"
-                         style="display:block; text-align:center;"
-                         data-ad-layout="in-article"
-                         data-ad-format="fluid"
-                         data-ad-client="ca-pub-4825364639199120"
-                         data-ad-slot="7601493277"></ins>
-                    <script>
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
-            </div>
-
-
-
+            
         </div>
     </div>
     </div>
