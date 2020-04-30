@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- GOOGLE ANALYTICS -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-147504302-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-147504302-1');
+    </script>
+
+    <title>Linear Models with Scikit-Learn  - Python Data Science Reference | AnalyseUp.com</title>
+
+
+    <!--META TAGS-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="See an examples of how to implement Linear Regression and Logistic Regression using Scikit-Learn in Python. This includes how to fit the model and makes predictions along with finding the intercept and coefficients of the model.">
+    <!--SOCIAL MEDIA META TAGS-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--STYLESHEETS-->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link href='../css/w3.css' rel='stylesheet' type="text/css">
+    <link href='../css/page_style.css' rel='stylesheet' type='text/css'>
+
+    <!--JAVASCRIPT FOR BURGER MENU-->
+    <script>
+        function w3_open() {
+            document.getElementById("mySidebar").style.display = "block";
+        }
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+        }
+    </script>
+</head>
+
+<body>
+    <!--TOP BANNER-->
+
+
+    <div id="top">
+        <a href="../index.html"><img alt="Get Started with Data Science, Data Analysis and BI" id="banner" src="../img/AnalyseUp_Black(v2.2).png" ></a>
+        <div class="sep"></div>
+    </div>
+
+
+
+    <!--SIDE MENU-->
+    <div class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left" style="width:250px; top:0vh;" id="mySidebar">
+        <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="w3_close()">Close &times;</button>
+        <!--NEXT BUTTON
+        <a href="python-lists-and-tuples.html" style="text-decoration: none;"><div id="next">Next</div></a>-->
+        <p></p>
+        <!--MENU LINKS-->
+        <h6 class="side_title">Data Wrangling</h6>
+            <a href="../python-data-science-reference/pandas-create-dataframe.html" class="w3-bar-item w3-button side_link" >Importing Data</a>
+            <a href="../python-data-science-reference/pandas-selecting-dropping-and-renaming-columns.html" class="w3-bar-item w3-button side_link" >Select, Drop & Rename</a>
+            <a href="../python-data-science-reference/pandas-filter-sort-and-sample.html" class="w3-bar-item w3-button side_link" >Filter, Sort & Sample</a>
+            <a href="../python-data-science-reference/pandas-add-column.html" class="w3-bar-item w3-button side_link" >Add Columns</a>
+            <a href="../python-data-science-reference/pandas-clean-data.html" class="w3-bar-item w3-button side_link" >Cleaning Data</a>
+            <a href="../python-data-science-reference/pandas-dates.html" class="w3-bar-item w3-button side_link" >Dates & Time</a>
+            <a href="../python-data-science-reference/pandas-join-data.html" class="w3-bar-item w3-button side_link" >Join Data</a>
+            <a href="../python-data-science-reference/pandas-aggregating-data.html" class="w3-bar-item w3-button side_link" >Aggregate & Transform</a>
+        <h6 class="side_title">Data Analysis</h6>
+            <a href="../python-data-science-reference/pandas-exploring-data.html" class="w3-bar-item w3-button side_link" >Exploring Data</a>
+            <a href="../python-data-science-reference/seaborn-continuous-variables.html" class="w3-bar-item w3-button side_link" >Plotting Continuous Variables</a>
+            <a href="../python-data-science-reference/seaborn-discrete-variables.html" class="w3-bar-item w3-button side_link" >Plotting Discrete Variables</a>
+        <h6 class="side_title">Machine Learning</h6>
+            <a href="../python-data-science-reference/python-machine-learning-model-preparation.html" class="w3-bar-item w3-button side_link" >Data Preparation</a>
+            <a href="../python-data-science-reference/python-machine-learning-linear-models.html" class="w3-bar-item w3-button side_link" >Linear Models</a>
+        <h6 class="side_title">Other Tutorials & Content</h6>
+            <a href="../learn-python-for-data-science/python-variables-and-data-types.html" class="w3-bar-item w3-button side_link" >Learn Python for Data Science</a> 
+            <a href="../learn-alteryx/alteryx-introduction.html" class="w3-bar-item w3-button side_link" >Learn Alteryx</a> 
+            <a href="../blog/evaluation-metric-tunnel-vision.html" class="w3-bar-item w3-button side_link" >Blog</a> 
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+    </div>
+
+    <!--MAIN PAGE----->
+    <div class="w3-main" style="margin-left:250px; margin-right:200px;">
+    <div>
+
+        <!--MENU BUTTON-->
+          <div class="h_left">
+              <button class="w3-button w3-xlarge w3-hide-large" onclick="w3_open()" style="left:0;">&#9776;</button>
+          </div>
+
+          <!--HEADER-->
+          <div class="h_right">
+              <h1>Linear Models with Scikit-Learn</h1>
+          </div>
+
+        <!--PY-REF-TOP-BANNER-->
+        <div class='horizontal_ad'>
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- top_ad_banner -->
+            <ins class="adsbygoogle"
+                 style="display:inline-block;width:100%;height:100px;
+                        text-align:center;"
+                 data-ad-client="ca-pub-4825364639199120"
+                 data-ad-slot="6723525876"></ins>
+            <script>
+                 (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <!--CONTENT-->
+        <div class="w3-container">
+
+            <!--SOCIAL MEDIA BUTTONS-->
+            <div class="share_buttons">
+                  <!--TWITTER FOLLOW-->
+                  <a href="https://twitter.com/AnalyseUp?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @AnalyseUp</a>
+                  <!--TWEET-->
+                  <a class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+            <p class="txt_pad"></p>
+
+            <h2 class="txt_pad">Linear Regression</h2>
+            <p class=txt2>Here we initialise and train a Linear Regression model before using the model to make predictions. Finally we find the intercept and cofficients of the model along with analysing the models performance on test data using mean squared error and mean absolute error metrics.</p>
+            <div class="wide_box code_wide_box">
+                  <div class="code_box_wide">
+                      <div class="txt2 code">
+                          <span class=comment>#Import Library</span>
+                          <div class="code_line">
+                              <span class=key_word>from</span> sklearn.linear_model <span class=key_word>import</span> LinearRegression
+                          </div>
+                           <br/>
+                          <span class=comment>#Initialise & Fit Model</span>
+                           <div class="code_line">
+                              model = LinearRegression()
+                          </div>
+                          <div class="code_line">
+                              model.fit(X_train, y_train)
+                          </div>
+                          <br/>
+                          <span class=comment>#Use Model to Make Predictions</span>
+                           <div class="code_line">
+                              y_pred = model.predict(X_test)
+                          </div>
+                          <br/>
+                          <span class=comment>#Get Intercept & Coefficients</span>
+                          <div class="code_line">
+                                <span class=key_word>print</span>(model.intercept_)
+                          </div>
+                          <div class="code_line">
+                                coef = pd.DataFrame(model.coef_, X_train.columns, columns=[<span class=string>'Coef'</span>])
+                          </div>
+                          <br/>
+                          <span class=comment>#Get MSE & MAE</span>
+                          <div class="code_line">
+                              <span class=key_word>from</span> sklearn.metrics <span class=key_word>import</span> mean_squared_error, mean_absolute_error
+                          </div>
+                          <div class="code_line">
+                              <span class=key_word>print</span>(<span class=string>'MSE:'</span>,mean_squared_error(y_test,y_pred))
+                          </div>
+                           <div class="code_line">
+                              <span class=key_word>print</span>(<span class=string>'MAE:'</span>,mean_absolute_error(y_test,y_pred))
+                          </div>
+                      </div>
+                    </div>
+            </div>
+            
+            <p class="txt2">For more detail, see the Scikit-Learn documentation <a class=txt_link href='https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html'>here</a></p>
+            
+            <h2 class="txt_pad">Logistic Regression</h2>
+            
+            <p class=txt2>Here we initialise and train a Logistic Regression model before using the model to make predictions. Finally we find the intercept and cofficients of the model along with analysing the models performance on test data using the Classification Report.</p>
+            
+            <div class="wide_box code_wide_box">
+                  <div class="code_box_wide">
+                      <div class="txt2 code">
+                          <span class=comment>#Import Library</span>
+                          <div class="code_line">
+                              <span class=key_word>from</span> sklearn.linear_model <span class=key_word>import</span> LogisticRegression
+                          </div>
+                          <br/>
+                          <span class=comment>#Initialise & Train Model</span>
+                           <div class="code_line">
+                              model = LogisticRegression()
+                          </div>
+                          <div class="code_line">
+                              model.fit(X_train, y_train)
+                          </div>
+                          <br/>
+                          <span class=comment>#Use Model to Make Predictions</span>
+                          <div class="code_line">
+                              y_pred = model.predict(X_test)
+                          </div>
+                          <br/>
+                          <span class=comment>#Get the Model Intercept & Coefficients</span>
+                          <div class="code_line">
+                              <span class=key_word>print</span>(<span class=string>'Intercept:'</span>,model.intercept_)
+                          </div>
+                          <div class="code_line">
+                              coef = pd.DataFrame(model.coef_.reshape(<span class=number>30</span>,<span class=number>1</span>), cols, columns=[<span class=string>'Coefficients'</span>]) 
+                          </div>
+                          <div class="code_line">
+                              <span class=key_word>print</span>(coef)
+                          </div>
+                          <br/>
+                          <span class=comment>#Get the Classification Report</span>
+                          <div class="code_line">
+                              <span class=key_word>from</span> sklearn.metrics <span class=key_word>import</span> classification_report
+                          </div>
+                          <div class="code_line">
+                              <span class=key_word>print</span>(classification_report(y_test, y_pred))
+                          </div>
+                      </div>
+                    </div>
+            </div>
+            
+
+            <p class="txt2">For more detail, see the Scikit-Learn documentation <a class=txt_link href='https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html'>here</a></p>
+            
+
+            
+        </div>
+    </div>
+    </div>
+<!-------------------------------------FOOTER---------------------------------->
+<div id="footer"></div>
+
+<!--PY-REF-SIDE-BANNER-->
+<div id="ad_bar" >
+    <!-- side_bar_1 -->
+    <ins class="adsbygoogle"
+         style="display:block; margin-top: 10vh;"
+         data-ad-client="ca-pub-4825364639199120"
+         data-ad-slot="6943017726"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+</div>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</body>
+</html>
