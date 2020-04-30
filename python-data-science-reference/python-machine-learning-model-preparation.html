@@ -70,6 +70,7 @@
             <a href="../python-data-science-reference/seaborn-discrete-variables.html" class="w3-bar-item w3-button side_link" >Plotting Discrete Variables</a>
         <h6 class="side_title">Machine Learning</h6>
             <a href="../python-data-science-reference/python-machine-learning-model-preparation.html" class="w3-bar-item w3-button side_link" >Data Preparation</a>
+            <a href="../python-data-science-reference/python-machine-learning-linear-models.html" class="w3-bar-item w3-button side_link" >Linear Models</a>
         <h6 class="side_title">Other Tutorials & Content</h6>
             <a href="../learn-python-for-data-science/python-variables-and-data-types.html" class="w3-bar-item w3-button side_link" >Learn Python for Data Science</a> 
             <a href="../learn-alteryx/alteryx-introduction.html" class="w3-bar-item w3-button side_link" >Learn Alteryx</a> 
@@ -133,7 +134,6 @@
                            <div class="code_line">
                                y = data[<span class=string>'price'</span>]
                           </div>
-                          <br/>
                       </div>
                     </div>
             </div>
@@ -146,7 +146,6 @@
                           <div class="code_line">
                               X = pd.get_dummies(X, columns=[<span class=string>'neighbourhood_group'</span>,<span class=string>'room_type'</span>], drop_first=<span class=key_word>True</span>)
                           </div>
-                          <br/>
                       </div>
                     </div>
             </div>
@@ -162,7 +161,6 @@
                           <div class="code_line">
                               X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=<span class=number>0.3</span>, random_state=<span class=number>101</span>)
                           </div>
-                          <br/>
                       </div>
                     </div>
             </div>
@@ -196,7 +194,6 @@
                           <div class="code_line">
                               X_test = pd.DataFrame(scaler.transform(X_test), columns = X_test.columns)
                           </div>
-                          <br/>
                       </div>
                     </div>
             </div>

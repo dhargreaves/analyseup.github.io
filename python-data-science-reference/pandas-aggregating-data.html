@@ -69,6 +69,7 @@
             <a href="../python-data-science-reference/seaborn-discrete-variables.html" class="w3-bar-item w3-button side_link" >Plotting Discrete Variables</a>
         <h6 class="side_title">Machine Learning</h6>
             <a href="../python-data-science-reference/python-machine-learning-model-preparation.html" class="w3-bar-item w3-button side_link" >Data Preparation</a>
+            <a href="../python-data-science-reference/python-machine-learning-linear-models.html" class="w3-bar-item w3-button side_link" >Linear Models</a>    
         <h6 class="side_title">Other Tutorials & Content</h6>
             <a href="../learn-python-for-data-science/python-variables-and-data-types.html" class="w3-bar-item w3-button side_link" >Learn Python for Data Science</a> 
             <a href="../learn-alteryx/alteryx-introduction.html" class="w3-bar-item w3-button side_link" >Learn Alteryx</a> 
@@ -130,7 +131,6 @@
                               <span class=string>'ProductID'</span>],as_index=<span class=key_word>False</span>)
                               [<span class=string>'Order_No'</span>].count()
                           </div>
-                          <br/>
                       </div>
                     </div>
             </div>
@@ -145,7 +145,6 @@
                               <span class=string>'ProductID'</span>],as_index=<span class=key_word>False</span>)
                               [<span class=string>'units'</span>].sum()
                           </div>
-                          <br/>
                       </div>
                     </div>
             </div>
@@ -159,7 +158,6 @@
                               genre_aggregations = products.groupby([<span class=string>'Genre'</span>],
                               as_index=<span class=key_word>False</span>)[<span class=string>'Cost'</span>].agg([<span class=string>'mean'</span>,<span class=string>'max'</span>,<span class=string>'min'</span>,<span class=string>'std'</span>]).reset_index()
                           </div>
-                        <br/>
                       </div>
                     </div>
             </div>
@@ -177,7 +175,6 @@
                               orders[<span class=keyword>'running_total'</span>] = orders.groupby([<span class=string>'ProductID'</span>],as_index=<span class=key_word>False</span>)
                               [<span class=string>'units'</span>].cumsum()
                           </div>
-                          <br/>
                       </div>
                     </div>
             </div>
@@ -196,7 +193,6 @@
                           <div class="code_line">
                               units_by_day_pivot.fillna(<span class=number>0</span>, inplace=<span class=key_word>True</span>)
                           </div>
-                          <br/>
                       </div>
                     </div>
             </div>

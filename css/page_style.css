@@ -100,6 +100,12 @@ a{
         font-family:"helvetica";
         color: white;
     }
+.txt_link{
+        position:relative;
+        font-size: 14px;
+        font-family:"helvetica";
+        color: black;
+}
 .side_link{
     font-size:14px;
     font-weight: 100;
@@ -415,6 +421,7 @@ tr:nth-child(even) {
     height:100%;
    /* border-right: 20px solid #ff7700ff;*/
     margin-right:-20%;
+    margin-bottom:30px;
 }
 
 .code_box {
